@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Using JSX as a backend templating layer with AdonisJS",
+    "slug": "adonisjs-and-jsx",
+    "authorName": "virk",
+    "content": "./articles/adonisjs-and-jsx.md",
+    "publishedAt": null,
+    "category": "News"
+  },
+  {
+    "title": "Creating RBAC on top of AdonisJS bouncer",
+    "slug": "rbac-with-adonisjs-bouncer",
+    "publishedAt": null,
+    "authorName": "virk",
+    "category": "News",
+    "content": "./articles/rbac-with-adonisjs-bouncer.md"
+  },
+  {
+    "title": "Announcing AdonisJS v6",
+    "slug": "adonisjs-v6-announcement",
+    "publishedAt": null,
+    "authorName": "virk",
+    "category": "News",
+    "content": "./articles/adonisjs-v6-announcement.md"
+  },
+  {
+    "title": "Where does AdonisJS fits into the Node.js ecosystem",
+    "slug": "adonisjs-and-the-nodejs-ecosystem",
+    "publishedAt": "2023-12-08T07:20:59.213Z",
+    "authorName": "virk",
+    "category": "Philosophy",
+    "content": "./articles/adonisjs-and-the-nodejs-ecosystem.md"
+  }
+]

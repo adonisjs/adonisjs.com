@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Lucid",
+    "colorShade": "teal",
+    "iconName": "tabler:database",
+    "description": "SQL ORM with a database query builder, Active record based models, support for migrations, and model factories for testing."
+  },
+  {
+    "name": "Auth",
+    "colorShade": "pink",
+    "iconName": "tabler:lock",
+    "description": "Driver-based authentication layer with support for sessions, API tokens, basic auth, and much more."
+  },
+  {
+    "name": "Bouncer",
+    "colorShade": "cyan",
+    "iconName": "tabler:forbid",
+    "description": "Bouncer provides low-level APIs to build custom authorization workflows like RBAC or ACL."
+  },
+  {
+    "name": "Drive",
+    "colorShade": "indigo",
+    "iconName": "tabler:cloud-upload",
+    "description": "AdonisJS Drive provides a unified API to manage user-uploaded files on S3, GCS, and the local filesystem."
+  },
+  {
+    "name": "Limiter",
+    "colorShade": "cyan",
+    "iconName": "tabler:gauge",
+    "description": "Protect your API endpoints by implementing fine-grained rate limiting. Supports multiple backend stores."
+  },
+  {
+    "name": "Edge",
+    "colorShade": "teal",
+    "iconName": "tabler:braces",
+    "description": "A modern and batteries-included template engine for the ones who keep things simple."
+  },
+  {
+    "name": "Bento Cache",
+    "colorShade": "cyan",
+    "iconName": "tabler:server-bolt",
+    "description": "Speed up your applications by storing slowly changing data in a multi-tier cache store."
+  },
+  {
+    "name": "VineJS",
+    "colorShade": "teal",
+    "iconName": "tabler:shield",
+    "description": "A superfast and type-safe validation library for Node.js. VineJS comes with 50+ validation rules and 12+ schema types."
+  },
+  {
+    "name": "Ally",
+    "colorShade": "pink",
+    "iconName": "tabler:social",
+    "description": "Add support for Social login to your apps. Ally ships Twitter, Github, Google, LinkedIn, and many more drivers."
+  },
+  {
+    "name": "i18n",
+    "colorShade": "teal",
+    "iconName": "tabler:globe",
+    "description": "Create multi-lingual web apps. We provide APIs for localization, formatting values, and managing translations."
+  },
+  {
+    "name": "Health checks",
+    "colorShade": "indigo",
+    "iconName": "tabler:activity",
+    "description": "Monitor database connectivity, redis memory size, and your application health using a single package."
+  },
+  {
+    "name": "Mailer",
+    "colorShade": "cyan",
+    "iconName": "tabler:mail",
+    "description": "Send emails from your application using a multi-driver mailer. Supports SMTP, SES, Mailgun, Resend and much more."
+  }
+]

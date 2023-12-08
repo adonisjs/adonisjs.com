@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Cavai",
+    "website_url": "https://www.cavai.com/",
+    "logo": "./logos/cavai.svg",
+    "verifiedBy": ["Virk"]
+  },
+  {
+    "name": "ZenChef",
+    "website_url": "https://www.zenchef.com/en-us",
+    "logo": "./logos/zenchef.svg",
+    "verifiedBy": ["Romain", "https://www.welcometothejungle.com/fr/companies/zenchef/tech"]
+  },
+  {
+    "name": "Marie Claire",
+    "website_url": "https://www.marieclaire.com/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/marie_claire.svg"
+  },
+  {
+    "name": "Zakodium",
+    "website_url": "https://www.zakodium.com/",
+    "verifiedBy": ["Michaël"],
+    "logo": "./logos/zakodium.svg"
+  },
+  {
+    "name": "Ledger",
+    "website_url": "https://www.ledger.com/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/ledger.svg"
+  },
+  {
+    "name": "Cleavr",
+    "website_url": "https://cleavr.io/",
+    "verifiedBy": ["Virk"],
+    "logo": "./logos/cleavr.svg"
+  },
+  {
+    "name": "FIVB",
+    "website_url": "https://www.fivb.com/en",
+    "verifiedBy": ["Romain"],
+    "logo": "./logos/fivb.svg"
+  },
+  {
+    "name": "Renault Group",
+    "website_url": "https://www.renaultgroup.com/en/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/renault.svg"
+  }
+]

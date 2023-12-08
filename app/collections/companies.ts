@@ -1,0 +1,11 @@
+import app from '@adonisjs/core/services/app'
+import BaseCollection from './base.js'
+import type companiesUsingAdonisJS from '../../content/companies_using_adonisjs/db.json'
+
+export type Company = (typeof companiesUsingAdonisJS)[number]
+
+export default class Companies extends BaseCollection<Company> {
+  uid: keyof Company = 'name'
+  inlineAssets: (keyof Company)[] = ['logo']
+  dbFilePath: string = app.makePath('content/companies_using_adonisjs/db.json')
+}

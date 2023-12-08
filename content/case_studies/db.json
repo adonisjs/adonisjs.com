@@ -1,0 +1,34 @@
+[
+  {
+    "companyName": "Cavai",
+    "logo": "./logos/cavai.svg",
+    "slug": "cavai",
+    "website": "https://cavai.com",
+    "submitterName": "Mikka",
+    "content": "./cavai.md"
+  },
+  {
+    "companyName": "Cleavr / Little Bets",
+    "logo": "./logos/cleavr.svg",
+    "slug": "cleavr",
+    "website": "https://cleavr.io",
+    "submitterName": "Adam",
+    "content": "./cleavr.md"
+  },
+  {
+    "companyName": "Relancer",
+    "logo": "./logos/relancer.svg",
+    "slug": "relancer",
+    "website": "https://relancer.com/",
+    "submitterName": "Kevin",
+    "content": "./relancer.md"
+  },
+  {
+    "companyName": "Streali",
+    "logo": "./logos/streali.svg",
+    "slug": "streali",
+    "website": "https://www.streali.com/",
+    "submitterName": "Romain Lanz",
+    "content": "./streali.md"
+  }
+]
