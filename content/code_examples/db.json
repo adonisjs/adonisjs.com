@@ -1,0 +1,47 @@
+[
+  {
+    "uid": "hero:routing",
+    "title": "Register routes",
+    "content": "./home/routing.md"
+  },
+  {
+    "uid": "hero:controller",
+    "title": "Create a controller",
+    "content": "./home/controller.md"
+  },
+  {
+    "uid": "hero:model",
+    "title": "Make a model",
+    "content": "./home/model.md"
+  },
+  {
+    "uid": "hero:validator",
+    "title": "Define a validator",
+    "content": "./home/validator.md"
+  },
+  {
+    "uid": "hero:all_together",
+    "title": "Put it all together",
+    "content": "./home/all_together.md"
+  },
+  {
+    "uid": "testing:e2e_testing",
+    "title": "Browser testing",
+    "content": "./home/e2e_testing.md"
+  },
+  {
+    "uid": "testing:api_testing",
+    "title": "Open API tests",
+    "content": "./home/api_testing.md"
+  },
+  {
+    "uid": "testing:swap_dependencies",
+    "title": "Swap dependencies",
+    "content": "./home/swap_dependencies.md"
+  },
+  {
+    "uid": "testing:cli_testing",
+    "title": "Command-line tests",
+    "content": "./home/cli_testing.md"
+  }
+]

@@ -8,8 +8,7 @@
 */
 
 import router from '@adonisjs/core/services/router'
-import Team from '../app/collections/team.js'
 
-router.get('/', () => {
-  return new Team().all()
-})
+const PagesController = () => import('#controllers/pages_controller')
+
+router.get('/', [PagesController, 'getHome'])
