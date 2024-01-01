@@ -1,4 +1,9 @@
 import '../css/app.css'
+import Alpine from 'alpinejs'
+import { tabs } from 'edge-uikit/tabs'
+
+Alpine.plugin(tabs)
+Alpine.start()
 
 import.meta.glob([
   '../../content/team/avatars/*.(png|jpg)',

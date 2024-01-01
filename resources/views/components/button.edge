@@ -1,0 +1,36 @@
+@let(sizeClasses = variant === 'small' ? [
+  'px-4',
+  'py-1.5',
+] : [
+  'px-5',
+  'py-2',
+])
+
+@let(classes = [
+  'text-sand1',
+  'bg-sand12',
+  'text-base',
+  'font-semibold',
+  'inline-flex',
+  'items-center',
+  'rounded-md',
+  'space-x-1',
+  'hover:brightness-110',
+  'hover:saturate-110',
+  'hover:contrast-88',
+  'focus:outline-none',
+  'focus:ring-2',
+  'focus:ring-offset-2',
+  'focus:ring-sand8',
+  ...sizeClasses
+])
+
+@if($props.has('href'))
+  <a {{ $props.except(['text']).merge({ class: classes }).toAttrs() }}>
+    <span>{{ text }}</span>
+  </a>
+@else
+  <button {{ $props.except(['text']).merge({ class: classes }).toAttrs() }}>
+    <span>{{ text }}</span>
+  </button>
+@end

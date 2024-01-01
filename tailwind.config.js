@@ -1,6 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 
-import { sand, sandDarkA } from '@radix-ui/colors'
+/**
+ * Colors radix JS colors to their CSS variable reference. This way
+ * we can use p3 color scales, which it not possible via JS API
+ * and Tailwind.
+ */
+function colorsToVars(tailwindShade, radixShade) {
+  return new Array(12).fill(0).reduce((result, _, index) => {
+    result[`${tailwindShade}${index + 1}`] = `var(--${radixShade}${index + 1})`
+    return result
+  }, {})
+}
 
 export default {
   content: ['./resources/**/*.{edge,js,ts,jsx,tsx,vue}', './content/**/*.svg'],
@@ -10,73 +20,67 @@ export default {
         sans: ['Instrument Sans'],
         mono: ['DM Mono'],
       },
+
       boxShadow: {
-        card: '0 0 #0000, 0 0 #0000, 0px 2px 4px rgba(44,43,42,.1)',
+        card: '0 0 0 1px #0101370f,0 8px 40px #0000000d,0 12px 32px -16px #0101370f',
         timeline: 'rgb(255, 255, 255) 0px 0px 8px 8px',
       },
+
       fontSize: {
         /**
          * Overrides
          */
-        'xs': [
-          '13px',
-          {
-            lineHeight: '1rem',
-          },
-        ],
-
         'sm': [
           '15px',
           {
-            lineHeight: '1.3rem',
+            lineHeight: '22px',
           },
         ],
 
         'hero': [
-          '72px',
+          '62px',
           {
-            lineHeight: '72px',
-            letterSpacing: '-4px',
+            lineHeight: '62px',
+            letterSpacing: '-2px',
+          },
+        ],
+
+        'hero-small': [
+          '52px',
+          {
+            lineHeight: '52px',
+            letterSpacing: '-1.5px',
           },
         ],
 
         'hero-mobile': [
-          '54px',
+          '48px',
           {
-            lineHeight: '54px',
-            letterSpacing: '-2px',
+            lineHeight: '48px',
+            letterSpacing: '-1.5px',
           },
         ],
 
         'lede': [
-          '21px',
+          '20px',
           {
-            letterSpacing: '-0.2px',
+            letterSpacing: '-0.1px',
             lineHeight: '30px',
           },
         ],
 
-        'post-title': [
-          '62px',
+        'lede-small': [
+          '18px',
           {
-            lineHeight: '70px',
-            letterSpacing: '-2.4px',
-          },
-        ],
-
-        'post-title-mobile': [
-          '54px',
-          {
-            lineHeight: '54px',
-            letterSpacing: '-2px',
+            lineHeight: '28px',
           },
         ],
 
         'section-title': [
-          '42px',
+          '46px',
           {
-            lineHeight: '46px',
-            letterSpacing: '-1.5px',
+            lineHeight: '50px',
+            letterSpacing: '-1.8px',
           },
         ],
 
@@ -102,13 +106,6 @@ export default {
           },
         ],
 
-        'tabTrigger': [
-          '15px',
-          {
-            lineHeight: '1.3rem',
-          },
-        ],
-
         'pre': [
           '15px',
           {
@@ -118,14 +115,22 @@ export default {
       },
 
       maxWidth: {
-        content: '1056px',
+        content: '1104px',
       },
 
       colors: {
         brand: '#5a45ff',
-        sand13: '#0e0d0c',
-        ...sand,
-        ...sandDarkA,
+        sand13: 'color(display-p3 0.05 0.06 0.06)',
+        ...colorsToVars('sand', 'sand-'),
+        ...colorsToVars('sanda', 'sand-a'),
+      },
+
+      saturate: {
+        110: '1.1',
+      },
+
+      contrast: {
+        88: '.88',
       },
     },
   },

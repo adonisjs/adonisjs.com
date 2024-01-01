@@ -5,7 +5,7 @@
     "slug": "cavai",
     "website": "https://cavai.com",
     "submitterName": "Mikka",
-    "content": "./cavai.md"
+    "content_path": "./cavai.md"
   },
   {
     "companyName": "Cleavr / Little Bets",
@@ -13,7 +13,7 @@
     "slug": "cleavr",
     "website": "https://cleavr.io",
     "submitterName": "Adam",
-    "content": "./cleavr.md"
+    "content_path": "./cleavr.md"
   },
   {
     "companyName": "Relancer",
@@ -21,7 +21,7 @@
     "slug": "relancer",
     "website": "https://relancer.com/",
     "submitterName": "Kevin",
-    "content": "./relancer.md"
+    "content_path": "./relancer.md"
   },
   {
     "companyName": "Streali",
@@ -29,6 +29,6 @@
     "slug": "streali",
     "website": "https://www.streali.com/",
     "submitterName": "Romain Lanz",
-    "content": "./streali.md"
+    "content_path": "./streali.md"
   }
 ]

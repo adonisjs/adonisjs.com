@@ -177,7 +177,7 @@ export default abstract class BaseCollection<Entry> {
   /**
    * Persists a new entry to the entries collection
    */
-  async update(entry: Entry) {
+  async update(entry: Entry, payload: Partial<Entry>) {
     await this.load()
     this.originalDb = this.originalDb || []
 
@@ -185,7 +185,7 @@ export default abstract class BaseCollection<Entry> {
       (originalEntry) => originalEntry[this.uid] === entry[this.uid]
     )
     if (matchingIndex > -1) {
-      this.originalDb[matchingIndex] = entry
+      this.originalDb[matchingIndex] = Object.assign({}, this.originalDb[matchingIndex], payload)
     }
 
     await writeFile(this.dbFilePath, JSON.stringify(this.originalDb, null, 2))

@@ -1,0 +1,12 @@
+<div class="relative bg-gradient-to-b from-sand1 to-sand2">
+  <div
+    class="absolute inset-0 justify-center pointer-events-none hidden lg:flex"
+    style="--marker-color: var(--sand-5)"
+  >
+    <div class="content-container relative h-full w-full guides_markers"></div>
+  </div>
+
+  <div class="relative z-1">
+    {{{ await $slots.main() }}}
+  </div>
+</div>

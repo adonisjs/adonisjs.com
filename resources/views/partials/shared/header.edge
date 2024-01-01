@@ -1,0 +1,104 @@
+@let(navItems = [
+  {
+    text: 'Docs',
+    href: 'https://v6-alpha.adonisjs.com/docs/installation'
+  },
+  {
+    text: 'Case studies',
+    'up-alias': '/case_studies/*',
+    href: '/case_studies'
+  },
+  {
+    text: 'Support program',
+    href: '/support_program'
+  },
+  {
+    text: 'Blog',
+    href: '/blog'
+  },
+  {
+    text: 'About',
+    href: '/about'
+  }
+])
+
+<header class="py-3">
+  <div class="content-container">
+    <div class="flex justify-between items-center">
+      {{-- Logo --}}
+      <div>
+        <a
+          href="/"
+          title="Go to homepage"
+          class="text-sand12"
+          up-follow
+          up-preload
+          up-target="[layout-hero], [layout-main]"
+        >
+          @!logos.adonisjs()
+        </a>
+      </div>
+
+      {{-- Hamburger --}}
+      <div class="md:hidden">
+        <button class="font-medium flex space-x-2 items-center">
+          @svg('tabler:menu-2', { class: 'w-5 h-5' })
+          <span>Menu</span>
+        </button>
+      </div>
+
+      {{-- Navigation menu wrapper --}}
+      <div
+        class="max-sm:fixed max-sm:inset-0 max-sm:bg-slate1 max-sm:z-10 max-sm:hidden"
+      >
+        <div
+          class="flex flex-col justify-center items-center h-full space-y-8 md:flex-row md:space-x-10 md:space-y-0"
+        >
+          {{-- Close mobile menu --}}
+          <button class="absolute right-6 top-6 md:hidden">
+            @svg('tabler:x', { class: 'w-6 h-6' })
+          </button>
+
+          {{-- Navigation menu --}}
+          <nav>
+            <ul class="flex flex-col items-center space-y-3 md:space-x-4 md:flex-row md:space-y-0">
+              @each(item in navItems)
+                <li>
+                  <a
+                    class="transition-colors ease-in-out duration-200 font-medium text-sanda11 focus:text-sand13 hover:text-sand13 text-xl md:text-sm"
+                    {{
+                      html.attrs({
+                        href: item.href,
+                        'up-follow': !item.href.startsWith('https://'),
+                        'up-preload': !item.href.startsWith('https://'),
+                        'up-target': !item.href.startsWith('https://') ? '[layout-hero], [layout-main]' : false,
+                        'up-alias': item['up-alias']
+                      })
+                    }}
+                  >
+                    {{ item.text }}
+                  </a>
+                </li>
+              @end
+            </ul>
+          </nav>
+
+          {{-- Additional header links --}}
+          <nav>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/adonisjs/core"
+                  class="flex items-center transition-colors ease-in-out duration-200 text-sanda11 focus:text-sand13 hover:text-sand13 text-xl md:text-sm"
+                >
+                  {{ svg('uiw:github', { class: 'w-5 h-5' }) }}
+                  <span class="text-sm ml-2 font-medium"> 14.5k </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,14 @@
+<p {{
+  $props.merge({
+    class: [
+      'text-section-text',
+      'mb-4',
+      'pr-6',
+      'md:max-w-2xl',
+      'md:pr-12',
+      'last:mb-0'
+    ]
+  }).toAttrs()
+}}>
+  {{{ await $slots.main() }}}
+</p>

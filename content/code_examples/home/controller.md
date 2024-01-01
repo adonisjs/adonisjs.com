@@ -14,7 +14,7 @@ export default class PostsController {
     // save post
   }
 
-  async show ({}: HttpContext) {
+  async show({}: HttpContext) {
     // return post by id
   }
 }

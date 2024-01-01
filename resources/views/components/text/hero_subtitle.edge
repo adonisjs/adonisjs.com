@@ -1,0 +1,11 @@
+@let(classes = variant === 'small' ? [
+  'text-lg',
+  'md:text-lede-small'
+] : [
+  'text-lg',
+  'md:text-lede'
+])
+
+<p {{ html.attrs({ class: classes }) }}>
+  {{{ await $slots.main() }}}
+</p>

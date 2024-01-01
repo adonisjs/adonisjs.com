@@ -1,0 +1,27 @@
+<section class="py-16">
+  <div class="content-container-small">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+      @each(benefit in await supportBenefits.all())
+        <div>
+          <div class="flex space-x-1 text-sand12 mb-3 items-center">
+            @svg(benefit.iconName, {
+              class: 'w-6 h-6 icon-tabler',
+              width: auto,
+              height: auto,
+            })
+            <h3 class="font-semibold text-xl">{{ benefit.name }}</h3>
+          </div>
+
+          <div>
+            <p class="md:pr-8"> {{ benefit.description }} </p>
+            <ul class="mt-6">
+              @each(bulletPoint in benefit.bulletPoints)
+                <li class="checkbox bg-[length:18px] pl-6 mb-2">{{ bulletPoint }}</li>
+              @end
+            </ul>
+          </div>
+        </div>
+      @end
+    </div>
+  </div>
+</section>

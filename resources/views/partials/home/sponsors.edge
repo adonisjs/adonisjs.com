@@ -1,0 +1,47 @@
+<section class="py-24">
+  <div class="content-container">
+    <div>
+      @text.sectionTitle()
+        Sponsored by fantastic companies and individuals
+      @end
+      <div class="mt-6">
+        @text.sectionBody()
+          AdonisJS is an independent open-source project released under the MIT license. We rely on our <a href="" class="text-sand12 underline">Github sponsors</a> and <a href="" class="text-sand12 underline">Support program</a> partners to keep the lights on.
+        @end
+      </div>
+    </div>
+
+    <div class="mt-12 relative">
+      <div class="flex flex-col-reverse relative z-1 md:flex-row md:space-x-12">
+        <div class="md:w-9/12 mt-8 md:mt-0">
+          <div class="flex flex-wrap">
+            @each(sponsor in await sponsors.active())
+              <a
+                href="{{ `https://github.com/${sponsor.sponsor.login || sponsor.sponsor.name}` }}"
+                class="my-1 mx-1"
+                target="_blank"
+                rel="noopener"
+                title="{{ sponsor.sponsor.name || sponsor.sponsor.login }}"
+              >
+                <img
+                  src="{{ sponsor.sponsor.avatarUrl }}"
+                  alt="{{ sponsor.sponsor.name || sponsor.sponsor.login }}"
+                  class="w-11 h-11 rounded-lg border border-sand5 md:w-14 md:h-14"
+                >
+              </a>
+            @end
+          </div>
+        </div>
+
+        <div class="md:w-3/12">
+          <div class="gap-y-2 flex flex-col pr-5 md:pr-0">
+            <div class="bg-white shadow-card rounded-lg h-20 flex items-center justify-center text-sand12">
+              <a href="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

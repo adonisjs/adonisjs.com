@@ -1,47 +1,61 @@
 [
   {
     "uid": "hero:routing",
+    "iconName": "tabler:route",
     "title": "Register routes",
-    "content": "./home/routing.md"
+    "content_path": "./home/routing.md"
   },
   {
     "uid": "hero:controller",
+    "iconName": "tabler:source-code",
     "title": "Create a controller",
-    "content": "./home/controller.md"
+    "content_path": "./home/controller.md"
   },
   {
     "uid": "hero:model",
+    "iconName": "tabler:database-edit",
     "title": "Make a model",
-    "content": "./home/model.md"
+    "content_path": "./home/model.md"
   },
   {
     "uid": "hero:validator",
+    "iconName": "tabler:shield",
     "title": "Define a validator",
-    "content": "./home/validator.md"
+    "content_path": "./home/validator.md"
   },
   {
     "uid": "hero:all_together",
+    "iconName": "tabler:checklist",
     "title": "Put it all together",
-    "content": "./home/all_together.md"
+    "content_path": "./home/all_together.md"
+  },
+  {
+    "uid": "jampacked:example",
+    "title": "Jampacked example",
+    "content_path": "./home/jampacked.md"
   },
   {
     "uid": "testing:e2e_testing",
+    "iconName": "tabler:browser",
     "title": "Browser testing",
-    "content": "./home/e2e_testing.md"
+    "content_path": "./home/e2e_testing.md"
   },
   {
     "uid": "testing:api_testing",
+    "iconName": "tabler:code-asterix",
     "title": "Open API tests",
-    "content": "./home/api_testing.md"
+    "content_path": "./home/api_testing.md"
   },
   {
     "uid": "testing:swap_dependencies",
+    "iconName": "tabler:box",
     "title": "Swap dependencies",
-    "content": "./home/swap_dependencies.md"
+    "content_path": "./home/swap_dependencies.md"
   },
   {
     "uid": "testing:cli_testing",
+    "iconName": "tabler:terminal-2",
     "title": "Command-line tests",
-    "content": "./home/cli_testing.md"
+    "content_path": "./home/cli_testing.md"
   }
 ]

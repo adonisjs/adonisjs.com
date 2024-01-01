@@ -14,7 +14,7 @@ export default class PostsController {
     return Post.create(payload)
   }
 
-  async show ({ params }: HttpContext) {
+  async show({ params }: HttpContext) {
     return Post.findOrFail(params.id)
   }
 }

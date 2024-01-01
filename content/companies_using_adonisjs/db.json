@@ -1,11 +1,5 @@
 [
   {
-    "name": "Cavai",
-    "website_url": "https://www.cavai.com/",
-    "logo": "./logos/cavai.svg",
-    "verifiedBy": ["Virk"]
-  },
-  {
     "name": "ZenChef",
     "website_url": "https://www.zenchef.com/en-us",
     "logo": "./logos/zenchef.svg",
@@ -18,10 +12,10 @@
     "logo": "./logos/marie_claire.svg"
   },
   {
-    "name": "Zakodium",
-    "website_url": "https://www.zakodium.com/",
-    "verifiedBy": ["Michaël"],
-    "logo": "./logos/zakodium.svg"
+    "name": "Cavai",
+    "website_url": "https://www.cavai.com/",
+    "logo": "./logos/cavai.svg",
+    "verifiedBy": ["Virk"]
   },
   {
     "name": "Ledger",
@@ -40,6 +34,12 @@
     "website_url": "https://www.fivb.com/en",
     "verifiedBy": ["Romain"],
     "logo": "./logos/fivb.svg"
+  },
+  {
+    "name": "Zakodium",
+    "website_url": "https://www.zakodium.com/",
+    "verifiedBy": ["Michaël"],
+    "logo": "./logos/zakodium.svg"
   },
   {
     "name": "Renault Group",

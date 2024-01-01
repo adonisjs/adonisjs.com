@@ -6,13 +6,13 @@ test('list logged-in user expenses', async ({ client }) => {
   // Setup state
   const user = await UserFactory.with('expenses', 10).create()
 
-  // Make API request
+  // Make an API request
   const response = await client.get('/me/expenses').loginAs(user)
 
-  // Assert against OpenAPI spec
+  // Assert using OpenAPI spec
   response.assertAgainstApiSpec()
 
-  // Assert values
+  // Assert response data
   response.assertBodyContains(user.expenses.toJSON())
 })
 ```

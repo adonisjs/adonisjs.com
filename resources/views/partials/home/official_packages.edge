@@ -1,0 +1,63 @@
+<section class="py-20 md:py-24">
+  <div class="content-container">
+    {{-- Intro --}}
+    <div id="official-packages">
+      @text.sectionTitle()
+        A huge collection of officially maintained packages
+      @end
+
+      <div class="mt-6">
+        @text.sectionBody()
+          Always find yourself switching between the latest ORMs or migrating away from those two unmaintained libraries<span class="font-mono">?</span>
+        @end
+        @text.sectionBody()
+          We have been there too<span class="font-mono">!</span> That is why AdonisJS ships with a collection of officially maintained and well-documented packages.
+        @end
+        @text.sectionBody()
+          <span class="text-highlight">Pick and use the ones you need.</span>
+        @end
+      </div>
+    </div>
+
+    {{-- Packages listing --}}
+    <div class="mt-12">
+      <div class="grid gap-4 md:grid-cols-3">
+        @each(package in await officialPackages.all())
+          <div class="bg-white px-6 py-6 shadow-card rounded-md">
+            {{-- Icon wrapper --}}
+            <div class="mb-4">
+              <div {{ html.attrs({
+                class: [
+                  `text-${package.colorShade}-700`,
+                  `bg-${package.colorShade}-600/20`,
+                  'flex',
+                  'h-9',
+                  'w-9',
+                  'items-center',
+                  'justify-center',
+                  'rounded-lg',
+                ]
+              }) }}>
+                @svg(package.iconName, {
+                  class: 'h-6 w-6',
+                  width: 'auto',
+                  height: 'auto'
+                })
+              </div>
+            </div>
+
+            {{-- Heading --}}
+            <h4 class="font-semibold text-lg text-sand12 mb-1">
+              {{ package.name }}
+            </h4>
+
+            {{-- Body --}}
+            <div class="text-sm">
+              {{ package.description }}
+            </div>
+          </div>
+        @end
+      </div>
+    </div>
+  </div>
+</section>

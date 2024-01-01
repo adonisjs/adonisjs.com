@@ -1,3 +1,131 @@
+/**
+ * Neutral gray used for surface and body
+ * copy.
+ */
+@import '@radix-ui/colors/sand.css';
+@import '@radix-ui/colors/sand-alpha.css';
+@import '@radix-ui/colors/amber.css';
+
+/**
+ * For codeblocks
+ */
+@import '@radix-ui/colors/crimson-dark.css';
+@import '@radix-ui/colors/blue-dark.css';
+@import '@radix-ui/colors/teal-dark.css';
+@import '@radix-ui/colors/orange-dark.css';
+@import '@radix-ui/colors/sand-dark-alpha.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/**
+ * Resetting stroke width of tabler icons
+ */
+.icon-tabler path {
+  stroke-width: 1.5;
+}
+
+/**
+ * Styling for codeblocks
+ */
+pre {
+  background: theme('colors.sand13') !important;
+  @apply rounded-xl pl-4 pr-6 py-6 mb-4 text-pre overflow-scroll;
+}
+
+code {
+  counter-reset: code;
+}
+
+code .line {
+  position: relative;
+  padding-left: 38px;
+}
+
+code .line::before {
+  @apply text-right left-0 absolute;
+  counter-increment: code;
+  content: counter(code);
+  width: 20px;
+  color: var(--sand-a7);
+}
+
+span[style='color: #6A737D;'] {
+  color: var(--sand-a8);
+}
+span[style='color: #F97583;'] {
+  color: var(--crimson-11) !important;
+}
+span[style='color: #9ECBFF;'] {
+  color: var(--blue-11) !important;
+}
+span[style='color: #B392F0;'] {
+  color: var(--teal-11) !important;
+}
+span[style='color: #FFAB70;'] {
+  color: var(--orange-11) !important;
+}
+
+/**
+ * Selected tab styles
+ */
+tab-container button[aria-selected='true'],
+tab-container button[aria-selected='true']:hover {
+  @apply text-brand;
+}
+
+/**
+ * Container styles
+ */
+.content-container {
+  @apply max-w-content mx-auto px-6;
+}
+
+.content-container-small {
+  @apply max-w-4xl mx-auto px-6 md:px-0;
+}
+
+/**
+ * List items shown with a checkbox. The background size
+ * must be controlled via tailwind utility class, since
+ * that allows better cutomization experience.
+ */
+.checkbox {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuMzczNzMgMTcuOTU5Nkw2LjY2NjYzIDE3LjI1MjVMNS4yNTI0MSAxOC42NjY3TDUuOTU5NTIgMTkuMzczOEw3LjM3MzczIDE3Ljk1OTZaTTE0LjY2NjYgMjYuNjY2N0wxMy45NTk1IDI3LjM3MzhMMTQuOTEzOSAyOC4zMjgxTDE1LjU0OSAyNy4xMzczTDE0LjY2NjYgMjYuNjY2N1pNMjYuMjE1NiA3LjEzNzI4QzI2LjQ3NTUgNi42NDk5NyAyNi4yOTEyIDYuMDQ0MjMgMjUuODAzOSA1Ljc4NDMzQzI1LjMxNjYgNS41MjQ0NCAyNC43MTA4IDUuNzA4NzkgMjQuNDUwOSA2LjE5NjFMMjYuMjE1NiA3LjEzNzI4Wk01Ljk1OTUyIDE5LjM3MzhMMTMuOTU5NSAyNy4zNzM4TDE1LjM3MzcgMjUuOTU5Nkw3LjM3MzczIDE3Ljk1OTZMNS45NTk1MiAxOS4zNzM4Wk0xNS41NDkgMjcuMTM3M0wyNi4yMTU2IDcuMTM3MjhMMjQuNDUwOSA2LjE5NjFMMTMuNzg0MyAyNi4xOTYxTDE1LjU0OSAyNy4xMzczWiIgZmlsbD0iIzM0Qzc1OSIvPgo8L3N2Zz4K);
+  background-repeat: no-repeat;
+  background-position: 0;
+}
+
+/**
+ * Highlighting text
+ */
+.text-highlight {
+  background: linear-gradient(
+    90deg,
+    var(--amber-1) 0,
+    var(--amber-3) 5%,
+    var(--amber-4) 55%,
+    var(--amber-4) 75%,
+    var(--amber-1) 100%
+  );
+  @apply font-medium text-sand12;
+}
+
+.guides_markers::before {
+  content: '';
+  background: repeating-linear-gradient(0deg, var(--marker-color) 0 4px, transparent 0 8px);
+  @apply absolute h-full w-[1px] top-0 left-0;
+}
+
+.guides_markers::after {
+  content: '';
+  background: repeating-linear-gradient(0deg, var(--marker-color) 0 4px, transparent 0 8px);
+  @apply absolute h-full w-[1px] top-0 right-0;
+}
+
+.guides_markers_horizontal:before {
+  content: '';
+  background: repeating-linear-gradient(90deg, var(--sand-4) 0 4px, transparent 0 8px);
+  @apply absolute h-[1px] top-0 left-0 right-0;
+}

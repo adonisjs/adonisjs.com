@@ -1,0 +1,17 @@
+@let(classes = variant === 'small' ? [
+  'text-hero-mobile',
+  'font-semibold',
+  'text-sand12',
+  'md:max-w-2xl',
+  'md:text-hero-small',
+] : [
+  'text-hero-mobile',
+  'font-semibold',
+  'text-sand12',
+  'md:max-w-3xl',
+  'md:text-hero',
+])
+
+<h1 {{ html.attrs({ class: classes }) }}>
+  {{{ await $slots.main() }}}
+</h1>

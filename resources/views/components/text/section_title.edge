@@ -1,0 +1,12 @@
+<h2 {{
+  $props.merge({
+    class: [
+      'text-section-title',
+      'text-sand12',
+      'font-semibold',
+      'md:max-w-2xl'
+    ]
+  }).toAttrs()
+}}>
+  {{{ await $slots.main() }}}
+</h2>

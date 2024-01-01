@@ -33,9 +33,7 @@ export default class PublishPost extends BaseCommand {
       this.exitCode = 1
       this.logger.error(`Unable to publish post "${post}". Cannot find it inside the databse`)
     } else {
-      postToPublish.publishedAt = new Date().toISOString()
-      await blogsPosts.update(postToPublish)
-
+      await blogsPosts.update(postToPublish, { publishedAt: new Date().toISOString() })
       this.logger.success(`Published post ${this.colors.dim(postToPublish.slug)}`)
     }
   }

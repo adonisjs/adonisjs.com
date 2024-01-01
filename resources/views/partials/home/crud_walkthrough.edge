@@ -1,0 +1,51 @@
+<section class="pt-6 pb-16 relative md:pt-10">
+  <div class="content-container">
+    @ui.tabs.group()
+      @ui.tabs.list({
+        class: [
+          'flex',
+          'items-center',
+          'space-x-3',
+          'pb-4',
+          'whitespace-nowrap',
+          'overflow-x-auto'
+        ]
+      })
+        @each(item in await codeExamples.getHeroList())
+          @ui.tabs.trigger({
+            class: [
+              'text-xs',
+              'font-semibold',
+              'px-3',
+              'flex',
+              'flex-col',
+              'items-center',
+              'space-y-2',
+              'text-sand9',
+              'hover:text-sand11',
+              'md:text-sm',
+              'md:space-y-4',
+            ]
+          })
+            @svg(item.iconName, {
+              width: 'none',
+              height: 'none',
+              class: 'icon-tabler w-8 h-8 md:w-10 md:h-10'
+            })
+            <span>
+              {{ item.title }}
+            </span>
+          @end
+        @end
+      @end
+
+      <div>
+        @each(item in await codeExamples.getHeroList())
+          @ui.tabs.panel({ class: 'dark' })
+            {{{ item.contentHtml.contents }}}
+          @end
+        @end
+      </div>
+    @end
+  </div>
+</section>

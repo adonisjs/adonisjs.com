@@ -18,21 +18,21 @@
     "twitterHandle": "@techreagan",
     "profilePictureUrl": "./avatars/techreagan.jpeg",
     "href": "https://twitter.com/techreagan/status/1209464504003768320",
-    "html": "<span class=\"text-brand\">@adonisframework</span> is the first ever framework I learnt from the docs, I'm in love with this framework, <span class=\"text-highlight\"> it's just like @Laravel but for the @nodejs world </span>. I will be like I'm stuck how can i solve this, the docs got you covered. It's gonna be my long term buddy."
+    "html": "@adonisframework is the first ever framework I learnt from the docs, I'm in love with this framework, <span class=\"text-highlight\"> it's just like @Laravel but for the @nodejs world </span>. I will be like I'm stuck how can i solve this, the docs got you covered. It's gonna be my long term buddy."
   },
   {
     "name": "Trésor Muco",
     "twitterHandle": "@mucotreso",
     "profilePictureUrl": "./avatars/mucotreso.jpeg",
     "href": "https://twitter.com/mucotreso/status/1504606612656381957",
-    "html": "The more I work with <span class=\"text-brand\"> @adonisframework </span> the more I'm convinced that it is the best framework in the Nodejs Ecosystem. <br /> The docs are well written, well designed, you just want to stay there and learn more. <br />Thanks to all the people who are working on this project."
+    "html": "The more I work with @adonisframework the more I'm convinced that it is the best framework in the Nodejs Ecosystem. <br /> The docs are well written, well designed, you just want to stay there and learn more. <br />Thanks to all the people who are working on this project."
   },
   {
     "name": "Josh Manders",
     "twitterHandle": "@joshmanders",
     "profilePictureUrl": "./avatars/joshmanders.jpeg",
     "href": "https://twitter.com/joshmanders/status/1697291138510569854",
-    "html": "Completely bailed on everything this past weekend. <span class=\"text-highlight\"> No React, No Remix, No Next.js </span>, still sipping that Tailwind sizzurup though. <br /> Now we rocking <span class=\"text-brand\"> @vuejs </span> & <span class=\"text-brand\"> @adonisframework </span>"
+    "html": "Completely bailed on everything this past weekend. <span class=\"text-highlight\"> No React, No Remix, No Next.js </span>, still sipping that Tailwind sizzurup though. <br /> Now we rocking @vuejs & @adonisframework"
   },
   {
     "name": "Carl Mathisen",
@@ -46,27 +46,27 @@
     "twitterHandle": "@jooop4y",
     "profilePictureUrl": "./avatars/jooop4y.jpeg",
     "href": "https://twitter.com/jooop4y/status/1686883864533499907",
-    "html": "Having a solid experience in Laravel and wanting to explore NodeJs, I found <span class=\"text-brand\">@adonisframework</span> a good choice for me to go through. It is been easy for me to jump in since it feels like <span class=\"text-highlight\"> I am just writing Laravel but in typescript and NodeJS </span>, Awesome developer experience!."
+    "html": "Having a solid experience in Laravel and wanting to explore NodeJs, I found @adonisframework a good choice for me to go through. It is been easy for me to jump in since it feels like <span class=\"text-highlight\"> I am just writing Laravel but in typescript and NodeJS </span>, Awesome developer experience!."
   },
   {
     "name": "Dylan Britz",
     "twitterHandle": "@britzdm",
     "profilePictureUrl": "./avatars/britzdm.jpeg",
     "href": "https://twitter.com/britzdm/status/1533547008950165507",
-    "html": "I've been using <span class=\"text-brand\"> @adonisframework </span> for the last two days an I've already got more done then I did in the last 3 weeks with just using expressjs."
+    "html": "I've been using @adonisframework for the last two days an I've already got more done then I did in the last 3 weeks with just using expressjs."
   },
   {
     "name": "Sam Newby",
     "twitterHandle": "@SamNewby_",
     "profilePictureUrl": "./avatars/samnewby.jpeg",
     "href": "https://twitter.com/SamNewby_/status/1396120662289309708",
-    "html": "If you’re a PHP dev who loves Laravel and want to give another language a go and use a similar style framework then make sure to check out <span class=\"text-brand\"> @adonisframework </span> . It has its own ORM, Auth support, and even a CLI tool called Ace which is very similar to Artisan. <span class=\"text-brand\">#Laravel</span> <span class=\"text-brand\">#NodeJS</span>"
+    "html": "If you’re a PHP dev who loves Laravel and want to give another language a go and use a similar style framework then make sure to check out @adonisframework. It has its own ORM, Auth support, and even a CLI tool called Ace which is very similar to Artisan.#Laravel #NodeJS"
   },
   {
     "name": "Andrew Weir",
     "twitterHandle": "@andruu",
     "profilePictureUrl": "./avatars/andruu.jpeg",
     "href": "https://twitter.com/andruu/status/1708376936710291599",
-    "html": "So funny seeing everyone looking/begging for the node/ts equivalent of rails/Laravel when it’s existed for years. I started using <span class=\"text-brand\">@adonisframework </span> in 2016 in production for one of the biggest startups in Asia. If you <span class=\"text-highlight\">want full stack with everything built in</span> take a look."
+    "html": "So funny seeing everyone looking/begging for the node/ts equivalent of rails/Laravel when it’s existed for years. I started using @adonisframework in 2016 in production for one of the biggest startups in Asia. If you <span class=\"text-highlight\">want full stack with everything built in</span> take a look."
   }
 ]

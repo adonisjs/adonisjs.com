@@ -1,0 +1,16 @@
+<div>
+  <div class="flex space-x-1 items-center mb-2">
+    @svg(iconName, {
+      class: 'w-6 h-6 icon-tabler text-sand12',
+      width: 'none',
+      height: 'none'
+    })
+    <h3 class="font-semibold text-lg text-sand12">
+      {{ title }}
+    </h3>
+  </div>
+
+  <div class="text-sm">
+    {{{ await $slots.main() }}}
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<section class="py-4 md:py-8">
+  <div class="content-container-small">
+    <div>
+      @each(post in await blogPosts.published())
+        <div class="border-b border-sand4 py-8 last:border-b-0 md:py-12">
+
+          {{-- Post --}}
+          <a href="{{ route('blog.show', [post.slug]) }}" class="grid grid-cols-12 group">
+
+            {{-- Category label --}}
+            <div class="col-span-12 md:col-span-2">
+              <div class="hidden md:block md:mt-2">
+                @!post.label({ post })
+              </div>
+            </div>
+
+            {{-- Title, publish date, and author info --}}
+            <div class="col-span-12 md:col-span-5">
+              <h2 class="text-xl font-semibold text-sand12 group-hover:underline">
+                {{ post.title }}
+              </h2>
+              <div class="hidden md:mt-2 md:block">
+                @!post.author({ post })
+              </div>
+            </div>
+
+            {{-- Post summary --}}
+            <div class="mt-3 col-span-12 md:col-span-5 md:col-start-9 md:mt-0">
+              <div class="group-hover:text-sand12">
+                {{{ post.contentHtml.summary }}}
+              </div>
+
+              <div class="mt-6 md:hidden">
+                @!post.author({ post })
+              </div>
+            </div>
+          </a>
+        </div>
+      @end
+    </div>
+  </div>
+</section>

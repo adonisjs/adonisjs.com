@@ -1,0 +1,98 @@
+@let(features = [
+  {
+    title: 'Config management',
+    href: 'https://v6-alpha.adonisjs.com/docs/config'
+  },
+  {
+    title: 'Type-safe environment variables',
+    href: 'https://v6-alpha.adonisjs.com/docs/environment-variables'
+  },
+  {
+    title: 'Thoughtful folder structure',
+    href: 'https://v6-alpha.adonisjs.com/docs/folder-structure'
+  },
+  {
+    title: 'Routing and controllers',
+    href: 'https://v6-alpha.adonisjs.com/docs/routing'
+  },
+  {
+    title: 'Middleware',
+    href: 'https://v6-alpha.adonisjs.com/docs/middleware'
+  },
+  {
+    title: 'BodyParser',
+    href: 'https://v6-alpha.adonisjs.com/docs/bodyparser-middleware'
+  },
+  {
+    title: 'File uploads',
+    href: 'https://v6-alpha.adonisjs.com/docs/file-uploads'
+  },
+  {
+    title: 'Type-safe event emitter',
+    href: 'https://v6-alpha.adonisjs.com/docs/emitter'
+  },
+  {
+    title: 'Encryption',
+    href: 'https://v6-alpha.adonisjs.com/docs/security/encryption'
+  },
+  {
+    title: 'Password hashing',
+    href: 'https://v6-alpha.adonisjs.com/docs/security/hashing'
+  },
+  {
+    title: 'And much, much more.',
+    href: '#official-packages'
+  }
+])
+
+<section class="relative overflow-hidden my-20 md:my-24">
+  <div class="content-container">
+    <div class="flex">
+      {{-- Features list --}}
+      <div>
+        @text.sectionTitle()
+          Feature rich framework core
+        @end
+
+        <div class="mt-6">
+          @text.sectionBody()
+            The core of the framework is <span class="text-highlight">a single npm package</span> that provides all the base-level features you need to create a web application from scratch.
+          @end
+
+          @text.sectionBody()
+            No need to spend hours finding and assembling dozens of packages together before you can write the first line of code.
+          @end
+
+          @text.sectionBody()
+            Use AdonisJS and be productive from day one.
+          @end
+        </div>
+
+        <ul class="mt-10">
+          @each(feature in features)
+            <li class="text-sand12 underline checkbox bg-[length:20px] pl-7 my-3 font-medium">
+              <a href="{{ feature.href }}">
+                {{ feature.title }}
+              </a>
+            </li>
+          @end
+        </ul>
+      </div>
+
+      <div class="absolute -right-[10px] top-[160px] flex-1 hidden md:block dark">
+        <div class="rotate-1 bg-sand13 rounded-lg">
+          <div class="flex items-center h-8 space-x-1.5 px-6 border-b border-[var(--sand-a6)]">
+            <div class="w-2.5 h-2.5 border-2 border-[#FA615B] rounded-full"></div>
+            <div class="w-2.5 h-2.5 border-2 border-[#FCBB40] rounded-full"></div>
+            <div class="w-2.5 h-2.5 border-2 border-[#41C84A] rounded-full"></div>
+          </div>
+          <div class="opacity-[0.7] hover:opacity-[1] transition-opacity ease-in-out duration-150">
+            {{{
+              (await codeExamples.find('jampacked:example')).contentHtml.contents
+            }}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

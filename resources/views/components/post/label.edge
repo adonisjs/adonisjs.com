@@ -1,0 +1,18 @@
+@let(categoriesShades = {
+  News: 'pink',
+  Tutorial: 'teal',
+  Philosophy: 'indigo',
+})
+
+<span {{ html.attrs({
+    class: [
+      `text-${categoriesShades[post.category]}-700`,
+      `bg-${categoriesShades[post.category]}-600/20`,
+      'rounded-md',
+      'font-medium',
+      'px-1.5',
+      'text-[14px]',
+      'inline-block',
+    ]
+  })
+}}> {{ post.category }} </span>

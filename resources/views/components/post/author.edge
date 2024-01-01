@@ -1,0 +1,16 @@
+<div class="flex items-center space-x-4 md:space-x-8">
+  <div class="flex items-center space-x-1 text-[14px]">
+    <img
+      src="{{ post.author.profilePictureUrl }}"
+      alt=""
+      class="w-8 h-8 border border-sand6 rounded-full"
+    >
+    <p>
+      {{ post.author.displayName }}
+    </p>
+  </div>
+
+  <time class="text-[14px]">
+    {{ post.publishedAt.format('MMM D, YYYY') }}
+  </time>
+</div>
