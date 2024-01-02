@@ -1,20 +1,20 @@
 @layouts.main({
   page: {
-    title: blogPost.title,
-    description: blogPost.contentHtml.summary,
-    ogImage: `/${blogPost.slug}.jpeg`
+    title: `${caseStudy.companyName} case study`,
+    description: caseStudy.contentHtml.summary,
+    ogImage: '/case_studies_og_image.jpeg'
   }
 })
   @sections.gray()
     @include('partials/shared/header')
     <div layout-hero>
-      @include('partials/blog/post_hero')
+      @include('partials/case_studies/case_study_hero')
     </div>
   @end
 
   <main layout-main>
     @sections.white()
-      @include('partials/blog/post')
+      @include('partials/case_studies/case_study')
       @include('partials/shared/separator')
     @end
   </main>

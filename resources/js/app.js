@@ -11,3 +11,7 @@ import.meta.glob([
   '../../content/tweets/avatars/*.(jpeg)',
   '../../content/authors/avatars/*.(jpeg)',
 ])
+
+up.on('up:location:changed', (event) => {
+  event.target.dispatchEvent(new CustomEvent('location-changed', { bubbles: true }))
+})

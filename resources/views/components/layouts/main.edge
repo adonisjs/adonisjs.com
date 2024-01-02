@@ -27,7 +27,14 @@
     >
     @vite(['resources/js/app.js'])
   </head>
-  <body class="font-sans antialiased text-sand11 h-full">
+  <body
+    class="font-sans antialiased text-sand11 h-full"
+    x-data="{
+      mobileNavExpanded: false
+    }"
+    :class="{ 'overflow-hidden': mobileNavExpanded }"
+    @location-changed.window="mobileNavExpanded = false"
+  >
     {{{ await $slots.main() }}}
 
     <script src="https://tally.so/widgets/embed.js" async defer></script>

@@ -42,7 +42,7 @@
 
         <div>
           @each(item in await codeExamples.getTestingList())
-            @ui.tabs.panel({ class: 'dark' })
+            @ui.tabs.panel({ class: 'dark code-example' })
               {{{ item.contentHtml.contents }}}
             @end
           @end

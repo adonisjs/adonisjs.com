@@ -5,16 +5,16 @@
     "description": "Instead of spending days on Github issues, send us a direct message, and we will get you up and running in no time.",
     "bulletPoints": [
       "Private Github repo for submitting issues",
-      "Discord group for quick chat"
+      "Discord group for a quick chat"
     ]
   },
   {
     "name": "On-demand Zoom calls",
     "iconName": "tabler:video",
-    "description": "Get a sneak peak of upcoming features, ask questions, and clarify your doubts during an hour long Zoom call.",
+    "description": "Get a sneak peek of upcoming features, ask questions, and clarify your doubts during an hour-long Zoom call.",
     "bulletPoints": [
       "Try new features and provide feedback",
-      "Q&A session to clarity doubts"
+      "Q&A session to clarify doubts"
     ]
   },
   {
@@ -31,7 +31,7 @@
     "iconName": "tabler:heart",
     "description": "Since AdonisJS is an independent open-source project, we rely on companies like you to keep the lights on.",
     "bulletPoints": [
-      "Financially support framework's development",
+      "Support the framework's development",
       "Get featured in sponsors listing"
     ]
   }

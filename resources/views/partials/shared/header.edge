@@ -42,7 +42,10 @@
 
       {{-- Hamburger (mobile only) --}}
       <div class="md:hidden">
-        <button class="font-medium flex space-x-2 items-center">
+        <button
+          class="font-medium flex space-x-2 items-center"
+          @click.prevent="mobileNavExpanded = true"
+        >
           @svg('tabler:menu-2', { class: 'w-5 h-5' })
           <span>Menu</span>
         </button>
@@ -50,13 +53,17 @@
 
       {{-- Navigation menu wrapper --}}
       <div
-        class="max-sm:fixed max-sm:inset-0 max-sm:bg-slate1 max-sm:z-10 max-sm:hidden"
+        class="max-sm:fixed max-sm:inset-0 max-sm:bg-white max-sm:z-10 max-sm:hidden"
+        :class="{ 'max-sm:!block': mobileNavExpanded }"
       >
         <div
           class="flex flex-col justify-center items-center h-full space-y-8 md:flex-row md:space-x-10 md:space-y-0"
         >
           {{-- Close button (mobile only) --}}
-          <button class="absolute right-6 top-6 md:hidden">
+          <button
+            class="absolute right-6 top-6 md:hidden"
+            @click.prevent="mobileNavExpanded = false"
+          >
             @svg('tabler:x', { class: 'w-6 h-6' })
           </button>
 

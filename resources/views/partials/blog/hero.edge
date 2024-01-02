@@ -11,7 +11,13 @@
     </div>
 
     <div class="mt-8">
-      <form action="" method="POST">
+      <form
+        method="POST"
+        action="https://buttondown.email/api/emails/embed-subscribe/adonisjs"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/adonisjs', 'popupwindow')"
+        class="embeddable-buttondown-form"
+      >
         <div class="flex items-center space-x-2">
           <div
             class="bg-white shadow-card px-3 py-1.5 rounded-md flex items-center space-x-2 text-sm text-sanda9 focus-within:ring-2 focus-within:ring-brand focus-within:text-sand12"
@@ -19,8 +25,11 @@
             @svg('tabler:mail', { class: 'w-5 h-5 icon-tabler' })
             <input
               type="email"
+              name="email"
+              id="email"
               placeholder="Enter your email address"
               class="w-full placeholder:text-sanda9 focus:outline-none"
+              required
             />
           </div>
 

@@ -9,7 +9,7 @@
               <div class="mb-6 h-8 flex">
                 {{{ caseStudy.logo }}}
               </div>
-              <div class="text-sand12">
+              <div>
                 {{{ caseStudy.contentHtml.summary }}}
               </div>
             </div>
@@ -17,10 +17,11 @@
             {{-- Link to learn more --}}
             <div>
               <a
-                href="/case_studies/streali"
-                class="inline-block mt-4 underline text-sand11"
+                href="{{ route('case_studies.show', [caseStudy.slug]) }}"
+                class="mt-4 underline text-sand12 font-medium inline-flex items-center"
               >
-                Learn more
+                <span>Learn more</span>
+                @svg('tabler:chevron-right', { class: 'w-4 h-4 mt-1 ml-0.5' })
               </a>
             </div>
           </div>
