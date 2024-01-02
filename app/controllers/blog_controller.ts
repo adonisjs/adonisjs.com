@@ -8,6 +8,10 @@ export default class BlogController {
     })
   }
 
+  list() {
+    return new BlogPosts().published()
+  }
+
   async show({ view, params, response }: HttpContext) {
     const post = await new BlogPosts().find(params.slug)
     if (!post) {

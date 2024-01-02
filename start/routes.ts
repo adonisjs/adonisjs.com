@@ -22,4 +22,5 @@ router
   .resource('case_studies', CaseStudiesController)
   .params({ case_studies: 'slug' })
   .only(['index', 'show'])
+
 router.resource('blog', BlogController).params({ blog: 'slug' }).only(['index', 'show'])

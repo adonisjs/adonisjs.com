@@ -8,6 +8,10 @@ export default class CaseStudiesController {
     })
   }
 
+  list() {
+    return new CaseStudies().all()
+  }
+
   async show({ view, params, response }: HttpContext) {
     const caseStudy = await new CaseStudies().find(params.slug)
     if (!caseStudy) {

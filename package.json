@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "node bin/server.js",
-    "build": "node ace build",
+    "build": "vite build && node ace build:static && copyfiles public/**/* public/* --up=1 dist",
     "dev": "node ace serve --watch",
     "test": "node ace test",
     "lint": "eslint .",
@@ -39,6 +39,7 @@
     "@types/node": "^20.10.6",
     "alpinejs": "^3.13.3",
     "autoprefixer": "^10.4.16",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.56.0",
     "pino-pretty": "^10.3.1",
     "postcss": "^8.4.32",
