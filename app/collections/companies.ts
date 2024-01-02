@@ -4,6 +4,9 @@ import type companiesUsingAdonisJS from '../../content/companies_using_adonisjs/
 
 export type Company = (typeof companiesUsingAdonisJS)[number]
 
+/**
+ * Collection of companies using AdonisJS
+ */
 export default class Companies extends BaseCollection<Company> {
   uid: keyof Company = 'name'
   inlineAssets: (keyof Company)[] = ['logo']

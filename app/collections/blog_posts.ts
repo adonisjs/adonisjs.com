@@ -11,6 +11,9 @@ export type BlogPost = Omit<(typeof blogPosts)[number], 'publishedAt'> & {
   publishedAt: null | string
 }
 
+/**
+ * Represents a collection of blog posts.
+ */
 export default class BlogPosts extends BaseCollection<BlogPost> {
   uid: keyof BlogPost = 'slug'
   dates: ['publishedAt'] = ['publishedAt']

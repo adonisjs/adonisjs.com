@@ -14,7 +14,7 @@ Previously, types used in the type parameter position of `defineProps` and `defi
 
 This limitation is now resolved in 3.3. The compiler can now resolve imported types, and supports a limited set of complex types:
 
-```tsx
+```vue
 <script setup lang="ts">
   import type { Props } from './foo'
 

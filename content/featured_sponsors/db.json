@@ -1,1 +1,7 @@
-[{}]
+[
+  {
+    "name": "Relancer",
+    "website": "https://relancer.com/",
+    "logo": "./logos/relancer.svg"
+  }
+]

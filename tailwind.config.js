@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 /**
- * Colors radix JS colors to their CSS variable reference. This way
+ * Convert Radix colors to their CSS variable reference. This way
  * we can use p3 color scales, which it not possible via JS API
  * and Tailwind.
  */
@@ -23,7 +23,6 @@ export default {
 
       boxShadow: {
         card: '0 0 0 1px #0101370f,0 8px 40px #0000000d,0 12px 32px -16px #0101370f',
-        timeline: 'rgb(255, 255, 255) 0px 0px 8px 8px',
       },
 
       fontSize: {
@@ -91,21 +90,6 @@ export default {
           },
         ],
 
-        'subsection-title': [
-          '26px',
-          {
-            lineHeight: '28px',
-            letterSpacing: '-0.8px',
-          },
-        ],
-
-        'subsection-text': [
-          '17px',
-          {
-            lineHeight: '26px',
-          },
-        ],
-
         'pre': [
           '15px',
           {
@@ -134,7 +118,6 @@ export default {
       },
     },
   },
-  plugins: [],
   safelist: [
     {
       pattern: /(bg|text)-(cyan|teal|pink|indigo)-\d/,

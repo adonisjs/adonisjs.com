@@ -1,0 +1,31 @@
+<section class="py-16">
+  <div class="content-container-small">
+    <div class="grid md:grid-cols-2 gap-x-6 gap-y-6">
+      @each(caseStudy in await caseStudies.all())
+        <div class="border border-sand7 py-8 px-6 rounded-md">
+          <div class="flex flex-col h-full justify-between">
+            {{-- Logo and summary --}}
+            <div>
+              <div class="mb-6 h-8 flex">
+                {{{ caseStudy.logo }}}
+              </div>
+              <div class="text-sand12">
+                {{{ caseStudy.contentHtml.summary }}}
+              </div>
+            </div>
+
+            {{-- Link to learn more --}}
+            <div>
+              <a
+                href="/case_studies/streali"
+                class="inline-block mt-4 underline text-sand11"
+              >
+                Learn more
+              </a>
+            </div>
+          </div>
+        </div>
+      @end
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section class="pt-20 pb-16 md:pt-24">
+  <div class="content-container-small">
+    <div class="mb-4">
+      <a
+        href="{{ route('blog.index') }}"
+        up-follow
+        up-target="[layout-hero], [layout-main]"
+        up-scroll="reset"
+      >
+        @!post.label({ post: blogPost })
+      </a>
+    </div>
+
+    @text.heroTitle({ variant: 'small' })
+      {{ blogPost.title }}
+    @end
+
+    <div class="mt-6 max-w-2xl md:pr-24">
+      @!post.author({ post: blogPost })
+    </div>
+  </div>
+</section>

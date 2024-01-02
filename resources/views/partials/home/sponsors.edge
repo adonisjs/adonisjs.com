@@ -6,7 +6,20 @@
       @end
       <div class="mt-6">
         @text.sectionBody()
-          AdonisJS is an independent open-source project released under the MIT license. We rely on our <a href="" class="text-sand12 underline">Github sponsors</a> and <a href="" class="text-sand12 underline">Support program</a> partners to keep the lights on.
+          AdonisJS is an independent open-source project released under the MIT license. We rely on our <a
+            href="http://github.com/sponsors/thetutlage"
+            class="text-sand12 underline transition-colors ease-in-out duration-200 hover:text-sand11"
+            target="_blank"
+          >
+            Github sponsors
+          </a> and <a
+            href="/support_program"
+            class="text-sand12 underline transition-colors ease-in-out duration-200 hover:text-sand11"
+            up-follow
+            up-target="[layout-hero], [layout-main]"
+            up-scroll="reset"
+          >
+            Support program </a> partners to keep the lights on.
         @end
       </div>
     </div>
@@ -26,7 +39,7 @@
                 <img
                   src="{{ sponsor.sponsor.avatarUrl }}"
                   alt="{{ sponsor.sponsor.name || sponsor.sponsor.login }}"
-                  class="w-11 h-11 rounded-lg border border-sand5 md:w-14 md:h-14"
+                  class="w-11 h-11 rounded-md border border-sanda5 md:w-14 md:h-14"
                 >
               </a>
             @end
@@ -35,10 +48,15 @@
 
         <div class="md:w-3/12">
           <div class="gap-y-2 flex flex-col pr-5 md:pr-0">
-            <div class="bg-white shadow-card rounded-lg h-20 flex items-center justify-center text-sand12">
-              <a href="">
-              </a>
-            </div>
+            @each(sponsor in await featuredSponsors.all())
+              <div
+                class="bg-white shadow-card rounded-md h-20 flex items-center justify-center text-sand12"
+              >
+                <a href="{{ sponsor.website }}" target="_blank">
+                  {{{ sponsor.logo }}}
+                </a>
+              </div>
+            @end
           </div>
         </div>
       </div>

@@ -4,6 +4,9 @@ import type caseStudies from '../../content/case_studies/db.json'
 
 export type CaseStudy = (typeof caseStudies)[number]
 
+/**
+ * Represents a collection of case studies.
+ */
 export default class CaseStudies extends BaseCollection<CaseStudy> {
   uid: keyof CaseStudy = 'slug'
   inlineAssets: (keyof CaseStudy)[] = ['logo']

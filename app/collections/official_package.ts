@@ -4,6 +4,9 @@ import type officialPackages from '../../content/official_packages/db.json'
 
 export type OfficialPackage = (typeof officialPackages)[number]
 
+/**
+ * Collection of official AdonisJS packages
+ */
 export default class OfficialPackages extends BaseCollection<OfficialPackage> {
   uid: keyof OfficialPackage = 'name'
   dbFilePath: string = app.makePath('content/official_packages/db.json')

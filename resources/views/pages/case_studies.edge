@@ -1,0 +1,25 @@
+@layouts.main({
+  page: {
+    title: 'AdonisJS - Case studies',
+    description: 'Experiences shared by businesses on how they use AdonisJS to save time, improve developer productivity, and ship world-class products.',
+    ogImage: '/case_studies_og_image.jpeg'
+  }
+})
+  @sections.gray()
+    @include('partials/shared/header')
+    <div layout-hero>
+      @include('partials/case_studies/hero')
+    </div>
+  @end
+
+  <main layout-main>
+    @sections.white()
+      @include('partials/case_studies/list')
+      @include('partials/shared/separator')
+    @end
+  </main>
+
+  @sections.white()
+    @include('partials/shared/footer')
+  @end
+@end

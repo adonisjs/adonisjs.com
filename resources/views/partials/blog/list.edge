@@ -3,9 +3,15 @@
     <div>
       @each(post in await blogPosts.published())
         <div class="border-b border-sand4 py-8 last:border-b-0 md:py-12">
-
           {{-- Post --}}
-          <a href="{{ route('blog.show', [post.slug]) }}" class="grid grid-cols-12 group">
+          <a
+            href="{{ route('blog.show', [post.slug]) }}"
+            class="grid grid-cols-12 group"
+            up-follow
+            up-preload
+            up-target="[layout-hero], [layout-main]"
+            up-scroll="reset"
+          >
 
             {{-- Category label --}}
             <div class="col-span-12 md:col-span-2">

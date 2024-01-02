@@ -2,17 +2,24 @@
 import { test } from '@japa/runner'
 import { UserFactory } from '#factories/user_factory'
 
-test('list logged-in user expenses', async ({ client }) => {
-  // Setup state
+test('get list of expenses for the logged-in user', async ({ client }) => {
   const user = await UserFactory.with('expenses', 10).create()
 
-  // Make an API request
-  const response = await client.get('/me/expenses').loginAs(user)
+  /**
+   * Login user and visit the API endpoint to
+   * get the list of expenses
+   */
+  const response = await client
+    .get('/me/expenses')
+    .loginAs(user)
 
-  // Assert using OpenAPI spec
+  /**
+   * Assert response matches the schema defined
+   * in an OpenAPI schema file
+   */
+  // highlight-start
   response.assertAgainstApiSpec()
-
-  // Assert response data
+  // highlight-end
   response.assertBodyContains(user.expenses.toJSON())
 })
 ```

@@ -4,6 +4,9 @@ import type sponsors from '../../content/sponsors/db.json'
 
 export type Sponsor = (typeof sponsors)[number]
 
+/**
+ * Collection of sponsors downloaded from Github
+ */
 export default class Sponsors extends BaseCollection<Sponsor> {
   uid: keyof Sponsor = 'sponsor'
   dbFilePath: string = app.makePath('content/sponsors/db.json')

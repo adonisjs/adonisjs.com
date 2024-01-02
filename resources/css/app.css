@@ -15,6 +15,13 @@
 @import '@radix-ui/colors/orange-dark.css';
 @import '@radix-ui/colors/sand-dark-alpha.css';
 
+/**
+ * For markdown
+ */
+@import '@radix-ui/colors/violet-alpha.css';
+@import '@radix-ui/colors/orange-alpha.css';
+@import './markdown.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,7 +38,7 @@
  */
 pre {
   background: theme('colors.sand13') !important;
-  @apply rounded-xl pl-4 pr-6 py-6 mb-4 text-pre overflow-scroll;
+  @apply rounded-xl pl-4 pr-6 py-6 mb-4 text-pre overflow-scroll flex;
 }
 
 code {
@@ -41,6 +48,17 @@ code {
 code .line {
   position: relative;
   padding-left: 38px;
+}
+
+.line.highlight {
+  background-image: linear-gradient(
+    90deg,
+    color(display-p3 0.05 0.06 0.06) 0,
+    color(display-p3 0.13 0.13 0.13) 5%,
+    color(display-p3 0.13 0.13 0.13) 55%,
+    color(display-p3 0.14 0.14 0.14) 75%,
+    color(display-p3 0.05 0.06 0.06) 100%
+  );
 }
 
 code .line::before {
@@ -112,6 +130,9 @@ tab-container button[aria-selected='true']:hover {
   @apply font-medium text-sand12;
 }
 
+/**
+ * Guides are lines around the grid
+ */
 .guides_markers::before {
   content: '';
   background: repeating-linear-gradient(0deg, var(--marker-color) 0 4px, transparent 0 8px);
@@ -128,4 +149,8 @@ tab-container button[aria-selected='true']:hover {
   content: '';
   background: repeating-linear-gradient(90deg, var(--sand-4) 0 4px, transparent 0 8px);
   @apply absolute h-[1px] top-0 left-0 right-0;
+}
+
+nav a.up-current {
+  @apply text-sand13;
 }

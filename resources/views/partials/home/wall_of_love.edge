@@ -12,16 +12,24 @@
           <blockquote class="break-inside-avoid-column">
             <a
               href="{{ tweet.href }}"
-              class="border border-sand7 py-4 px-5 block rounded-lg"
+              target="_blank"
+              class="border border-sand7 py-4 px-5 block rounded-lg group transition-colors duration-100 ease-in-out hover:border-sand8"
             >
               {{-- Twitter user profile --}}
-              <div class="flex space-x-3 items-center">
-                <div>
-                  <img src="{{ tweet.profilePictureUrl }}" class="w-12 h-12 rounded-full">
+              <div class="flex justify-between">
+                <div class="flex space-x-3 items-center">
+                  <div>
+                    <img src="{{ tweet.profilePictureUrl }}" class="w-12 h-12 rounded-full">
+                  </div>
+                  <div>
+                    <p class="font-semibold text-sand12">{{ tweet.name }}</p>
+                    <p class="text-sand9 text-xs">{{ tweet.twitterHandle }}</p>
+                  </div>
                 </div>
-                <div>
-                  <p class="font-semibold text-sand12">{{ tweet.name }}</p>
-                  <p class="text-sand9 text-xs">{{ tweet.twitterHandle }}</p>
+                <div class="relative">
+                  <div class="absolute top-0 right-0 hidden group-hover:block">
+                    @svg('tabler:external-link', { class: 'icon-tabler text-sand9 w-4 h-4' })
+                  </div>
                 </div>
               </div>
 

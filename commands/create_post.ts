@@ -5,7 +5,7 @@ import BlogPosts from '../app/collections/blog_posts.js'
 
 export default class CreatePost extends BaseCommand {
   static commandName = 'create:post'
-  static description = ''
+  static description = 'Create a new post by adding it to the local JSON database'
 
   static options: CommandOptions = {
     startApp: true,
@@ -74,7 +74,7 @@ export default class CreatePost extends BaseCommand {
         title,
         slug,
         authorName: selectedAuthor,
-        content: `./articles/${slug}.md`,
+        content_path: `./articles/${slug}.md`,
         publishedAt: null,
         category: category,
       },

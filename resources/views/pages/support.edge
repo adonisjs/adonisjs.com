@@ -1,8 +1,8 @@
 @layouts.main({
   page: {
-    title: 'AdonisJS - A fully featured web framework for Node.js',
-    description: 'AdonisJS is a TypeScript-first web framework with support for testing, modern tooling, ecosystem of official packages, and much more. You can use it to create a full-stack web application or an API server.',
-    ogImage: '/home_og_image.jpeg'
+    title: 'AdonisJS - Professional Support',
+    description: 'Get priority support, a direct line of contact with the framework creator, and most importantly, your sponsorship amount will help sustain the framework in the long run.',
+    ogImage: '/support_og_image.jpeg'
   }
 })
   @sections.gray()
@@ -12,12 +12,15 @@
     </div>
   @end
 
-  @sections.white()
-    @include('partials/support_program/benefits')
-    @include('partials/support_program/apply')
-  @end
+  <main layout-main>
+    @sections.white()
+      @include('partials/support_program/benefits')
+      @include('partials/support_program/apply')
+      @include('partials/shared/separator')
+    @end
+  </main>
 
-  @sections.gray()
+  @sections.white()
     @include('partials/shared/footer')
   @end
 @end

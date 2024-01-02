@@ -4,6 +4,10 @@ import type codeExamples from '../../content/code_examples/db.json'
 
 export type CodeExample = (typeof codeExamples)[number]
 
+/**
+ * Represents a collection of code examples that can be rendered
+ * individually inside the templates.
+ */
 export default class CodeExamples extends BaseCollection<CodeExample> {
   uid: keyof CodeExample = 'uid'
   dbFilePath: string = app.makePath('content/code_examples/db.json')

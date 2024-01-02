@@ -3,17 +3,19 @@ import { test } from '@japa/runner'
 import Greet from '#commands/greet'
 import ace from '@adonisjs/core/services/ace'
 
-test('should greet the user and finish with exit code 1', async () => {
-  // Create an instance of the Greet command class
-  const command = await ace.create(Greet, [])
-
-  // Execute command
+test('greet the user and exit successfully', async () => {
+  /**
+   * Create an instance of the CLI command
+   * and execute it
+   */
+  const command = await ace.create(Greet, ['virk'])
   await command.exec()
 
-  // Assert command exited with status code 0
+  /**
+   * Write assertions for the command status and
+   * logs
+   */ 
   command.assertSucceeded()
-
-  // Assert the command printed the following log message
   command.assertLog('[ blue(info) ] Hello world from "Greet"')
 })
 ```

@@ -10,7 +10,7 @@
   },
   {
     "name": "On-demand Zoom calls",
-    "iconName": "tabler:lifebuoy",
+    "iconName": "tabler:video",
     "description": "Get a sneak peak of upcoming features, ask questions, and clarify your doubts during an hour long Zoom call.",
     "bulletPoints": [
       "Try new features and provide feedback",
@@ -19,7 +19,7 @@
   },
   {
     "name": "Access to our paid stuff",
-    "iconName": "tabler:lifebuoy",
+    "iconName": "tabler:lock-open",
     "description": "Download our paid content and premium packages for free and share them with everyone inside your company.",
     "bulletPoints": [
       "Current and upcoming courses",
@@ -28,7 +28,7 @@
   },
   {
     "name": "Support development",
-    "iconName": "tabler:lifebuoy",
+    "iconName": "tabler:heart",
     "description": "Since AdonisJS is an independent open-source project, we rely on companies like you to keep the lights on.",
     "bulletPoints": [
       "Financially support framework's development",

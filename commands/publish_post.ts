@@ -4,7 +4,7 @@ import BlogPosts from '../app/collections/blog_posts.js'
 
 export default class PublishPost extends BaseCommand {
   static commandName = 'publish:post'
-  static description = ''
+  static description = 'Publish post by updating the publishedAt timestamp to now'
 
   static options: CommandOptions = {
     startApp: true,

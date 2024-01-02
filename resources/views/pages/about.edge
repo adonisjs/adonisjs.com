@@ -1,8 +1,8 @@
 @layouts.main({
   page: {
-    title: 'AdonisJS - A fully featured web framework for Node.js',
-    description: 'AdonisJS is a TypeScript-first web framework with support for testing, modern tooling, ecosystem of official packages, and much more. You can use it to create a full-stack web application or an API server.',
-    ogImage: '/home_og_image.jpeg'
+    title: 'AdonisJS - Unlike any other Node.js framework',
+    description: 'AdonisJS is not yet another micro-framework or a wrapper on top of everything that already exists. Instead, we have written AdonisJS from scratch to be simple, elegant, and opinionated.',
+    ogImage: '/about_og_image.jpeg'
   }
 })
   @sections.gray()
@@ -10,5 +10,15 @@
     <div layout-hero>
       @include('partials/about/hero')
     </div>
+  @end
+
+  <main layout-main>
+    @sections.white()
+      @include('partials/shared/separator')
+    @end
+  </main>
+
+  @sections.white()
+    @include('partials/shared/footer')
   @end
 @end

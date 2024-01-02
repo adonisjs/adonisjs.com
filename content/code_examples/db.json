@@ -47,10 +47,10 @@
     "content_path": "./home/api_testing.md"
   },
   {
-    "uid": "testing:swap_dependencies",
+    "uid": "testing:trap_mails",
     "iconName": "tabler:box",
-    "title": "Swap dependencies",
-    "content_path": "./home/swap_dependencies.md"
+    "title": "Trap outgoing mails",
+    "content_path": "./home/trap_mails.md"
   },
   {
     "uid": "testing:cli_testing",

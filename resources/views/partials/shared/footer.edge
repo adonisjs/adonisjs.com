@@ -4,19 +4,19 @@
     links: [
       {
         title: 'Discord',
-        href: '',
+        href: 'https://discord.gg/vDcEjq6',
       },
       {
         title: 'Twitter',
-        href: '',
+        href: 'https://twitter.com/adonisframework',
       },
       {
         title: 'Github',
-        href: '',
+        href: 'https://github.com/adonisjs',
       },
       {
         title: 'Forum',
-        href: '',
+        href: 'https://github.com/adonisjs/core/discussions',
       }
     ]
   },
@@ -25,27 +25,27 @@
     links: [
       {
         title: 'About',
-        href: '',
+        href: '/about',
       },
       {
         title: 'Blog',
-        href: '',
+        href: '/blog',
       },
       {
         title: 'Support',
-        href: '',
+        href: '/support_program',
       },
       {
         title: 'Case studies',
-        href: '',
+        href: '/case_studies',
       },
       {
         title: 'Code of Conduct',
-        href: '',
+        href: 'https://github.com/adonisjs/.github/blob/main/docs/CODE_OF_CONDUCT.md',
       },
       {
         title: 'Brand guidelines',
-        href: '',
+        href: 'https://www.notion.so/adonisjs/Welcome-to-the-AdonisJS-Brand-Assets-Guidelines-a042a6d0be7640c6bc78eb32e1bbaaa1',
       }
     ]
   },
@@ -54,15 +54,15 @@
     links: [
       {
         title: 'AdonisJS',
-        href: ''
+        href: 'https://marketplace.visualstudio.com/items?itemName=jripouteau.adonis-vscode-extension'
       },
       {
         title: 'Edge',
-        href: ''
+        href: 'https://marketplace.visualstudio.com/items?itemName=AdonisJS.vscode-edge'
       },
       {
         title: 'Japa',
-        href: ''
+        href: 'https://marketplace.visualstudio.com/items?itemName=jripouteau.japa-vscode'
       }
     ]
   }
@@ -91,7 +91,25 @@
             </h5>
             <nav class="flex flex-col">
               @each(link in group.links)
-                <a href="{{ link.href }}" class="text-[14px] mb-1.5 hover:text-sand12">
+                @let(isExternalLink = link.href.startsWith('https://'))
+                <a {{
+                  html.attrs({
+                    href: link.href,
+                    'up-follow': !isExternalLink,
+                    'up-preload': !isExternalLink,
+                    'up-target': !isExternalLink ? '[layout-hero], [layout-main]' : false,
+                    'up-scroll': 'reset',
+                    class: [
+                      'text-[14px]',
+                      'transition-colors',
+                      'ease-in-out',
+                      'duration-200',
+                      'mb-1.5',
+                      'focus:text-sand13',
+                      'hover:text-sand13',
+                    ]
+                  })
+                }}>
                   {{ link.title }}
                 </a>
               @end

@@ -1,43 +1,43 @@
 @let(features = [
   {
     title: 'Config management',
-    href: 'https://v6-alpha.adonisjs.com/docs/config'
+    href: 'https://docs.adonisjs.com/guides/config'
   },
   {
     title: 'Type-safe environment variables',
-    href: 'https://v6-alpha.adonisjs.com/docs/environment-variables'
+    href: 'https://docs.adonisjs.com/guides/environment-variables'
   },
   {
     title: 'Thoughtful folder structure',
-    href: 'https://v6-alpha.adonisjs.com/docs/folder-structure'
+    href: 'https://docs.adonisjs.com/guides/folder-structure'
   },
   {
     title: 'Routing and controllers',
-    href: 'https://v6-alpha.adonisjs.com/docs/routing'
+    href: 'https://docs.adonisjs.com/guides/routing'
   },
   {
     title: 'Middleware',
-    href: 'https://v6-alpha.adonisjs.com/docs/middleware'
+    href: 'https://docs.adonisjs.com/guides/middleware'
   },
   {
     title: 'BodyParser',
-    href: 'https://v6-alpha.adonisjs.com/docs/bodyparser-middleware'
+    href: 'https://docs.adonisjs.com/guides/bodyparser-middleware'
   },
   {
     title: 'File uploads',
-    href: 'https://v6-alpha.adonisjs.com/docs/file-uploads'
+    href: 'https://docs.adonisjs.com/guides/file-uploads'
   },
   {
     title: 'Type-safe event emitter',
-    href: 'https://v6-alpha.adonisjs.com/docs/emitter'
+    href: 'https://docs.adonisjs.com/guides/emitter'
   },
   {
     title: 'Encryption',
-    href: 'https://v6-alpha.adonisjs.com/docs/security/encryption'
+    href: 'https://docs.adonisjs.com/guides/security/encryption'
   },
   {
     title: 'Password hashing',
-    href: 'https://v6-alpha.adonisjs.com/docs/security/hashing'
+    href: 'https://docs.adonisjs.com/guides/security/hashing'
   },
   {
     title: 'And much, much more.',
@@ -48,7 +48,6 @@
 <section class="relative overflow-hidden my-20 md:my-24">
   <div class="content-container">
     <div class="flex">
-      {{-- Features list --}}
       <div>
         @text.sectionTitle()
           Feature rich framework core
@@ -70,7 +69,7 @@
 
         <ul class="mt-10">
           @each(feature in features)
-            <li class="text-sand12 underline checkbox bg-[length:20px] pl-7 my-3 font-medium">
+            <li class="text-sand12 underline checkbox bg-[length:20px] pl-7 my-3 font-medium hover:text-sand13">
               <a href="{{ feature.href }}">
                 {{ feature.title }}
               </a>
