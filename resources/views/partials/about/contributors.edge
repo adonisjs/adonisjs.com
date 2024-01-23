@@ -1,0 +1,34 @@
+<section class="py-20">
+  <div class="content-container-small">
+    @text.sectionTitle()
+      Contributors
+    @end
+
+    <div class="mt-6">
+      @text.sectionBody()
+        AdonisJS is not possible without the help and support of our outstanding contributors.
+      @end
+    </div>
+
+    <div class="mt-12">
+      <div class="grid gap-1 grid-cols-5 md:grid-cols-10">
+        @each(contributor in await contributors.all())
+          <a
+            href="{{ contributor.url }}"
+            target="_blank"
+            rel="noopener"
+            title="{{ contributor.username }}"
+            loading="lazy"
+            class="rounded-full border border-sand4 px-1 py-1"
+          >
+            <img
+              src="{{ contributor.avatar_url }}"
+              alt="{{ username }}"
+              class="w-full rounded-full"
+            />
+          </a>
+        @end
+      </div>
+    </div>
+  </div>
+</section>

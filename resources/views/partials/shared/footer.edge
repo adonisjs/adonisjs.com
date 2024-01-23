@@ -35,10 +35,10 @@
         title: 'Support',
         href: '/support_program',
       },
-      {
-        title: 'Case studies',
-        href: '/case_studies',
-      },
+      // {
+      //   title: 'Case studies',
+      //   href: '/case_studies',
+      // },
       {
         title: 'Code of Conduct',
         href: 'https://github.com/adonisjs/.github/blob/main/docs/CODE_OF_CONDUCT.md',
@@ -99,6 +99,7 @@
                     'up-preload': !isExternalLink,
                     'up-target': !isExternalLink ? '[layout-hero], [layout-main]' : false,
                     'up-scroll': 'reset',
+                    'target': isExternalLink ? '_blank' : false,
                     class: [
                       'text-[14px]',
                       'transition-colors',

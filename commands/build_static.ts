@@ -126,6 +126,6 @@ export default class BuildStatic extends BaseCommand {
     await this.buildAboutPage()
     await this.buildSupportProgramPage()
     await this.buildBlog()
-    await this.buildCaseStudies()
+    // await this.buildCaseStudies()
   }
 }
