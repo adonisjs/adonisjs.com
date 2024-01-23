@@ -14,7 +14,108 @@
 
   <main layout-main>
     @sections.white()
+      @include('partials/about/principles')
       @include('partials/shared/separator')
+
+      <section class="py-8">
+        <div class="content-container-small relative">
+          <div class="absolute right-0 top-[-60px]">
+            <img src="/arrow.svg" alt="">
+          </div>
+          <img src="/companies_logo_cloud.svg" alt="" class="w-full">
+        </div>
+      </section>
+
+      @include('partials/shared/separator')
+      @include('partials/about/team')
+      @include('partials/shared/separator')
+
+      <section class="py-8">
+        <div class="content-container-small">
+          <div class="grid grid-cols-4">
+            <div>
+              <div>
+                @svg('tabler:brand-npm', {
+                  class: 'w-10 h-10 text-[#cd3534]',
+                  height: 'auto',
+                  width: 'auto'
+                })
+              </div>
+              <div>
+                <p class="text-3xl font-semibold text-sand12">1M+</p>
+              </div>
+              <div>
+                <p>Npm downloads</p>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                @svg('uiw:github', {
+                  class: 'w-8 h-8 text-sand12',
+                  height: 'auto',
+                  width: 'auto'
+                })
+              </div>
+              <div>
+                <p class="text-3xl font-semibold text-sand12">14,600+</p>
+              </div>
+              <div>
+                <p>Github stars</p>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                @svg('tabler:brand-x', {
+                  class: 'w-8 h-8 text-[#0f1419]',
+                  height: 'auto',
+                  width: 'auto'
+                })
+              </div>
+              <div>
+                <p class="text-3xl font-semibold text-sand12">10,000+</p>
+              </div>
+              <div>
+                <p>X followers</p>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                @svg('tabler:brand-discord-filled', {
+                  class: 'w-8 h-8 text-[#5765f2]',
+                  height: 'auto',
+                  width: 'auto'
+                })
+              </div>
+              <div>
+                <p class="text-3xl font-semibold text-sand12">5,000+</p>
+              </div>
+              <div>
+                <p>Discord members</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @include('partials/shared/separator')
+
+      {{-- <section class="">
+        <div class="content-container-small">
+          <div class="grid grid-cols-4 gap-x-6 gap-y-6 mt-10">
+            @each(company in await companies.all())
+              <a
+                href="{{ company.website_url }}"
+                class="bg-sand3 flex h-24 items-center justify-center rounded-md text-sand12"
+              >
+                {{{ company.logo }}}
+              </a>
+            @end
+          </div>
+        </div>
+      </section> --}}
     @end
   </main>
 

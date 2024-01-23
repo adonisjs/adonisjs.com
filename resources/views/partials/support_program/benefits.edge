@@ -5,15 +5,15 @@
         <div>
           <div class="flex space-x-1 text-sand12 mb-3 items-center">
             @svg(benefit.iconName, {
-              class: 'w-6 h-6 icon-tabler',
+              class: 'w-8 h-8 icon-tabler',
               width: auto,
               height: auto,
             })
-            <h3 class="font-semibold text-xl">{{ benefit.name }}</h3>
+            <h3 class="font-semibold text-2xl">{{ benefit.name }}</h3>
           </div>
 
           <div>
-            <p class="md:pr-8"> {{ benefit.description }} </p>
+            <p class="md:pr-6 text-section-text"> {{ benefit.description }} </p>
             <ul class="mt-6">
               @each(bulletPoint in benefit.bulletPoints)
                 <li class="checkbox bg-[length:18px] pl-6 mb-2">{{ bulletPoint }}</li>

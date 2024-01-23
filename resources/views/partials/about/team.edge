@@ -1,0 +1,38 @@
+<section class="py-16">
+  <div class="content-container-small">
+    @text.sectionTitle()
+      Core Team
+    @end
+
+    <div class="mt-6">
+      @text.sectionBody()
+        AdonisJS is primarily maintained by Harminder Virk (the creator and the lead maintainer of the framework)
+        along with the help of other core team members.
+      @end
+    </div>
+
+    <div>
+      @each(teamMember in await team.all())
+        <div class="flex my-12 last:mb-0 space-x-4 items-center">
+          <div>
+            <img src="{{ teamMember.profilePictureUrl }}" alt="" class="w-28 rounded-full border-2 border-sand4" />
+          </div>
+          <div>
+            <h2 class="font-semibold text-sand12 text-2xl mb-1">{{ teamMember.name }}</h2>
+            <p>
+              {{ teamMember.about }}
+            </p>
+            <div class="mt-4 flex items-center space-x-1">
+              <a href="https://github.com/{{ teamMember.ghUsername }}">
+                @svg('uiw:github')
+              </a>
+              <a href="https://twitter.com/{{ teamMember.twitterHandle }}">
+                @svg('tabler:brand-x')
+              </a>
+            </div>
+          </div>
+        </div>
+      @end
+    </div>
+  </div>
+</section>
