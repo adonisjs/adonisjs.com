@@ -1,4 +1,5 @@
 ```ts
+import User from '#models/user'
 import { middleware } from '#start/kernel'
 import router from '@adonisjs/core/services/router'
 
