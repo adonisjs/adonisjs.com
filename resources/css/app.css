@@ -38,7 +38,7 @@
  */
 pre {
   background: theme('colors.sand13') !important;
-  @apply rounded-xl pl-4 pr-6 py-6 mb-4 text-pre overflow-scroll flex;
+  @apply rounded-xl pl-4 pr-6 py-6 mb-4 text-pre overflow-auto flex;
 }
 
 code {
