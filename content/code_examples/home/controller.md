@@ -3,7 +3,7 @@ node ace make:controller posts
 ```
 
 ```ts
-import { HttpContext } from '@adonisjs/core/http'
+import type { HttpContext } from '@adonisjs/core/http'
 
 export default class PostsController {
   async index({}: HttpContext) {

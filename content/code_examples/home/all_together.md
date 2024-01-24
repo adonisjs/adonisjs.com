@@ -1,7 +1,7 @@
 ```ts
 import Post from '#models/post'
-import { HttpContext } from '@adonisjs/core/http'
 import { createPostValidator } from '#validators/posts'
+import type { HttpContext } from '@adonisjs/core/http'
 
 export default class PostsController {
   async index({ request }: HttpContext) {
