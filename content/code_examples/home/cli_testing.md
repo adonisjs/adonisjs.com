@@ -1,7 +1,7 @@
 ```ts
 import { test } from '@japa/runner'
-import Greet from '#commands/greet'
 import ace from '@adonisjs/core/services/ace'
+import Greet from '#commands/greet'
 
 test('greet the user and exit successfully', async () => {
   /**

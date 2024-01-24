@@ -1,7 +1,7 @@
 ```ts
+import router from '@adonisjs/core/services/router'
 import User from '#models/user'
 import { middleware } from '#start/kernel'
-import router from '@adonisjs/core/services/router'
 
 router.put('me/avatar', async ({ request }) => {
   const avatar = request.file('avatar', {
