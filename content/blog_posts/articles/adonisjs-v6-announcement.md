@@ -256,9 +256,9 @@ With AdonisJS v6, we have spent significant time covering all the framework aspe
 
 - [HTTP introduction guide](https://docs.adonisjs.com/guides/http) explaining the flow of an HTTP request.
 
-- Dedicated guide for the [BodyParser middleware](https://v6-docs.pages.dev/guides/bodyparser-middleware).
+- Dedicated guide for the [BodyParser middleware](https://docs.adonisjs.com/guides/bodyparser-middleware).
 
-- Detailed guide for middleware, covering topics like [mutating response](https://v6-docs.pages.dev/guides/middleware#mutating-response-from-a-middleware), [exception handling](https://v6-docs.pages.dev/guides/middleware#middleware-and-exception-handling), and [testing middleware](https://v6-docs.pages.dev/guides/middleware#testing-middleware-classes) in isolation.
+- Detailed guide for middleware, covering topics like [mutating response](https://docs.adonisjs.com/guides/middleware#mutating-response-from-a-middleware), [exception handling](https://docs.adonisjs.com/guides/middleware#middleware-and-exception-handling), and [testing middleware](https://docs.adonisjs.com/guides/middleware#testing-middleware-classes) in isolation.
 
 ## Better testing experience
 
@@ -266,13 +266,13 @@ We keep testing as one of the top priorities of the framework. Not only do we pr
 
 Starting from v6, we ship:
 
-- First-class assertion APIs for [testing emitted events](https://v6-docs.pages.dev/guides/emitter#events-assertions).
+- First-class assertion APIs for [testing emitted events](https://docs.adonisjs.com/guides/emitter#events-assertions).
 
-- Ability to test ace commands, write assertions for [logger output](https://v6-docs.pages.dev/guides/command-line-tests#testing-logger-output), and [trap prompts](https://v6-docs.pages.dev/guides/command-line-tests#trapping-prompts).
+- Ability to test ace commands, write assertions for [logger output](https://docs.adonisjs.com/guides/command-line-tests#testing-logger-output), and [trap prompts](https://docs.adonisjs.com/guides/command-line-tests#trapping-prompts).
 
-- Fake outgoing emails and [write assertions](https://v6-docs.pages.dev/guides/fake-mailer#assert-email-was-not-sent) against them.
+- Fake outgoing emails and [write assertions](https://docs.adonisjs.com/guides/fake-mailer#assert-email-was-not-sent) against them.
 
-- Support for writing [Browser tests](https://v6-docs.pages.dev/guides/fake-mailer#assert-email-was-not-sent) using Playwright.
+- Support for writing [Browser tests](https://docs.adonisjs.com/guides/fake-mailer#assert-email-was-not-sent) using Playwright.
 
 - And, a [dedicated VSCode extension](https://marketplace.visualstudio.com/items?itemName=jripouteau.japa-vscode) to run Japa tests without leaving your code editor.
 
@@ -304,7 +304,7 @@ The rest 20% of folder structure changes include:
 
 The `@adonisjs/mail` package now bundles additional transports for [Resend](https://resend.com/) and the [Brevo](https://brevo.com/) mail services. Additionally, it contributes the `@mjml` Edge tag to write email content using the [MJML markup language](https://npmjs.com/mjml).
 
-The contents of the following template will be auto-compiled to HTML on the fly when sending the email. [Learn more](https://v6-docs.pages.dev/guides/mail-message#using-mjml-for-email-markup)
+The contents of the following template will be auto-compiled to HTML on the fly when sending the email. [Learn more](https://docs.adonisjs.com/guides/mail-message#using-mjml-for-email-markup)
 
 ```edge
 @mjml()
@@ -350,7 +350,11 @@ Following is the list of additional notable changes in the v6 release.
 
 - Remove support for CORS from the framework core in favor of the new [@adonisjs/cors](https://github.com/adonisjs/cors/releases) package.
 
+## Ready to get started
+Head to the [official documentation](https://docs.adonisjs.com/) to learn more about AdonisJS and create a new project. Or check out the [Let's Learn AdonisJS 6](https://adocasts.com/series/lets-learn-adonisjs-6) course from **Tom at Adocasts**.
+
 ## Additional Links
 
 - [v5 Documentation](https://v5-docs.adonisjs.com)
 - [v6 Migration guide](https://v6-migration.adonisjs.com/guides/introduction)
+- [Official and community packages collection](https://packages.adonisjs.com/)
