@@ -1,7 +1,7 @@
 @layouts.main({
   page: {
     title: blogPost.title,
-    description: blogPost.contentHtml.summary,
+    description: blogPost.contentHtml.summary.replace('<p>', '').replace('</p>', ''),
     ogImage: `/${blogPost.slug}.jpeg`
   }
 })
