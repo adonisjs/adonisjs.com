@@ -1,6 +1,6 @@
 :root {
   --markdown-width: 670px;
-  --prose-font-size: 16px;
+  --prose-font-size: 17px;
   --prose-line-height: 27px;
   --prose-text-color: var(--sand-12);
   --prose-headings-color: var(--prose-text-color);
@@ -24,14 +24,14 @@
   --prose-h1-font-weight: 600;
 
   --prose-h2-margin-bottom: 10px;
-  --prose-h2-font-size: 21px;
-  --prose-h2-line-height: 25px;
+  --prose-h2-font-size: 27px;
+  --prose-h2-line-height: 30px;
   --prose-h2-letter-spacing: 0;
   --prose-h2-font-weight: 600;
 
   --prose-h3-margin-bottom: 5px;
-  --prose-h3-font-size: 17px;
-  --prose-h3-line-height: 20px;
+  --prose-h3-font-size: 19px;
+  --prose-h3-line-height: 23px;
   --prose-h3-letter-spacing: 0;
   --prose-h3-font-weight: 600;
 
@@ -378,6 +378,7 @@
   font-size: var(--pre-font-size);
   overflow: auto;
   line-height: var(--pre-line-height);
+  margin: var(--prose-elements-margin) 0;
   display: flex;
 }
 
@@ -408,7 +409,7 @@
 .markdown pre .line.highlight-insert {
   background: var(--code-insert-bg-color);
 }
-.markdown pre .line.highlight-insert:before {
+.markdown pre .line.highlight-insert:after {
   content: '';
   position: absolute;
   left: 0;
@@ -421,7 +422,7 @@
 .markdown pre .line.highlight-delete {
   background: var(--code-delete-bg-color);
 }
-.markdown pre .line.highlight-delete:before {
+.markdown pre .line.highlight-delete:after {
   content: '';
   position: absolute;
   left: 0;
