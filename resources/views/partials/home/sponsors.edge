@@ -29,19 +29,13 @@
         <div class="md:w-9/12 mt-8 md:mt-0">
           <div class="flex flex-wrap">
             @each(sponsor in await sponsors.active())
-              <a
-                href="{{ `https://github.com/${sponsor.sponsor.login || sponsor.sponsor.name}` }}"
-                class="my-1 mx-1"
-                target="_blank"
-                rel="noopener"
-                title="{{ sponsor.sponsor.name || sponsor.sponsor.login }}"
-              >
+              <div class="my-1 mx-1">
                 <img
                   src="{{ sponsor.sponsor.avatarUrl }}"
                   alt="{{ sponsor.sponsor.name || sponsor.sponsor.login }}"
                   class="w-11 h-11 rounded-md border border-sanda5 md:w-14 md:h-14"
                 >
-              </a>
+              </div>
             @end
           </div>
         </div>
