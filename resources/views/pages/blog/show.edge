@@ -2,7 +2,8 @@
   page: {
     title: blogPost.title,
     description: blogPost.contentHtml.summary.replace('<p>', '').replace('</p>', ''),
-    ogImage: `/${blogPost.slug}.jpeg`
+    ogImage: `/${blogPost.slug}.jpeg`,
+    canonical: `/blog/${blogPost.slug}`
   }
 })
   @sections.gray()
