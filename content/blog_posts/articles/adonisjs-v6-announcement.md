@@ -1,7 +1,7 @@
 ---
 summary: The long-awaited version of AdonisJS is finally here. In this post, we cover the highlights of the release.
 ---
-
+ 
 Alright, sit tight, as this will be a long article. The work for v6 started with the goal of moving to ESM and improving the IoC container to be simple and [have fewer responsibilities](https://github.com/adonisjs/fold/releases/tag/v9.0.0-0).
 
 But we have touched almost every part of the framework, smoothing out many rough edges, fixing some long pending issues, and rewriting some packages from scratch. 
