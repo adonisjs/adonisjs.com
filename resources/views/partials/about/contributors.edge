@@ -15,7 +15,7 @@
         @each(contributor in await contributors.all())
           <div class="rounded-full border border-sand4 px-1 py-1">
             <img
-              src="{{ contributor.avatar_url }}"
+              src="{{ contributor.avatar_url + '&s=120' }}"
               alt="{{ contributor.username }}"
               title="{{ contributor.username }}"
               class="w-full rounded-full"
