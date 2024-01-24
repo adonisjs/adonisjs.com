@@ -3,5 +3,10 @@
     "username": "virk",
     "displayName": "Harminder Virk",
     "profilePictureUrl": "./avatars/virk.png"
+  },
+  {
+    "username": "romainlanz",
+    "displayName": "Romain Lanz",
+    "profilePictureUrl": "./avatars/romainlanz.jpg"
   }
 ]
