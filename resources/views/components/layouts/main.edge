@@ -45,6 +45,8 @@
     :class="{ 'overflow-hidden': mobileNavExpanded }"
     @location-changed.window="mobileNavExpanded = false"
   >
+    @include('partials/shared/banner')
+
     {{{ await $slots.main() }}}
 
     <script src="https://tally.so/widgets/embed.js" async defer></script>
