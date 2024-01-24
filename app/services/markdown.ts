@@ -1,15 +1,16 @@
 import { map } from 'unist-util-map'
 import app from '@adonisjs/core/services/app'
-import { fromHtml } from 'hast-util-from-html'
 import { MarkdownFile } from '@dimerapp/markdown'
 import { toHtml } from '@dimerapp/markdown/utils'
 import { Shiki, codeblocks } from '@dimerapp/shiki'
+import vsCodeGrammars from '../../vscode_grammars/main.js'
 
 /**
  * Configuring shiki to prettify codeblocks
  */
 const shiki = new Shiki()
 shiki.useTheme(app.makeURL('resources/themes/night_owl.json'))
+vsCodeGrammars.forEach((grammar) => shiki.loadLanguage(grammar))
 await shiki.boot()
 
 /**

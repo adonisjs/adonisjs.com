@@ -1,0 +1,106 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Edge",
+	"scopeName": "text.html.edge",
+  "injections": {
+    "text.html.edge - (meta.embedded | meta.tag | comment.block.edge), L:(text.html.edge meta.tag - (comment.block.edge | meta.embedded.block.edge)), L:(source.js.embedded.html - (comment.block.edge | meta.embedded.block.edge))": {
+      "patterns": [
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#escapedMustache"
+        },
+        {
+          "include": "#safeMustache"
+        },
+        {
+          "include": "#mustache"
+        },
+        {
+          "include": "#nonSeekableTag"
+        },
+        {
+          "include": "#tag"
+        }
+      ]
+    }
+  },
+	"repository": {
+    "comment": {
+      "begin": "\\{{--",
+      "end": "\\--}}",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.comment.begin.edge" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.comment.end.edge" }
+      },
+      "name": "comment.block"
+		},
+    "escapedMustache": {
+      "begin": "\\@{{",
+      "end": "\\}}",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.comment.begin.edge" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.comment.end.edge" }
+      },
+      "name": "comment.block"
+		},
+		"safeMustache": {
+      "begin": "\\{{{",
+      "end": "\\}}}",
+      "beginCaptures": {
+        "0": { "name": "punctuation.mustache.begin" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.mustache.end" }
+      },
+      "name": "meta.embedded.block.javascript",
+      "patterns": [{ "include": "source.js#expression" }]
+		},
+    "mustache": {
+      "begin": "\\{{",
+      "end": "\\}}",
+      "beginCaptures": {
+        "0": { "name": "punctuation.mustache.begin" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.mustache.end" }
+      },
+      "name": "meta.embedded.block.javascript",
+      "patterns": [{ "include": "source.js#expression" }]
+		},
+    "nonSeekableTag": {
+      "match": "^(\\s*)((@{1,2})(!)?([a-zA-Z._]+))(~)?$",
+      "captures": {
+        "2": { "name": "support.function.edge" }
+      },
+      "name": "meta.embedded.block.javascript",
+      "patterns": [{ "include": "source.js#expression" }]
+    },
+    "tag": {
+      "begin": "^(\\s*)((@{1,2})(!)?([a-zA-Z._]+)(\\s{0,2}))(\\()",
+      "beginCaptures": {
+        "2": { "name": "support.function.edge" },
+        "7": { "name": "punctuation.paren.open" }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": { "name": "punctuation.paren.close" }
+      },
+      "name": "meta.embedded.block.javascript",
+      "patterns": [{ "include": "source.js#expression" }]
+    }
+	},
+	"patterns": [
+    {
+      "include": "text.html.basic"
+    },
+    {
+      "include": "text.html.derivative"
+    }
+	]
+}
