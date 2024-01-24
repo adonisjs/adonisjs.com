@@ -65,6 +65,7 @@
     "edge-uikit": "^1.0.0-1",
     "edge.js": "^6.0.0",
     "got": "^14.0.0",
+    "hast-util-from-html": "^2.0.1",
     "klona": "^2.0.6",
     "luxon": "^3.4.4",
     "reflect-metadata": "^0.2.1",
