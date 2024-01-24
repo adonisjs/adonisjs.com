@@ -54,7 +54,7 @@ There are two problems with the above transformation.
 
 Do not worry if you do not understand the container usage in this example. We have removed all this magic, and imports in v6 are regular JavaScript imports.
 
-If you have been using AdonisJS v5 for a long time, wonder what happened to `@ioc` prefixed imports. Remember, there were better ways to resolve dependencies from the container. We have found a much simpler way to resolve container dependencies [in the form of container services](https://docs.adonisjs.com/guides/fundamentals/container-services).
+If you have been using AdonisJS v5 for a long time, wonder what happened to `@ioc` prefixed imports. Remember, there were better ways to resolve dependencies from the container. We have found a much simpler way to resolve container dependencies [in the form of container services](https://docs.adonisjs.com/guides/container-services).
 
 ## Type-safe routes and controllers binding
 
@@ -203,7 +203,7 @@ Also, we no longer recommend using [Webpack Encore](https://github.com/adonisjs/
 
 The scaffolding system and codemods API are used by the package creators to configure a package or by Ace commands to scaffold a resource.
 
-We have written an [in-depth guide on the same](https://docs.adonisjs.com/guides/fundamentals/scaffolding#configure-command) that you must read to learn more about it.
+We have written an [in-depth guide on the same](https://docs.adonisjs.com/guides/scaffolding#configure-command) that you must read to learn more about it.
 
 ## New validation library
 
