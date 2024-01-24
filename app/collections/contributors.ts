@@ -6,7 +6,7 @@ export type Contributor = (typeof contributor)[number]
 
 /**
  * Contributors collection represents individuals who have
- * contributed on Github.
+ * contributed on GitHub.
  */
 export default class Contributors extends BaseCollection<Contributor> {
   uid: keyof Contributor = 'username'

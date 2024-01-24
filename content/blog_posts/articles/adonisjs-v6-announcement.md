@@ -17,7 +17,7 @@ Also, we have created a [migration CLI](https://v6-migration.adonisjs.com/guides
 
 :::applaud
 
-Before we move forward, I will give a huge shoutout to everyone who [sponsored me on Github](http://github.com/sponsors/thetutlage). Your financial support helped me stay focused and make this release possible.
+Before we move forward, I will give a huge shoutout to everyone who [sponsored me on GitHub](http://github.com/sponsors/thetutlage). Your financial support helped me stay focused and make this release possible.
 
 :::
 

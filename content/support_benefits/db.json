@@ -2,9 +2,9 @@
   {
     "name": "Priority support",
     "iconName": "tabler:lifebuoy",
-    "description": "Instead of spending days on Github issues, send us a direct message, and we will get you up and running in no time.",
+    "description": "Instead of spending days on GitHub issues, send us a direct message, and we will get you up and running in no time.",
     "bulletPoints": [
-      "Private Github repo for submitting issues",
+      "Private GitHub repo for submitting issues",
       "Discord group for a quick chat"
     ]
   },

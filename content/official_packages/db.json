@@ -51,7 +51,7 @@
     "name": "Ally",
     "colorShade": "pink",
     "iconName": "tabler:social",
-    "description": "Add support for Social login to your apps. Ally ships Twitter, Github, Google, LinkedIn, and many more drivers."
+    "description": "Add support for Social login to your apps. Ally ships Twitter, GitHub, Google, LinkedIn, and many more drivers."
   },
   {
     "name": "i18n",
