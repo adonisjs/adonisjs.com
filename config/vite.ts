@@ -1,6 +1,10 @@
 import { defineConfig } from '@adonisjs/vite'
 
 const viteBackendConfig = defineConfig({
+  scriptAttributes: {
+    defer: true,
+  },
+
   /**
    * The output of vite will be written inside this
    * directory. The path should be relative from
