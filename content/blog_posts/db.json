@@ -1,5 +1,21 @@
 [
   {
+    "title": "AdonisJS v6 - One Step Closer to the Release",
+    "slug": "adonisjs-6-one-step-closer-to-the-release",
+    "authorName": "romainlanz",
+    "content_path": "./articles/adonisjs-6-one-step-closer-to-the-release.md",
+    "publishedAt": "2023-10-09T07:50:55.721Z",
+    "category": "News"
+  },
+  {
+    "title": "What to Expect of AdonisJS 6?",
+    "slug": "what-to-expect-of-adonisjs-6",
+    "authorName": "romainlanz",
+    "content_path": "./articles/what-to-expect-of-adonisjs-6.md",
+    "publishedAt": "2023-07-04T09:45:15.004Z",
+    "category": "News"
+  },
+  {
     "title": "Announcing AdonisJS v6",
     "slug": "adonisjs-v6-announcement",
     "publishedAt": "2024-01-24T06:56:49.314Z",
