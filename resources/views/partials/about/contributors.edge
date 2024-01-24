@@ -13,20 +13,14 @@
     <div class="mt-12">
       <div class="grid gap-1 grid-cols-5 md:grid-cols-10">
         @each(contributor in await contributors.all())
-          <a
-            href="{{ contributor.url }}"
-            target="_blank"
-            rel="noopener"
-            title="{{ contributor.username }}"
-            loading="lazy"
-            class="rounded-full border border-sand4 px-1 py-1"
-          >
+          <div class="rounded-full border border-sand4 px-1 py-1">
             <img
               src="{{ contributor.avatar_url }}"
-              alt="{{ username }}"
+              alt="{{ contributor.username }}"
+              title="{{ contributor.username }}"
               class="w-full rounded-full"
             />
-          </a>
+          </div>
         @end
       </div>
     </div>
