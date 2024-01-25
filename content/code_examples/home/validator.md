@@ -7,7 +7,7 @@ import vine from '@vinejs/vine'
 
 export const createPostValidator = vine.compile(
   vine.object({
-    title: vine.string().trim().min(4).max(256),
+    title: vine.string().trim().minLength(4).maxLength(256),
     contents: vine.string().trim()
   })
 )
