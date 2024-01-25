@@ -2,15 +2,17 @@
 summary: Our latest experimentation and future iterations for AdonisJS 6
 ---
 
-We just released AdonisJS 6 with a ton of new features and improvements. This release was a big milestone for us as we have been working on it for the last year. But we are not done yet and still have a lot of things to share with you. In order to finally release AdonisJS 6, we had to put on hold a few ideas that we were working on. Now that AdonisJS 6 is out, we will be able to focus on them again.
+We have just released AdonisJS 6 with a ton of new features and improvements. This release was a big milestone for us as we have been working on it for the last year. But we are not done yet and still got lots of ideas in the pipeline.
 
-We spent a lot of time experimenting with new ideas and features this year. Some of them are already in pretty good state, while others are still being worked on. In this article, I will share some of them. 
+In order to finally release AdonisJS 6, we had to put on hold some ideas that we have been experimenting with. Now that AdonisJS 6 is out, our immediate focus is going to be on stabilizing it, fixing bugs and improving the documentation and migration guide. But we'll soon be able to get back to our ideas.
 
-**Please, do not expect any release dates or timelines. We will share more details about them when we are ready.**
+This year, we've spent a lot of time testing new ideas and features. Some of them are already in pretty good state, while others are still being thought and worked on. In this article, I'm going to share some of those ideas.
+
+**Please, do not expect or ask for any release dates or timelines. We will share more details when we are ready.**
 
 ## Migrating last few packages to AdonisJS 6
 
-There are a few packages that we still need to migrate to AdonisJS 6. Can't commit on a specific date but expect them to be migrated in the next few weeks :
+First focus will be to migrate the last few packages to AdonisJS 6. We can't commit on a specific date, but expect them to be migrated in the next few weeks :
 
 - Drive
 - Limiter
@@ -38,19 +40,29 @@ import cache from '@adonisjs/cache/services/main'
 const result = await cache.getOrSet('users:1', () => User.find(1))
 ```
 
-We will soon have a `@adonisjs/cache` package that will be a wrapper around BentoCache and will provide a few AdonisJS specific features. We already have a working prototype but still need to polish a few things. 
+BentoCache is quite different from existing caching libraries like `keyv` or `cache-manager`. Same philosophy as AdonisJS : Bentocache is fully-featured, while other libraries are more low-scope.
 
-We also need to think about additional features that we could provide to this package. Russian doll caching, HTTP Response caching ... ? We are still exploring the possibilities and what make sense for AdonisJS.
+So we will soon have a `@adonisjs/cache` package that will be a wrapper around BentoCache and will also provide a few AdonisJS specific features. We already have a working prototype but still need to polish a few things. 
+
+We also need to think about additional features that we could provide to this package. Russian doll caching, HTTP Response caching ... ? We are still exploring the possibilities and what could make sense for AdonisJS.
 
 :::note
-In the meantime, you can already use BentoCache with AdonisJS 6. Take a look at the [documentation](https://bentocache.dev) to learn more about it.
+In the meantime, you can already use BentoCache with AdonisJS 6. Take a look at the [documentation](https://bentocache.dev) to learn more about it. Basically, just install the package and use it as you would with any other package.
 :::
 
 ## @adonisjs/inertia 
 
-With AdonisJS 5, we had an awesome community-package for InertiaJS, maintained by [eidellev](https://github.com/eidellev). Since we are ourselves using InertiaJS for our own projects, **we decided to take over the package and make it a first-party package**. Thanks again to [eidellev](https://github.com/eidellev) for maintaining this package for so long. 
+With AdonisJS 5, we had an awesome community-package for InertiaJS, maintained by [eidellev](https://github.com/eidellev). 
 
-We already have a prototype in a pretty good state. API is fairly similar to the V5 package, but we have added a few new features. There's still one thing that we need to figure out before releasing it : the server-side rendering. This one is related to our recent Vite support. Let's talk about it.
+Since we are ourselves using InertiaJS for our own projects, **we decided to take over the package and make it a first-party package**. 
+
+![inertia logo](https://i.imgur.com/eTxaWws.png)
+
+Thanks again to [eidellev](https://github.com/eidellev) for maintaining this package for so long.
+
+We already have a prototype in a pretty good state. API is fairly similar to the V5 package, but we have added a few new features. 
+
+There's still one thing that we need to figure out before releasing it : the server-side rendering. This one is related to our recent Vite support. Let's talk about it.
 
 ## @adonisjs/vite
 
@@ -142,9 +154,9 @@ export default function getServerSideProps() {
 
 As you can see, we have something that is very similar to frontend meta-frameworks like NextJS or NuxtJS, **but backed with the power of AdonisJS**. We are able to use any AdonisJS feature, like Lucid, Mail, Events, etc in our backend code. 
 
-Some may say that this is not a good idea, that we are loosing the spirit of AdonisJS, or that we are trying to do too much. Feel free to not use it if you don't like it. But we think that this is great to open the door to this possibility, if some people want to use it.
+Some may say that this is not a good idea, that we are loosing the spirit of AdonisJS, or that we are trying to do too much. You are free to not use it if you don't like this approach. But we think that this is great to open the door to that possibility, if some people want to use AdonisJS this way.
 
-Also note this is very barebone example, but we can imagine building something more advanced on top of it. At least, the API provided by `@adonisjs/vite` will allow us and the community to build something like this.
+Also note, this is very barebone example, but we can imagine building something way more advanced on top of it. At least, the API provided by `@adonisjs/vite` will allow us and the community to build something like this. [Radonis](https://radonis.vercel.app/) was an excellent example of that.
 
 :::note
 If you speak French, Romain and I did a live stream of 2 hours ( 🥵 ) about this exact topic. You can [watch it here](https://www.youtube.com/watch?v=V1K2Gp3L95Y). We showed an example of SSR with InertiaJS + AdonisJS + Vite, and also a basic [Vike](https://vike.dev/) integration in AdonisJS.
@@ -186,7 +198,7 @@ await lock.run(async () => {
 So we'll probably have an `@adonisjs/locks` package to wrap Verrou and enable first-party integration with Adonis. For the time being, we don't yet have any Adonis-specific features in mind, but the package will at least enable us to have an API similar to the other AdonisJS packages, reuse the redis/mysql/postgre connections defined in the `@adonisjs/redis` and `@adonisjs/lucid` config and so on.
 
 :::note
-In the meantime, you can already use Verrou with AdonisJS 6. Take a look at the [documentation](https://verrou.dev) to learn more about it.
+In the meantime, you can already use Verrou with AdonisJS 6. Take a look at the [documentation](https://verrou.dev) to learn more about it. Same as BentoCache, just install the package and use it as you would with any other package.
 :::
 
 ## node ace add
@@ -205,7 +217,7 @@ One of the main drawback of AdonisJS is not even technical : it's the lack of po
 
 ## Conclusion
 
-There a few other ideas that we are exploring, but they are still in the early stages. So I will not talk about them in this article. Can't wait to share more details about them in the future. 
+There a few other exciting ideas that we are exploring, but they are still in the early stages. So I will not talk about them in this article. Can't wait to share more details about them in the future. 
 
 First, let's ship the things we talked about in this article.
 
