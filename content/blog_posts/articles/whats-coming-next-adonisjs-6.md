@@ -60,9 +60,11 @@ Since we are ourselves using InertiaJS for our own projects, **we decided to tak
 
 Thanks again to [eidellev](https://github.com/eidellev) for maintaining this package for so long.
 
-We already have a prototype in a pretty good state. API is fairly similar to the V5 package, but we have added a few new features. 
+The package is already usable and functional, and the API is almost identical to the V5 package, with a few extra features. **We therefore plan to release it in the coming weeks.**
 
-There's still one thing that we need to figure out before releasing it : the server-side rendering. This one is related to our recent Vite support. Let's talk about it.
+**However, the first version will not support SSR**. Since we've had many requests for it, we decided to release a first version quickly, which will allow you to start working with. When the SSR version will be ready, you'll only have to change a few config lines to enable it. No major changes to expect.
+
+Why no SSR in the first version ? This is related to our recent support for Vite. Let's talk about it.
 
 ## @adonisjs/vite
 
@@ -76,13 +78,13 @@ To sum up quickly: With AdonisJS 5 + Webpack, and AdonisJS 6 + Vite, the strateg
 - At the same time, the same main process launch a new child process which is responsible for compiling the frontend assets. 
   In other words, we have an `exec('pnpm vite dev')` which launch the compilation of the assets via the asset bundler CLI tool ( Vite / Webpack ). This would be almost the same as if you were launching `pnpm vite dev` in another terminal.
 
-This strategy works well, but it has one major drawback: it's complicated to integrate with the SSR (for reasons we won't go into here, otherwise this article will be too long).
+This strategy works well, but it has one major drawback: it's complicated to get the SSR to work (for reasons we won't go into here, otherwise this article will be too long).
 
 ### New implementation
 
 With the new version of Vite, we've tried another approach: rather than launching a child process, the main process will be in charge of compiling the assets. 
 
-Vite exposes the `createServer` function, which allows us to create a Vite dev server within an existing process. And it's possible to configure the Vite server in Middleware mode so that it's integrated with another existing HTTP server. In our case, our own: `@adonisjs/http-server`. 
+Vite exposes a function called `createServer`, which allows us to create a Vite dev server within an existing process. And it's possible to configure the Vite server in Middleware mode so that it's integrated with another existing HTTP server. In our case, our own: `@adonisjs/http-server`. 
 
 For example, here's an example taken from the Vite documentation, that integrates Vite within an Express server, so you can have an idea of what it looks like:
 
@@ -106,18 +108,22 @@ async function createServer() {
 createServer()
 ```
 
-Now, on some endpoints, the Vite server will be responsible for answering the request. For example, if you request `/assets/app.js`, the Vite server will answer the request with the compiled code for the same file. But if you request `/users`, Vite will just ignore the request and let the main HTTP server handle it.
+Now, on some endpoints, the Vite server will be responsible for answering the request. For example, if you request `/assets/app.js` on this Express Server, then Vite gonna answer the request with the compiled code for the same file. But if you request `/users`, Vite will just ignore the request and let the Express server handle it.
 
 It's a change that may seem insignificant, but it opens the door to something really cool: the `vite.ssrLoadModule` function. Exposed by the vite server, this function automatically transforms source code to be usable in Node.JS. For example, a `.vue` file is impossible to import natively into Node.JS. This function allows us to do just that. So yes, it opens the door to SSR super-easily.
 
 To sum up: we're probably going to release an `@adonisjs/vite` module that will work this way, and which will enable us to do two things in particular:
 
-- Open the possibility for the community to develop AdonisJS packages for SSR. **We could imagine a Nuxt/Next-like system, but backed by AdonisJS rather than by a simple HTTP router**.
+- Open the possibility for the community to develop AdonisJS packages for SSR. **We could imagine someone building a Nuxt/Next-like, but backed by AdonisJS rather than by a simple HTTP router**. See below for a quick example.
 - SSR with InertiaJS. We already have a prototype that works perfectly, and is super-simple to configure. One of the main pain points of the AdonisJS 5 inertia package was SSR. A lot of people had trouble configuring it. With our new version of adonisjs/vite, all you need to do is change a few config lines and you'll have a working SSR.
+
+:::note
+I will insist on that : **we are not gonna build a Nuxt/Next-like**. We are just opening the door to that possibility. We are not gonna build it ourselves, but we are gonna provide the API to make it possible.
+:::
 
 ### Quick example
 
-Just to give a quick overview of what could be possible with this new version of Vite. Here's a quick example I did. A SolidJS component that is rendered server-side, with a NextJS-like `getServerSideProps` function for fetching data.
+Just to give a quick overview of what could be possible to build with the API exposed by the new version of Vite. Here's a quick example I did. A SolidJS component that is rendered server-side, with a NextJS-like `getServerSideProps` function for fetching data.
 
 - When rendered server-side, on initial page load, the whole code will be executed server-side : first the `getServerSideProps` function, then the component itself (which will be hydrated client-side).
 - When rendered client-side ( for example, when navigating from another page to this one ), an HTTP request will be made to fetch the data, the `getServerSideProps` function will be executed server-side and return the data as JSON, and the component will just receive the data as props.
@@ -152,11 +158,11 @@ export default function getServerSideProps() {
 }
 ```
 
-As you can see, we have something that is very similar to frontend meta-frameworks like NextJS or NuxtJS, **but backed with the power of AdonisJS**. We are able to use any AdonisJS feature, like Lucid, Mail, Events, etc in our backend code. 
+As you can see, we have something very similar to Next/Nuxt DX, but with the difference that our backend is powered by AdonisJS. As a result, we can use all the AdonisJS features in our backend code.
 
-Some may say that this is not a good idea, that we are loosing the spirit of AdonisJS, or that we are trying to do too much. You are free to not use it if you don't like this approach. But we think that this is great to open the door to that possibility, if some people want to use AdonisJS this way.
+Note also that this is a very barebone example, it doesn't even look like the Adonis paradigm we're used to. But we could imagine someone building something much more advanced on top of it and that looks more like what we are used to with Adonis. [Radonis](https://radonis.vercel.app/) was an excellent example of this.
 
-Also note, this is very barebone example, but we can imagine building something way more advanced on top of it. At least, the API provided by `@adonisjs/vite` will allow us and the community to build something like this. [Radonis](https://radonis.vercel.app/) was an excellent example of that.
+To conclude, I'm going to insist on this again: **This is just an example of something that will be possible to build with the API exposed by our new version of Vite**. We're not changing our focus, AdonisJS will remain a backend-first framework, we'll keep the same philosophy. The main goal of the new version of Vite is to enable SSR with InertiaJS. And by doing that, we are opening the door to these new possibilities we have just mentioned.
 
 :::note
 If you speak French, Romain and I did a live stream of 2 hours ( 🥵 ) about this exact topic. You can [watch it here](https://www.youtube.com/watch?v=V1K2Gp3L95Y). We showed an example of SSR with InertiaJS + AdonisJS + Vite, and also a basic [Vike](https://vike.dev/) integration in AdonisJS.
