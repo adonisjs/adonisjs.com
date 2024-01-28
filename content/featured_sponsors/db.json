@@ -3,5 +3,10 @@
     "name": "Relancer",
     "website": "https://relancer.com/",
     "logo": "./logos/relancer.svg"
+  },
+  {
+    "name": "Cleavr",
+    "website": "https://cleavr.io/",
+    "logo": "./logos/cleavr.svg"
   }
 ]
