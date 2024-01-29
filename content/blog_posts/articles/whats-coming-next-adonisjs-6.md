@@ -76,7 +76,7 @@ To sum up quickly: With AdonisJS 5 + Webpack, and AdonisJS 6 + Vite, the strateg
 
 - You launch `node ace serve`. The main process launch the HTTP server, and start compiling your backend code with Typescript.
 - At the same time, the same main process launch a new child process which is responsible for compiling the frontend assets. 
-  In other words, we have an `exec('npm run vite dev')` which launch the compilation of the assets via the asset bundler CLI tool ( Vite / Webpack ). This would be almost the same as if you were launching `npx vite dev` in another terminal.
+  In other words, we have an `exec('npx vite dev')` which launch the compilation of the assets via the asset bundler CLI tool ( Vite / Webpack ). This would be almost the same as if you were launching `npx vite dev` in another terminal.
 
 This strategy works well, but it has one major drawback: it's complicated to get the SSR to work (for reasons we won't go into here, otherwise this article will be too long).
 
