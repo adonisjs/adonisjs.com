@@ -1,5 +1,13 @@
 [
   {
+    "title": "Use TSX for your template engine",
+    "slug": "use-tsx-for-your-template-engine",
+    "authorName": "romainlanz",
+    "content_path": "./articles/use-tsx-for-your-template-engine.md",
+    "publishedAt": null,
+    "category": "Tutorial"
+  },
+  {
     "title": "AdonisJS v6 - One Step Closer to the Release",
     "slug": "adonisjs-6-one-step-closer-to-the-release",
     "authorName": "romainlanz",
