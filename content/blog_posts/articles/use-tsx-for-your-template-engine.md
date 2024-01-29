@@ -8,7 +8,7 @@ Edge is one of the best templating engines out there for Node.js. It is not rest
 
 We love Edge and working with it, but it brings a few caveats.
 
-It is a "custom language". We need to have an extension for any IDE to have syntax highlighting. If we want to have type safety, we would need to create a complete LSP ((Language Server Protocol)[https://en.wikipedia.org/wiki/Language_Server_Protocol]) from scratch, which is out of the scope of this project. It also means `prettier` does not work out of the box with Edge; a custom plugin would be needed.
+It is a "custom language". We need to have an extension for any IDE to have syntax highlighting. If we want to have type safety, we would need to create a complete LSP ([Language Server Protocol](https://en.wikipedia.org/wiki/Language_Server_Protocol)) from scratch, which is out of the scope of this project. It also means `prettier` does not work out of the box with Edge; a custom plugin would be needed.
 
 Those caveats may not be an issue for you, and you love us working with Edge, but let me present you another alternative for those who would like better type-safety and IDE support.
 
@@ -153,7 +153,7 @@ export function route(...args: Parameters<typeof router.makeUrl>) {
 ```tsx
 import { route } from '#start/view'
 
-<a href="{route('posts.show', [post.id])}">
+<a href={route('posts.show', [post.id])}>
   View post
 </a>
 ```
