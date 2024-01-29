@@ -63,7 +63,9 @@ We use `cva` from the [class-variance-authority](https://cva.style/docs) package
 We can leverage the [Async Local Storage](https://docs.adonisjs.com/guides/async-local-storage#async-local-storage) of AdonisJS to access the `HttpContext` anywhere in your template.
 
 :::warn
+
  We recommend doing props drilling since using ALS will create a performance hit for your application.
+
 :::
 
 ```tsx
@@ -96,7 +98,9 @@ Once done, we will edit the `bin/server.ts` file to register Kita.
 
 ```ts
 import 'reflect-metadata'
+// insert-start
 import '@kitajs/html/register.js'
+// insert-end
 import { Ignitor, prettyPrintError } from '@adonisjs/core'
 
 // ...
@@ -109,10 +113,12 @@ We must also change our `tsconfig.json` file to add JSX support.
   // ...
   "compilerOptions": {
    // ...
+   // insert-start
    "jsx": "react",
-    "jsxFactory": "Html.createElement",
-    "jsxFragmentFactory": "Html.Fragment",
-    "plugins": [{ "name": "@kitajs/ts-html-plugin" }]
+   "jsxFactory": "Html.createElement",
+   "jsxFragmentFactory": "Html.Fragment", 
+   "plugins": [{ "name": "@kitajs/ts-html-plugin" }]
+    // insert-end
   }
 }
 ```
