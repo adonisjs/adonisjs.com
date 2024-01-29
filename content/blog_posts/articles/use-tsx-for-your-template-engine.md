@@ -6,11 +6,11 @@ Seven years ago, we decided to build Edge, our templating engine. We created it 
 
 Edge is one of the best templating engines out there for Node.js. It is not restrictive; any JavaScript expression will work on it; it generates an accurate error stack, helping you debug your templating issue; it provides support for components with props and slots and is easily extendable. In fact, 80% of Edge is built using its public API.
 
-We love Edge, and we love working with it, but we must say that it brings a few caveats.
+We love Edge and working with it, but it brings a few caveats.
 
-It is a "custom langage". We need to have an extension for any IDE to have syntax highlighting. If we want to have type-safety, we would need to create a complete LSP ((Language Server Protocol)[https://en.wikipedia.org/wiki/Language_Server_Protocol]) from scratch, which is out of the scope of this project. It also means `prettier` does not work out of the box with Edge; a custom plugin would be needed.
+It is a "custom language". We need to have an extension for any IDE to have syntax highlighting. If we want to have type safety, we would need to create a complete LSP ((Language Server Protocol)[https://en.wikipedia.org/wiki/Language_Server_Protocol]) from scratch, which is out of the scope of this project. It also means `prettier` does not work out of the box with Edge; a custom plugin would be needed.
 
-Maybe those caveats are not an issue for you, and you love us working with Edge, but let me present you another alternative for those who would like better type-safety and IDE support.
+Those caveats may not be an issue for you, and you love us working with Edge, but let me present you another alternative for those who would like better type-safety and IDE support.
 
 ## JSX
 
