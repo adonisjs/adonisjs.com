@@ -62,7 +62,7 @@ We use `cva` from the [class-variance-authority](https://cva.style/docs) package
 
 We can leverage the [Async Local Storage](https://docs.adonisjs.com/guides/async-local-storage#async-local-storage) of AdonisJS to access the `HttpContext` anywhere in your template.
 
-:::warn
+:::warning
 
  We recommend doing props drilling since using ALS will create a performance hit for your application.
 
