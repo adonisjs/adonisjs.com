@@ -6,7 +6,7 @@ We have just released AdonisJS 6 with a ton of new features and improvements. Th
 
 In order to finally release AdonisJS 6, we had to put on hold some ideas that we have been experimenting with. Now that AdonisJS 6 is out, our immediate focus is going to be on stabilizing it, fixing bugs and improving the documentation and migration guide. But we'll soon be able to get back to our ideas.
 
-This year, we've spent a lot of time testing new ideas and features. Some of them are already in pretty good state, while others are still being thought and worked on. In this article, I'm going to share some of those ideas.
+Last year, we've spent a lot of time testing new ideas and features. Some of them are already in pretty good state, while others are still being thought and worked on. In this article, I'm going to share some of those ideas.
 
 **Please, do not expect or ask for any release dates or timelines. We will share more details when we are ready.**
 
@@ -76,7 +76,7 @@ To sum up quickly: With AdonisJS 5 + Webpack, and AdonisJS 6 + Vite, the strateg
 
 - You launch `node ace serve`. The main process launch the HTTP server, and start compiling your backend code with Typescript.
 - At the same time, the same main process launch a new child process which is responsible for compiling the frontend assets. 
-  In other words, we have an `exec('pnpm vite dev')` which launch the compilation of the assets via the asset bundler CLI tool ( Vite / Webpack ). This would be almost the same as if you were launching `pnpm vite dev` in another terminal.
+  In other words, we have an `exec('npm run vite dev')` which launch the compilation of the assets via the asset bundler CLI tool ( Vite / Webpack ). This would be almost the same as if you were launching `npx vite dev` in another terminal.
 
 This strategy works well, but it has one major drawback: it's complicated to get the SSR to work (for reasons we won't go into here, otherwise this article will be too long).
 
