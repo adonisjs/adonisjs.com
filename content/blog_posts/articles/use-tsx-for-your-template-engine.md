@@ -62,7 +62,7 @@ We use `cva` from the [class-variance-authority](https://cva.style/docs) package
 
 We can leverage the [Async Local Storage](https://docs.adonisjs.com/guides/async-local-storage#async-local-storage) of AdonisJS to access the `HttpContext` anywhere in your template.
 
-:::warning
+:::note
 
  We recommend doing props drilling since using ALS will create a performance hit for your application.
 
@@ -82,9 +82,7 @@ export function Header() {
 
 ## Setting up TSX
 
-I have tried different packages to use TSX as a templating engine; [JSXTE](https://github.com/ncpa0/jsxte) and [Kita](https://github.com/kitajs/html) were the most advanced ones.
-
-We will use `@kitajs/html` during this tutorial, but feel free to use the one you prefer.
+I have tried different packages to use TSX as a templating engine. For this tutorial, we will use [`@kitajs/html`](https://github.com/kitajs/html), but feel free to use the one you prefer.
 
 First, you have to install the package. At the time of writing, this package is at version `3.1.1`.
 
@@ -166,14 +164,30 @@ import { route } from '#start/view'
 
 ### Examples of some helpers
 
+Here are some helpers you may want to add to your project.
+
+#### Route Helper
+
+This helper will allow you to generate URLs for your routes.
+
 ```ts
-import vite from '@adonisjs/vite/services/main'
 import router from '@adonisjs/core/services/router'
-import { HttpContext } from '@adonisjs/core/http'
 
 export function route(...args: Parameters<typeof router.makeUrl>) {
   return router.makeUrl(...args)
 }
+```
+
+#### CSRF Field
+
+This helper will generate a hidden input with the CSRF token.
+
+:::note
+We are using ALS in this example, but you can use any other way to access the `HttpContext`.
+:::
+
+```tsx
+import { HttpContext } from '@adonisjs/core/http'
 
 export function csrfField() {
   // Note the usage of ALS here.
@@ -181,6 +195,14 @@ export function csrfField() {
 
   return Html.createElement('input', { type: 'hidden', value: request.csrfToken, name: '_csrf' })
 }
+```
+
+#### Asset Path
+
+Those helpers will generate the path to your assets. If you are in production, it will also add a hash to the file name.
+
+```tsx
+import vite from '@adonisjs/vite/services/main'
 
 function Image(props: { src: string; alt?: string; class?: string }) {
   const url = vite.assetPath(props.src)
@@ -206,3 +228,7 @@ function ScriptAsset(props: { entrypoint: string }) {
   return Html.createElement(Html.Fragment, {}, elements)
 }
 ```
+
+## Conclusion
+
+I hope this article will help you decide if you want to use TSX as your templating engine. If you have any questions, feel free to ask them on our [Discord Server](https://discord.gg/vDcEjq6) or [GitHub Discussion](https://github.com/adonisjs/core/discussions).
