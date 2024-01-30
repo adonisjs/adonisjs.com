@@ -229,6 +229,31 @@ function ScriptAsset(props: { entrypoint: string }) {
 }
 ```
 
+## Extending the typings
+
+TSX will not allow you to use any non-standard HTML attributes. For example, if you are using [unpoly](https://unpoly.com) or [htmx](https://htmx.org), the compiler will complain about the `up-*` or `hx-*` attributes.
+
+KitaJS comes with some typings for those attributes ([htmx](https://github.com/kitajs/html?tab=readme-ov-file#htmx), [Hotwire Turbo](https://github.com/kitajs/html?tab=readme-ov-file#hotwire-turbo)), but you may want to add your own.
+
+To do so, you need to extend the `JSX` namespace.
+
+```ts
+declare global {
+  namespace JSX {
+    // Adds support for `my-custom-attribute` on any HTML tag.
+    interface HtmlTag {
+      ['my-custom-attribute']?: string
+    }
+  }
+}
+```
+
+```tsx
+<div my-custom-attribute="hello world" />
+```
+
+Learn more about this in [the KitaJS documentation](https://github.com/kitajs/html?tab=readme-ov-file#extending-types).
+
 ## Conclusion
 
 I hope this article will help you decide if you want to use TSX as your templating engine. If you have any questions, feel free to ask them on our [Discord Server](https://discord.gg/vDcEjq6) or [GitHub Discussion](https://github.com/adonisjs/core/discussions).
