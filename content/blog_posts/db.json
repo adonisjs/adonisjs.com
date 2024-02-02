@@ -1,5 +1,13 @@
 [
   {
+    "title": "Setting up Kysely inside an AdonisJS project",
+    "slug": "kysely-with-adonisjs",
+    "authorName": "virk",
+    "content_path": "./articles/kysely-with-adonisjs.md",
+    "publishedAt": "2024-02-02T08:26:11.654Z",
+    "category": "Tutorial"
+  },
+  {
     "title": "Use TSX for your template engine",
     "slug": "use-tsx-for-your-template-engine",
     "authorName": "romainlanz",
