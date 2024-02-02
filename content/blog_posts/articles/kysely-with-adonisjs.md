@@ -2,8 +2,6 @@
 summary: This post showcases how we can use the existing primitives of the framework and integrate Kysely inside an AdonisJS application seamlessly.
 ---
 
-# Setting up Kysely inside an AdonisJS project
-
 AdonisJS comes pre-configured with our home-grown ORM [Lucid](https://lucid.adonisjs.com/docs/introduction). While Lucid shines on many fronts, it does not have a type-safe API for constructing SQL queries.
 
 Depending on your personal or team preferences, not having end-to-end type safety at the database level can be a deal breaker, and you might want to replace Lucid with another type-safe ORM or a query builder.
