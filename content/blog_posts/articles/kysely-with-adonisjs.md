@@ -386,7 +386,7 @@ Now that we have completed the whole lifecycle of configuring Kysely, creating m
 
 ```ts
 import { db } from '#services/db'
-import router from '@adonisjs/core/services/route'
+import router from '@adonisjs/core/services/router'
 
 router.get('/posts', async () => {
   const posts = await db
