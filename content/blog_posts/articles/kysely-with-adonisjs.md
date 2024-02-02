@@ -34,7 +34,7 @@ npm i -D @types/better-sqlite3
 mkdir tmp
 ```
 
-Also, let's install the [kysely-codegen](https://github.com/RobinBlomberg/kysely-codegen) CLI tool to create TypeScript types by inspecting the database schema. During my testing, I found that `kysely-codegen` has [rough edges](https://github.com/RobinBlomberg/kysely-codegen/issues/70). If you find yourself fighting this tool more than using it, feel free to remove it since Kysely can work without automated types generation.
+Also, let's install the [kysely-codegen](https://github.com/RobinBlomberg/kysely-codegen) CLI tool to create TypeScript types by inspecting the database schema. During my testing, I found that `kysely-codegen` has [rough edges](https://github.com/RobinBlomberg/kysely-codegen/issues/70). If you find yourself fighting this tool more than using it, feel free to remove it since Kysely can work without automated type generation.
 
 ```sh
 npm i -D kysely-codegen
@@ -85,7 +85,7 @@ export const db = new Kysely<DB>({
 
 We can start using Kysely right now. However, building an application from scratch will be easier with a proper workflow for creating and running migrations.
 
-So, let's put some initial efforts and create a couple of [Ace commands](https://docs.adonisjs.com/guides/ace-creating-commands). We will start with the `make:migration` command.
+So, let's put in some initial efforts and create a couple of [Ace commands](https://docs.adonisjs.com/guides/ace-creating-commands). We will start with the `make:migration` command.
 
 ### The make migration command
 
@@ -379,6 +379,37 @@ export interface Users {
 export interface DB {
   users: Users;
 }
+```
+
+## Basic usage
+Now that we have completed the whole lifecycle of configuring Kysely, creating migration commands, and using codegen to inspect database schema, Let's define some routes and use the Database service to write some queries.
+
+```ts
+import { db } from '#services/db'
+import router from '@adonisjs/core/services/route'
+
+router.get('/posts', async () => {
+  const posts = await db
+    .selectFrom('posts')
+    .selectAll()
+    .execute()
+  
+  return posts
+})
+
+router.get('/posts/:id', async ({ params, response }) => {
+  const post = await db
+    .selectFrom('posts')
+    .selectAll()
+    .where('id', '=', params.id)
+    .executeTakeFirst()
+  
+  if (!post) {
+    return response.notFound('Post not found')
+  }
+
+  return post
+})
 ```
 
 ## Conclusion
