@@ -16,7 +16,7 @@ In this article, we will learn how to take a low-level library like Kysely and i
 
 ## Creating a new AdonisJS application
 
-Let's create a new AdonisJS application using the [slim starter kit](https://github.com/adonisjs/slim-starter-kit). I selected a slim starter kit because it does not come with any database layer, giving us a clean surface to configure Kysely.
+Let's create a new AdonisJS application using the [slim starter kit](https://github.com/adonisjs/slim-starter-kit). I selected the slim starter kit because it does not come with any database layer, giving us a clean surface to configure Kysely.
 
 ```sh
 npm init adonisjs@latest hello-world -- -K=slim
@@ -34,7 +34,7 @@ npm i -D @types/better-sqlite3
 mkdir tmp
 ```
 
-Also, let's install the [kysely-codegen](https://github.com/RobinBlomberg/kysely-codegen) CLI tool to create TypeScript types by inspecting the database schema. During my testing, I found that `kysely-codegen` has [rough edges](https://github.com/RobinBlomberg/kysely-codegen/issues/70). If you find yourself fighting this tool more than using it, feel free to remove it since Kysely can work without automated code generation.
+Also, let's install the [kysely-codegen](https://github.com/RobinBlomberg/kysely-codegen) CLI tool to create TypeScript types by inspecting the database schema. During my testing, I found that `kysely-codegen` has [rough edges](https://github.com/RobinBlomberg/kysely-codegen/issues/70). If you find yourself fighting this tool more than using it, feel free to remove it since Kysely can work without automated types generation.
 
 ```sh
 npm i -D kysely-codegen
@@ -71,7 +71,7 @@ export const db = new Kysely<DB>({
 -  Next, we create an instance of the `Kysely` class and provide it with the dialect object.
 -  The generic `DB` type comes from the `types/db.js` file. We will create the `DB` interface using the `kysely-codegen` CLI. But first, we should create this file and export an empty interface from it.
 
-    ```ts
+    ```sh
     mkdir types
     touch types/db.ts
     ```
