@@ -47,9 +47,9 @@ interface ButtonProps { /* ... */ }
 
 export function Button(props: ButtonProps) {
   const { color, children, size = 'medium', ...extraProps } = props
-  
+
   const buttonStyle = cva('button', { /* ... */ }
-  
+
   return (
     <button class={button({ color, size })} {...extraProps}>
       {children}
@@ -71,11 +71,11 @@ We can leverage the [Async Local Storage](https://docs.adonisjs.com/guides/async
 ```tsx
 export function Header() {
   const { auth } = HttpContext.getOrFail()
-  
+
   if (auth.user) {
     return <header>Authenticated!</header>
   }
-  
+
   return <header>Please connect!</header>
 }
 ```
@@ -114,7 +114,7 @@ We must also change our `tsconfig.json` file to add JSX support.
    // insert-start
    "jsx": "react",
    "jsxFactory": "Html.createElement",
-   "jsxFragmentFactory": "Html.Fragment", 
+   "jsxFragmentFactory": "Html.Fragment",
    "plugins": [{ "name": "@kitajs/ts-html-plugin" }]
     // insert-end
   }
@@ -132,6 +132,120 @@ import { Home } from 'path/to/your/tsx/file'
 router.get('/', () => {
   return <Home />
 })
+```
+
+## Preventing XSS Injection
+
+When using JSX, you must be careful about XSS injection. You should always escape user input and never trust it.
+
+Always use the `safe` attribute when rendering uncontrolled HTML.
+
+```tsx
+export function Home(props) {
+  const { username } = props
+
+  return (
+    <div>
+      <h1>Hello World</h1>
+      <p safe>{username}</p>
+    </div>
+  )
+}
+```
+
+The `@kitajs/ts-html-plugin` package provides a script ([`xss-scan`](https://github.com/kitajs/ts-html-plugin?tab=readme-ov-file#running-as-cli)) to scan your code for potential XSS injection.
+
+```sh
+xss-scan --help
+```
+
+## Updating Vite & RC file
+
+You must to update your `adonisrc.ts` and `vite.config.ts` files to change `.edge` references to `.tsx`.
+
+```ts
+// title: adonisrc.ts
+export default defineConfig({
+  // ...
+
+  metaFiles: [
+    {
+      // delete-start
+      pattern: 'resources/views/**/*.edge',
+      // delete-end
+      // insert-start
+      pattern: 'resources/views/**/*.tsx',
+      // insert-end
+      reloadServer: false,
+    },
+    {
+      pattern: 'public/**',
+      reloadServer: false,
+    },
+  ],
+
+  //...
+})
+```
+
+```ts
+// title: vite.config.ts
+export default defineConfig({
+  plugins: [
+    adonisjs({
+      /**
+       * Entrypoints of your application. Each entrypoint will
+       * result in a separate bundle.
+       */
+      entrypoints: ['resources/css/app.scss', 'resources/js/app.js'],
+
+      /**
+       * Paths to watch and reload the browser on file change
+       */
+      // delete-start
+      reload: ['resources/views/**/*.edge'],
+      // delete-end
+      // insert-start
+      reload: ['resources/views/**/*.tsx'],
+      // insert-end
+    }),
+  ],
+})
+```
+
+## Sending HTML doctype
+
+The [`<!doctype html>`](https://developer.mozilla.org/en-US/docs/Glossary/Doctype) preamble is not added by default when using JSX. You can add it by creating a layout file and using a small "hack".
+
+```tsx
+// title: resources/views/layouts/app.tsx
+import { Vite } from '#start/view'
+import type { Children } from '@kitajs/html'
+
+interface LayoutProps {
+  children: Children
+}
+
+export function Layout(props: LayoutProps) {
+  const { children } = props
+
+  return (
+    <>
+      {'<!DOCTYPE html>'}
+      <html lang="en">
+        <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+          <title>BoringMoney</title>
+
+          <Vite.Entrypoint entrypoints={['resources/css/app.scss', 'resources/js/app.js']} />
+        </head>
+        <body>{children}</body>
+      </html>
+    </>
+  )
+}
 ```
 
 ## Adding global helpers
@@ -210,23 +324,34 @@ function Image(props: { src: string; alt?: string; class?: string }) {
   return Html.createElement('img', { src: url, alt: props.alt, class: props.class })
 }
 
-function ScriptAsset(props: { entrypoint: string }) {
-  const assets = vite.generateEntryPointsTags(props.entrypoint)
+function Entrypoint(props: { entrypoints: string[] }) {
+  const assets = vite.generateEntryPointsTags(props.entrypoints)
 
   const elements = assets.map((asset) => {
     if (asset.tag === 'script') {
       return Html.createElement('script', {
         ...asset.attributes,
       })
-    } else {
-      return Html.createElement('link', {
-        ...asset.attributes,
-      })
     }
+
+    return Html.createElement('link', {
+      ...asset.attributes,
+    })
   })
 
   return Html.createElement(Html.Fragment, {}, elements)
 }
+
+export const Vite = {
+  Entrypoint,
+  Image,
+}
+```
+
+```tsx
+import { Vite } from '#start/view'
+
+<Vite.Entrypoint entrypoints={['resources/css/app.scss', 'resources/js/app.js']} />
 ```
 
 ## Extending the typings
