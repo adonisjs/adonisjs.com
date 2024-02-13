@@ -161,7 +161,7 @@ xss-scan --help
 
 ## Updating Vite & RC file
 
-You must to update your `adonisrc.ts` and `vite.config.ts` files to change `.edge` references to `.tsx`.
+You must update your `adonisrc.ts` and `vite.config.ts` files to change `.edge` references to `.tsx`.
 
 ```ts
 // title: adonisrc.ts
