@@ -70,7 +70,7 @@ Why is SSR not supported in the first version? This is related to how we use Vit
 
 Soon, we will release a new major version of the `@adonisjs/vite` package with SSR support. There will be some breaking changes, as we will change how we integrate with Vite within an AdonisJS application.
 
-In the following subsections, we will take a deep dive into how Vite works inside an AdonisJS application; feel free to skip these sections if you are interested in the inner technical details.
+In the following subsections, we will take a deep dive into how Vite works inside an AdonisJS application; feel free to skip these sections if you are not interested in the inner technical details.
 
 ### Current implementation 
 
