@@ -56,9 +56,9 @@ In the meantime, you can already use BentoCache with AdonisJS 6. Please look at 
 
 With AdonisJS v5, we had a fantastic community package for InertiaJS, maintained by [eidellev](https://github.com/eidellev). Thanks again to eidellev for maintaining this package for so long.
 
-Since we are using InertiaJS for our projects, **we decided to take over the package and maintain it officially**. 
+Since we are using InertiaJS for our projects, **we decided to take over the package and maintain it officially**.
 
-![inertia logo](https://i.imgur.com/eTxaWws.png)
+![inertia logo](/inertia_banner.png)
 
 The package is already usable and functional, and the API is almost identical to the `eidellev/inertiajs-adonisjs` package, with a few extra features. **We, therefore, plan to release it in the coming weeks.**
 
