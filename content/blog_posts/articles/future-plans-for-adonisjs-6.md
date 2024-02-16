@@ -187,7 +187,7 @@ transmit.broadcast('chat', { message: 'hello' })
 import { Transmit } from '@adonisjs/transmit-client'
 
 const transmit = new Transmit({ baseUrl: 'localhost:3333' })
-transmit.listen('chat', (message) => console.log(message))
+transmit.listenOn('chat', (message) => console.log(message))
 ```
 
 ## @adonisjs/locks
