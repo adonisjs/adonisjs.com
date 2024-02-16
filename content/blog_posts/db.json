@@ -1,5 +1,13 @@
 [
   {
+    "title": "Future plans for AdonisJS v6",
+    "slug": "future-plans-for-adonisjs-6",
+    "authorName": "julien-ripouteau",
+    "content_path": "./articles/future-plans-for-adonisjs-6.md",
+    "publishedAt": "2024-02-16T13:35:53.599Z",
+    "category": "News"
+  },
+  {
     "title": "Setting up Kysely inside an AdonisJS project",
     "slug": "kysely-with-adonisjs",
     "authorName": "virk",

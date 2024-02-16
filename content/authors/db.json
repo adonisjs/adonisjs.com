@@ -8,5 +8,10 @@
     "username": "romainlanz",
     "displayName": "Romain Lanz",
     "profilePictureUrl": "./avatars/romainlanz.jpg"
+  },
+  {
+    "username": "julien-ripouteau",
+    "displayName": "Julien Ripouteau",
+    "profilePictureUrl": "./avatars/julien.jpg"
   }
 ]
