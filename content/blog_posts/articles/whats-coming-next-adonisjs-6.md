@@ -15,7 +15,7 @@ Last year, we've spent a lot of time testing new ideas and features. Some of the
 First focus will be to migrate the last few packages to AdonisJS 6. We can't commit on a specific date, but expect them to be migrated in the next few weeks :
 
 - Drive
-- Limiter
+- ~~Limiter~~ : Already released. See the [changelog](https://github.com/adonisjs/limiter/releases/tag/v2.1.0) and the [documentation](https://docs.adonisjs.com/guides/rate-limiter#rate-limiter)
 - Lucid Slugify
 - Attachment lite
 - Route model binding
@@ -23,7 +23,7 @@ First focus will be to migrate the last few packages to AdonisJS 6. We can't com
 
 ## @adonisjs/cache
 
-This summer we worked on [BentoCache](bentocache.dev) - a caching library for Node.js. It is a standalone and can be used with any framework. We are planning to have a first-party integration with AdonisJS 6, and so with its own set of features.
+Last summer (2023) we worked on [BentoCache](https://bentocache.dev) - a caching library for Node.js. It is a standalone and can be used with any framework. We are planning to have a first-party integration with AdonisJS 6, and so with its own set of features.
 
 Take a look at the [BentoCache documentation](https://bentocache.dev) to learn more about it, but to give you a quick overview, main features are:
 
@@ -191,7 +191,7 @@ Transmit should be released in the next few weeks. Get ready for it!
 
 ## @adonisjs/locks
 
-A few weeks ago, we released [Verrou](verrou.dev), an agnostic package for NodeJS that can be used with any framework. The purpose of the package is to provide a simple API for locking (mutexes), also known as "Atomic locks". Verrou supports several drivers: Redis, Postgre, Mysql, Sqlite, In-memory ...
+A few weeks ago, we released [Verrou](https://verrou.dev), an agnostic package for NodeJS that can be used with any framework. The purpose of the package is to provide a simple API for locking (mutexes), also known as "Atomic locks". Verrou supports several drivers: Redis, Postgre, Mysql, Sqlite, In-memory ...
 
 ```ts
 const lock = verrou.createLock('payment:1')
