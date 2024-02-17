@@ -237,7 +237,6 @@
 
 .markdown code {
   @apply font-mono;
-  flex: 1;
 }
 
 .markdown :not(pre) > code {
@@ -374,7 +373,7 @@
 .markdown pre {
   @apply font-mono;
   white-space: pre;
-  padding: var(--prose-elements-spacing) 0 var(--prose-elements-spacing) 12px;
+  padding: var(--prose-elements-spacing) 0 var(--prose-elements-spacing) 0;
   font-size: var(--pre-font-size);
   overflow: auto;
   line-height: var(--pre-line-height);
@@ -382,10 +381,14 @@
   display: flex;
 }
 
+.markdown code .line::before {
+  left: 10px;
+}
+
 .markdown pre .line {
   position: relative;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 30px 0 42px;
 }
 
 .markdown pre span[style='color: #676E95;'] {
@@ -430,6 +433,10 @@
   bottom: 0;
   width: 4px;
   background: var(--code-delete-border-color);
+}
+
+.markdown pre .line.highlight-insert span[style='color: #6A737D;'] {
+  color: #76998b !important;
 }
 
 .markdown ul {
