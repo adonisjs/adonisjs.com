@@ -1,6 +1,6 @@
 [
   {
-    "title": "Integrating Kysely with session auth guard",
+    "title": "Integrating Kysely with Auth session guard",
     "slug": "kysely-with-auth-session-guard",
     "authorName": "virk",
     "content_path": "./articles/kysely-with-auth-session-guard.md",

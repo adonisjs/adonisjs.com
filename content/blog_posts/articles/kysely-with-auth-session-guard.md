@@ -1,5 +1,5 @@
 ---
-summary: In this post, we create a custom user provider for authenticating users using the AdonisJS auth session guard and Kysely.
+summary: In this post, we create a custom user provider for authenticating users using the AdonisJS Auth session guard and Kysely.
 ---
 
 In the last post, we setup [Kysely inside an AdonisJS application](https://adonisjs.com/blog/kysely-with-adonisjs) with commands to make, run, and rollback migrations. In this post, we will take a step ahead and integrate Kysely with the AdonisJS auth package.
@@ -8,11 +8,11 @@ If you want to follow along, I recommend first reading the [Kysely setup post](h
 
 ## Installing the Auth package
 
-The first step is to install and configure the Auth package. Since we will create a provider for the [Session guard](https://docs.adonisjs.com/guides/auth-session-guard), you must configure the package with the `--guard=session` flag.
+The first step is to install and configure the Auth package. Since we will create a provider for the [session guard](https://docs.adonisjs.com/guides/auth-session-guard), you must configure the package with the `--guard=session` flag.
 
 :::note
 
-The Session guard requires the `@adonisjs/session` package. So make sure to configure the [session package](https://docs.adonisjs.com/guides/session#installation) as well.
+The session guard requires the `@adonisjs/session` package. So make sure to configure the [session package](https://docs.adonisjs.com/guides/session#installation) as well.
 
 :::
 
@@ -31,7 +31,7 @@ rm database/migrations/<file_create_by_auth_package>
 rm app/models/user.ts
 ```
 
-## Creating a User provider for the Session guard
+## Creating a User provider for the session guard
 
 Let's start by creating the User provider for the session guard. We will store it inside the `app/auth_providers` directory.
 
@@ -52,15 +52,15 @@ export class SessionKyselyUserProvider implements SessionUserProviderContract<Us
 }
 ```
 
-- The `SessionUserProviderContract` interface needs a generic User property your guard will accept and return when interacting with the Session guard. This generic property adds type safety to your codebase.
+- The `SessionUserProviderContract` interface needs a generic User property your guard will accept and return when interacting with the session guard. This generic property adds type safety to your codebase.
 
 - We read the `Users` property from the `types/db.ts` file. This file is created using the [kysely-codegen](https://adonisjs.com/blog/kysely-with-adonisjs#using-kysely-codegen) CLI.
 
-- The `symbols.PROVIDER_REAL_USER` property is used by the event emitter to add type information to the [events emitted by the Session guard](https://docs.adonisjs.com/guides/events-reference#session_authlogin_attempted).
+- The `symbols.PROVIDER_REAL_USER` property is used by the event emitter to add type information to the [events emitted by the session guard](https://docs.adonisjs.com/guides/events-reference#session_authlogin_attempted).
 
 ### Implementing the createUserForGuard method
 
-The `createUserForGuard` method is a Bridge (or Adapter) between the Session guard and your provider. Since the guard is user-agnostic, it needs this adapter to fetch the user's unique ID and store it inside the session.
+The `createUserForGuard` method is a Bridge (or Adapter) between the session guard and your provider. Since the guard is user-agnostic, it needs this adapter to fetch the user's unique ID and store it inside the session.
 
 ```ts
 import type { Users } from '../../types/db.js'
@@ -296,7 +296,7 @@ Since we are not using Lucid models, we cannot abstract the logic of verifying u
 
 3. Next, we verify the user's password with the hash saved inside the database.
 
-4. Finally, we log in using the Session guard and redirect the user to the home page.
+4. Finally, we log in using the session guard and redirect the user to the home page.
 
 ### Creating the home page
 Create the `resources/views/pages/home.edge` file and copy-paste the following code inside it.
@@ -355,7 +355,7 @@ Create the `resources/views/pages/login.edge` file and copy-paste the following 
 
 ## Conclusion
 
-In this post, we create a custom user provider for the Session guard. Even though we are using Kysely in this example, you can replace the code specific to Kysely with the ORM of your choice.
+In this post, we create a custom user provider for the session guard. Even though we are using Kysely in this example, you can replace the code specific to Kysely with the ORM of your choice.
 
 All you have to do is create a JavaScript class that implements [SessionUserProviderContract](https://github.com/adonisjs/auth/blob/develop/modules/session_guard/types.ts#L153).
 
