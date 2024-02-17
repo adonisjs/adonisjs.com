@@ -236,6 +236,7 @@ export default class KyselyMigrate extends BaseCommand {
           break
         case 'Error':
           this.logger.error(`failed to execute migration "${it.migrationName}"`)
+          break
         case 'NotExecuted':
           this.logger.info(`migration pending "${it.migrationName}"`)
       }
@@ -327,6 +328,7 @@ export default class KyselyRollback extends BaseCommand {
           break
         case 'Error':
           this.logger.error(`failed to rollback migration "${it.migrationName}"`)
+          break
         case 'NotExecuted':
           this.logger.info(`rollback pending "${it.migrationName}"`)
       }
