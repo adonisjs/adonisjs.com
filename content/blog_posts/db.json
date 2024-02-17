@@ -1,19 +1,19 @@
 [
   {
+    "title": "Integrating Kysely with session auth guard",
+    "slug": "kysely-with-auth-session-guard",
+    "authorName": "virk",
+    "content_path": "./articles/kysely-with-auth-session-guard.md",
+    "publishedAt": "2024-02-17T07:45:54.103Z",
+    "category": "Tutorial"
+  },
+  {
     "title": "Future plans for AdonisJS v6",
     "slug": "future-plans-for-adonisjs-6",
     "authorName": "julien-ripouteau",
     "content_path": "./articles/future-plans-for-adonisjs-6.md",
     "publishedAt": "2024-02-16T13:35:53.599Z",
     "category": "News"
-  },
-  {
-    "title": "Integrating Kysely with session auth guard",
-    "slug": "kysely-with-auth-session-guard",
-    "authorName": "virk",
-    "content_path": "./articles/kysely-with-auth-session-guard.md",
-    "publishedAt": "2024-02-16T09:48:23.075Z",
-    "category": "Tutorial"
   },
   {
     "title": "Setting up Kysely inside an AdonisJS project",
