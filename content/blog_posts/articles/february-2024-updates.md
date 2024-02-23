@@ -13,7 +13,6 @@ The rate limiter package was incompatible with `v6` during the initial launch. H
 - [Release notes](https://github.com/adonisjs/limiter/releases/tag/v2.1.0)
 - [Documentation](https://docs.adonisjs.com/guides/rate-limiter)
 
-
 ## Adding back database testing utilities
 
 The utilities to `migrate`, `seed`, and `truncate` database tables during tests were missing during the `v6` initial launch. They have been added back, and you can find the links to the release notes and documentation below.
@@ -45,6 +44,9 @@ The utilities to `migrate`, `seed`, and `truncate` database tables during tests 
 
 - **Add Basic Auth guard to the auth package**\
   https://github.com/adonisjs/auth/releases/tag/v9.1.0
+
+- **Add/Export ResponseStatus enum to use descriptive labels for response statuses**\
+  https://github.com/adonisjs/http-server/releases/tag/v7.1.0
 
 </div>
 
