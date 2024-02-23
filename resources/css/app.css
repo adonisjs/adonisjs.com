@@ -154,3 +154,7 @@ tab-container button[aria-selected='true']:hover {
 nav a.up-current {
   @apply text-sand13;
 }
+
+.links_list ul li a {
+  color: var(--sand-11);
+}
