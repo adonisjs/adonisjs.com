@@ -48,13 +48,13 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "unpoly": "^3.7.3",
-    "vite": "^5.0.12",
+    "vite": "^5.1.4",
     "windy-radix-palette": "^2.0.0-beta.7"
   },
   "dependencies": {
     "@adonisjs/core": "^6.3.0",
     "@adonisjs/static": "^1.1.1",
-    "@adonisjs/vite": "^2.0.2",
+    "@adonisjs/vite": "3.0.0-3",
     "@dimerapp/markdown": "^8.0.1",
     "@dimerapp/shiki": "^5.0.0",
     "@iconify-json/tabler": "^1.1.104",

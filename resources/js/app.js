@@ -1,7 +1,6 @@
 import 'unpoly'
 import Alpine from 'alpinejs'
 import { tabs } from 'edge-uikit/tabs'
-import '../css/app.css'
 
 Alpine.plugin(tabs)
 Alpine.start()
