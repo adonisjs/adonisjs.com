@@ -80,4 +80,9 @@ export default defineConfig({
       reloadServer: false,
     },
   ],
+
+  assetsBundler: false,
+  unstable_assembler: {
+    onBuildStarting: [() => import('@adonisjs/vite/build_hook')],
+  },
 })
