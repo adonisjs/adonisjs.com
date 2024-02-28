@@ -1,4 +1,3 @@
-import '../css/app.css'
 import 'unpoly'
 import Alpine from 'alpinejs'
 import { tabs } from 'edge-uikit/tabs'
