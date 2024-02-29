@@ -1,5 +1,13 @@
 [
   {
+    "title": "Updates from February 2024",
+    "slug": "february-2024-updates",
+    "authorName": "virk",
+    "content_path": "./articles/february-2024-updates.md",
+    "publishedAt": "2024-02-23T09:59:16.962Z",
+    "category": "News"
+  },
+  {
     "title": "Integrating Kysely with the Auth session guard",
     "slug": "kysely-with-auth-session-guard",
     "authorName": "virk",
