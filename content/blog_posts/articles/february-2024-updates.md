@@ -2,7 +2,9 @@
 summary: Recap of the improvements, bug fixes, and documentation updates made during February 2024
 ---
 
-It's been a month since the significant release of AdonisJS v6, and we had a lot going on during this month. So, let's recap and highlight all the important changes.
+It's been a month since the major release of AdonisJS v6, and we had a lot going on during this month. Some of the work has been shipped, and some are under the experimental phase and will be released soon.
+
+So, let's recap and highlight all the important changes.
 
 ## Shipping limiter
 
@@ -20,9 +22,40 @@ The utilities to `migrate`, `seed`, and `truncate` database tables during tests 
 - [Release notes](https://github.com/adonisjs/lucid/releases/tag/v20.1.0)
 - [Documentation](https://docs.adonisjs.com/guides/database-tests)
 
+## A new ace command to install and configure packages
+A small quality of life improvement to install and configure AdonisJS packages using a single `node ace add` command.
+
+Right now, if you want to use an AdonisJS-specific package, the workflow for configuring it might look as follows.
+
+```sh
+npm i <package-name>
+```
+
+```sh
+node ace configure <package-name>
+```
+
+There is nothing unusual about this workflow. However, improving it a little won't hurt either. Therefore, we have added a new `add` command that performs both steps together.
+
+The command will auto-detect the package manager used by your application and will use it for the installation. You can learn more about it in the [documentation](https://docs.adonisjs.com/guides/commands-reference#add).
+
+```sh
+node ace add <package-name>
+```
+
+## Adocasts screencasts go public
+
+[![](./adocasts-banner.jpeg)](https://adocasts.com/series/lets-learn-adonisjs-6)
+
+The first **29 lessons out of 40** on [Let's Learn AdonisJS 6
+](https://adocasts.com/series/lets-learn-adonisjs-6) series on Adocasts are now publicly available for free. If you have been waiting to take your first steps with AdonisJS, these screencasts are for you.
+
 ## Notable Releases
 
 <div class="links_list">
+
+- **New codemods APIs, ace add command, and experimental assembler hooks**\
+  https://github.com/adonisjs/core/releases/tag/v6.3.0
 
 - **Bug fixes with the `@adonisjs/logger` package**\
   https://github.com/adonisjs/logger/releases/tag/v6.0.2
