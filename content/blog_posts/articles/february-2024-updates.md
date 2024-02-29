@@ -138,4 +138,7 @@ The first **29 lessons out of 40** on [Let's Learn AdonisJS 6
 - **The AdonisJS Redis RPC package is now compatible with v6**\
   https://github.com/Craftnotion/adonis-advance-redis-rpc
 
+- **AdonisJS benchmarks on Web Frameworks Benchmark**\
+  https://web-frameworks-benchmark.netlify.app/result?l=javascript
+
 </div>
