@@ -1,5 +1,7 @@
+import { dirname, resolve } from 'node:path'
 import { map } from 'unist-util-map'
 import app from '@adonisjs/core/services/app'
+import vite from '@adonisjs/vite/services/main'
 import { MarkdownFile } from '@dimerapp/markdown'
 import { toHtml } from '@dimerapp/markdown/utils'
 import { Shiki, codeblocks } from '@dimerapp/shiki'
@@ -36,6 +38,15 @@ export default class MarkdownService {
     md.transform(() => {
       return (tree) => {
         map(tree, (node) => {
+          if (node.type === 'image') {
+            const image = node as any
+            if (!image.url.startsWith('https://') && !image.url.startsWith('/')) {
+              const imageAbsPath = resolve(dirname(this.#filePath), image.url)
+              console.log(imageAbsPath)
+              image.url = vite.assetPath(app.relativePath(imageAbsPath))
+            }
+          }
+
           if (node.type === 'containerDirective') {
             node.data = node.data || {}
 

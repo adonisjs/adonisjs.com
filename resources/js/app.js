@@ -9,6 +9,7 @@ import.meta.glob([
   '../../content/team/avatars/*.(jpeg|png|jpg)',
   '../../content/tweets/avatars/*.(jpeg|png|jpg)',
   '../../content/authors/avatars/*.(jpeg|png|jpg)',
+  '../../content/blog_posts/articles/*.(jpeg|png|jpg)',
 ])
 
 up.on('up:location:changed', (event) => {
