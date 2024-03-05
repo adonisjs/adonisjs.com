@@ -6,7 +6,7 @@ We are pleased to announce that the Inertia adapter for AdonisJS is now availabl
 
 By experimental version, we mean that the adapter is ready to be used and functional, but we're waiting for more feedback to stabilize all APIs and fix uncaught bugs. We may push breaking changes during the experimental version without bumping the semver major number.
 
-Alongside Interia, we released an experimental version of our [Vite integration](#major-vite-release-experimental) and [introduced assembler hooks](#expiremental-assembler-hooks). We will cover these changes in this article, but let's start with Inertia first.
+Alongside Inertia, we released an experimental version of our [Vite integration](#major-vite-release-experimental) and [introduced assembler hooks](#expiremental-assembler-hooks). We will cover these changes in this article, but let's start with Inertia first.
 
 ## Creating a project using the Inertia starter kit
 
