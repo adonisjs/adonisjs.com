@@ -106,7 +106,7 @@ It will result in a slow process from your browser:
 
 This process can be highly optimized using [preload](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/rel/preload) and [modulepreload](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/rel/modulepreload) attributes.
 
-Vite generates a Manifest outlining the relationships between our application's various scripts and styles in production. We can use this manifest to create preload tags for assets and inject them into the HTML.
+In production, Vite generates a Manifest outlining the relationships between our application's various scripts and styles. We can use this manifest to create preload tags for assets and inject them into the HTML.
 
 Preload tags are generated for:
 
@@ -122,7 +122,7 @@ You will see a small difference if you use AdonisJS with Edge and a small amount
 
 A specific documentation page for the new experimental version of Vite is available [here](https://docs.adonisjs.com/guides/experimental-vite).
 
-### Inertia API
+### Inertia
 
 The Inertia API on AdonisJS is similar to the community package maintained by [eidellev](https://github.com/eidellev) for V5. So, you shouldn't have too much trouble migrating or using the new version. For more information, consult our [guide](https://docs.adonisjs.com/guides/inertia). 
 
