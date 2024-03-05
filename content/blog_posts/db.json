@@ -1,5 +1,13 @@
 [
   {
+    "title": "Announcing Inertia adapter for AdonisJS",
+    "slug": "experimental-release-for-inertia",
+    "authorName": "julien-ripouteau",
+    "content_path": "./articles/experimental-release-for-inertia.md",
+    "publishedAt": "2024-03-05T07:12:12.528Z",
+    "category": "News"
+  },
+  {
     "title": "Updates from February 2024",
     "slug": "february-2024-updates",
     "authorName": "virk",
