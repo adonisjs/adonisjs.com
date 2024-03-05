@@ -16,10 +16,10 @@ During the installation process, you can choose the frontend framework of choice
 
 ```sh
 # Run the following command and select the inertia starter kit
-npm init adonisjs
+npm init adonisjs@latest
 
 # or use arguments to skip the prompts
-npm init adonisjs my-app --kit=inertia --framework=solid --ssr
+npm init adonisjs@latest my-app -- --kit=inertia --adapter=solid --ssr
 ```
 
 You'll have a ready-to-use application with Inertia, with or without SSR, your favorite frontend framework, and all the rest.
