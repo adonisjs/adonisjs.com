@@ -99,7 +99,7 @@ It will result in a slow process from your browser:
 - After parsing, the browser will discover the imports in the `app.js` file.
 - Then, it signals the browser to load those additional imports, which can be CSS files or pre-compiled Vue/React components.
 
-This linear process of downloading assets can be highly optimized using [preload](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/rel/preload) and [modulepreload](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/rel/modulepreload) attributes.
+This linear process of downloading assets can be highly optimized using [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload) and [modulepreload](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/modulepreload) attributes.
 
 In production, Vite generates a Manifest outlining the relationships between our application's various scripts and styles. We can use this manifest to create preload tags for assets and inject them into the HTML.
 
