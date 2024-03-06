@@ -15,3 +15,7 @@ import.meta.glob([
 up.on('up:location:changed', (event) => {
   event.target.dispatchEvent(new CustomEvent('location-changed', { bubbles: true }))
 })
+
+up.on('up:fragment:offline', function (event) {
+  window.location.reload()
+})
