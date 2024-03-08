@@ -8,5 +8,10 @@
     "name": "Cleavr",
     "website": "https://cleavr.io/",
     "logo": "./logos/cleavr.svg"
+  },
+  {
+    "name": "ToolZZ",
+    "website": "https://www.toolzz.com.br/",
+    "logo": "./logos/toolzz.svg"
   }
 ]
