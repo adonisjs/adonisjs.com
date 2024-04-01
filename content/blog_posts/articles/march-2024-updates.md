@@ -16,7 +16,7 @@ To enable syntax highlighting, you must set the code block language to `edge`, a
 
 Julien (from the core team) has created [Verrou](https://verrou.dev/docs/introduction) - **A framework agnostic library for managing distributed locks to prevent race conditions**.
 
-We provide first-class integration with Verrou via the `@adonisjs/locks` package. You can store the locks inside an AdonisJS app within a Redis or SQL database, along with the memory store that can be used during testing.
+We provide first-class integration with Verrou via the `@adonisjs/lock` package. You can store the locks inside an AdonisJS app within a Redis or SQL database, along with the memory store that can be used during testing.
 
 ```ts
 import locks from '@adonisjs/lock/services/main'
