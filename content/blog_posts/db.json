@@ -1,5 +1,13 @@
 [
   {
+    "title": "Updates from March 2024",
+    "slug": "march-2024-updates",
+    "authorName": "virk",
+    "content_path": "./articles/march-2024-updates.md",
+    "publishedAt": "2024-04-01T09:04:00.328Z",
+    "category": "News"
+  },
+  {
     "title": "Announcing Inertia adapter for AdonisJS",
     "slug": "experimental-release-for-inertia",
     "authorName": "julien-ripouteau",
