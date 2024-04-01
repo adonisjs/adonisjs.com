@@ -51,9 +51,9 @@ return 'Unable to fulfill order. Try again after some time'
 
 We have finally taken over the development of the InertiaJS adapter (for AdonisJS). The project is led by [Julien Ripouteau](https://twitter.com/julien_rpt), and the first version has been released under the experimental flag.
 
-[InteriaJS](https://inertiajs.com/) can become an excellent alternative for projects that use a frontend framework like Vue or React for the application's UI and create a separate JSON API using AdonisJS.
+[InertiaJS](https://inertiajs.com/) can become an excellent alternative for projects that use a frontend framework like Vue or React for the application's UI and create a separate JSON API using AdonisJS.
 
-With InteriaJS, you can remove routing and a lot of state management boilerplate from your frontend apps and keep everything within a single codebase.
+With InertiaJS, you can remove routing and a lot of state management boilerplate from your frontend apps and keep everything within a single codebase.
 
 So, [try Inertia with our new integration](https://docs.adonisjs.com/guides/inertia) and share your feedback. After smoothing out certain rough edges, we are looking forward to releasing a stable version soon.
 
@@ -62,7 +62,7 @@ So, [try Inertia with our new integration](https://docs.adonisjs.com/guides/iner
 
 ## Changes to the Vite integration
 
-To support SSR mode for the InteriaJS application, we need access to Vite APIs within the AdonisJS process to pre-render your React or Vue components on the server and send HTML to the browser.
+To support SSR mode for the InertiaJS application, we need access to Vite APIs within the AdonisJS process to pre-render your React or Vue components on the server and send HTML to the browser.
 
 This requires us to run Vite alongside AdonisJS rather than in a separate process (as we do with the current integration). 
 
