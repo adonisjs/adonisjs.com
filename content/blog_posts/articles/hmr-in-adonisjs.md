@@ -50,7 +50,7 @@ Once done, you need to add the following configuration to your `package.json`
   "hotHook": {
     "boundaries": [
       "./app/controllers/**/*.ts",
-      "./middlewares/*.ts",
+      "./app/middlewares/*.ts"
     ]
   }
 }
