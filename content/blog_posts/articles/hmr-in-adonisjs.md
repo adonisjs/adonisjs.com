@@ -62,13 +62,13 @@ Now, enter AdonisJS 6, with three major changes:
 
 - We now use ESM instead of CommonJS.
 - We have an alternative to Edge for SSR templating sites: TSX.
-- As explained in this article, the Vite dev server is now embedded in the AdonisJS dev server, meaning that every time we restart the AdonisJS dev server, we must also restart the Vite server.
+- As explained [in this article](https://adonisjs.com/blog/future-plans-for-adonisjs-6#adonisjsvite), the Vite dev server is now embedded in the AdonisJS dev server, meaning that every time we restart the AdonisJS dev server, we must also restart the Vite server.
 
 These three changes are part of why we felt the need for HMR. We'll go into more detail on each of these points.
 
 ### ESM Migration
 
-The biggest change in AdonisJS 6: we've completely switched to ESM. And ESM has a particularity: it loads much slower than CommonJS. Bun talks about it a bit in this post:
+The biggest change in AdonisJS 6: we've completely switched to ESM. And ESM has a particularity: it loads much slower than CommonJS. Bun talks about it a bit [in this post](https://bun.sh/blog/commonjs-is-not-going-away):
 
 ![ESM vs CommonJS](./cjs-vs-esm.png)
 
@@ -119,7 +119,7 @@ The approaches of Hono and NestJS are almost the same.
 
 NestJS proposes Webpack as a solution: https://docs.nestjs.com/recipes/hot-reload#hot-module-replacement
 
-So, if you want HMR with NestJS, you will need to compile your application with Webpack. I think I don't need to expand much on this: I believe nobody wants to have to configure webpack for that and add so much layer of complexity for a backend framework.
+So, if you want HMR with NestJS, you will need to compile your application with Webpack. I think I don't need to expand much on this: I believe nobody wants to have to configure webpack for that and adding it to their backend application. 
 
 As for Hono, they propose the same approach but instead suggest Vite: https://github.com/honojs/vite-plugins/tree/main/packages/dev-server
 
@@ -304,4 +304,4 @@ That's all for this long article!
 
 We're super excited about the addition of HMR in AdonisJS: we hardly need to reload the server now, we find ourselves having to reload it maybe something like 90% less often than before, which is a real time saver and a comfort in development.
 
-I hope you enjoy it as much as we do. We look forward to reading your feedback and hope you enjoy this feature as much as we do, and if you encounter any problems, don't hesitate to open an issue or come and discuss it on the [Discord](https://discord.gg/vDcEjq6).
+We are looking forward to read your feedback and hope you will enjoy this feature as much as we do, and if you encounter any problems, don't hesitate to open an issue or come and discuss it on the [Discord](https://discord.gg/vDcEjq6).
