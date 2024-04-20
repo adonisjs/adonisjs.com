@@ -4,7 +4,7 @@ summary: Hot Module Replacement (HMR) is now available in AdonisJS.
 
 We're thrilled to announce that **HMR is now available in AdonisJS**!
 
-Before anything, let me quickly explain what this enables. HMR now allows us to modify the code of our controllers/middlewares and their dependencies (services, repositories, models, etc.) without having to restart the entire dev server each time.
+Before anything, let me quickly explain what this enables. HMR now allows us to modify the code of our controllers/middleware and their dependencies (services, repositories, models, etc.) without having to restart the entire dev server each time.
 
 This results in a significant productivity boost and a greater DX. We really love this new feature. 
 
@@ -27,7 +27,7 @@ Next, update your `package.json` file with the following configuration:
   "hotHook": {
     "boundaries": [
       "./app/controllers/**/*.ts",
-      "./app/middlewares/*.ts"
+      "./app/middleware/*.ts"
     ]
   }
 }
