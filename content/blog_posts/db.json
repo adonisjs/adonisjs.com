@@ -1,6 +1,6 @@
 [
   {
-    "title": "Hot Module Reloading (HMR) in AdonisJS",
+    "title": "Hot module reloading (HMR) in AdonisJS",
     "slug": "hmr-in-adonisjs",
     "authorName": "julien-ripouteau",
     "content_path": "./articles/hmr-in-adonisjs.md",
