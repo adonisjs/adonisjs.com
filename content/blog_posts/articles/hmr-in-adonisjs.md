@@ -1,5 +1,5 @@
 ---
-summary: Announcing hot module reloading (HMR) in AdonisJS. HMR will lead to a faster feedback loop between changing the code and verifying the results.
+summary: Announcing hot module replacement (HMR) in AdonisJS. HMR will lead to a faster feedback loop between changing the code and verifying the results.
 ---
 
 We're thrilled to announce that **HMR is now available in AdonisJS**! Before anything, let me quickly explain what this enables. 
