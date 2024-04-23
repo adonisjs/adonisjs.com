@@ -511,6 +511,25 @@
   margin: 0;
 }
 
+.markdown p:has(img) + blockquote {
+  border: 1px solid var(--prose-table-border-color);
+  margin-top: -30px;
+  text-align: center;
+  font-size: var(--prose-table-font-size);
+  padding: 10px 0 6px 0;
+  background-color: var(--prose-blockquote-bg-color);
+  border-radius: 0 0 8px 8px;
+  margin-bottom: var(--prose-elements-margin);
+}
+
+.markdown p:has(img) + blockquote *:last-child {
+  margin: 0;
+}
+
+.markdown p:has(+ blockquote) img {
+  border-radius: 8px 8px 0 0;
+}
+
 .markdown .alert {
   background: var(--prose-alert-bg-color);
   border-radius: var(--rounded-md);
