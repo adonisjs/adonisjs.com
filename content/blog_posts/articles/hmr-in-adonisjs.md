@@ -2,17 +2,15 @@
 summary: Hot Module Replacement (HMR) is now available in AdonisJS.
 ---
 
-We're thrilled to announce that **HMR is now available in AdonisJS**!
+We're thrilled to announce that **HMR is now available in AdonisJS**! Before anything, let me quickly explain what this enables. 
 
-Before anything, let me quickly explain what this enables. HMR now allows us to modify the code of our controllers/middleware and their dependencies (services, repositories, models, etc.) without having to restart the entire dev server each time.
+HMR allows us to modify the code of our controllers/middleware and their dependencies (services, repositories, models, etc.) without restarting the entire dev server each time. This results in a faster feedback loop, which in turn improves the developer experience.
 
-This results in a significant productivity boost and a greater DX. We really love this new feature. 
-
-We gonna first explain how to add HMR to your AdonisJS application, then we'll go into more detail about why we felt the need to add HMR to AdonisJS and how it works under the hood. Grab a coffee, it's going to be a long read!
+I will first explain how to add HMR to your AdonisJS application, and then we'll go into more detail about why we felt the need to add HMR to AdonisJS and how it works under the hood. Grab a coffee - it's going to be a long read!
 
 ## Adding HMR to your AdonisJS Application
 
-To use HMR in AdonisJS, you'll first need to upgrade `@adonisjs/core` and `@adonisjs/assembler` to the latest version and install `hot-hook`.
+To use HMR in AdonisJS, you must first upgrade `@adonisjs/core` and `@adonisjs/assembler` to the latest version and install `hot-hook`.
 
 ```bash
 npm i -D hot-hook @adonisjs/assembler@latest
@@ -39,7 +37,7 @@ Then run the following command to start your dev server:
 node ace serve --hmr
 ```
 
-Note that you don't need the `--watch` flag anymore. Only `--hmr` is enough. If you are using npm scripts, you can update your `dev` script with the following:
+Note that you no longer need the `--watch` flag. Only `--hmr` is enough. If you are using npm scripts, you can update your `dev` script with the following:
 
 ```jsonc
 // title: package.json
@@ -50,93 +48,81 @@ Note that you don't need the `--watch` flag anymore. Only `--hmr` is enough. If 
 }
 ```
 
-Now, try modifying a controller, you will see that the server does not restart, but the modifications will be taken into account: you'll always have the latest version of your code.
+Now, try modifying a controller. You will see that the server does not restart, but the modifications will be considered: you'll always have the latest version of your code.
 
-For more information on using it in AdonisJS, you can check out the [documentation page](https://docs.adonisjs.com/hot-module-reloading).
+For more information, please consult the [official documentation](https://docs.adonisjs.com/guides/hot-module-reloading).
 
 ## Backstory
 
-Having HMR in a backend-first framework isn't very common. In fact, we didn't feel the need for it with AdonisJS 5: the server restarted very quickly, usually in less than 500ms, and if we were developing a site with templating, we used Edge. Thus, a change in a view didn't trigger a full-server reload, the modification would appear directly on our screen in less than a few milliseconds. Great.
+Having HMR in a backend-first framework is rare. In fact, we didn't need it for all these years and followed the common wisdom of restarting the entire process after a file change.
 
-Now, enter AdonisJS 6, with three major changes:
+However, restarting the entire process is slow. It takes a couple hundred milliseconds to restart the server (in a good-case scenario) and might take a second or longer (in worst-case scenarios).
 
-- We now use ESM instead of CommonJS.
-- We have an alternative to Edge for SSR templating sites: TSX.
-- As explained [in this article](https://adonisjs.com/blog/future-plans-for-adonisjs-6#adonisjsvite), the Vite dev server is now embedded in the AdonisJS dev server, meaning that every time we restart the AdonisJS dev server, we must also restart the Vite server.
+On top of that, we recently made certain changes to the framework, which negatively impacted the server's boot time. These changes include:
 
-These three changes are part of why we felt the need for HMR. We'll go into more detail on each of these points.
+- Using ES modules. ESM is inherently slower than CommonJS.
 
-### ESM Migration
+- Encouraging the use of TSX. TSX files are standard JavaScript modules, so we must restart the process whenever a TSX module changes.
 
-The biggest change in AdonisJS 6: we've completely switched to ESM. And ESM has a particularity: it loads much slower than CommonJS. Bun talks about it a bit [in this post](https://bun.sh/blog/commonjs-is-not-going-away):
+- Embedding the Vite dev server in the same process as the AdonisJS HTTP server. This means that every time we restart the AdonisJS process, we also have to reboot the Vite dev server.
+
+These three changes are part of why we felt the need for HMR. Let's discuss each point in more detail.
+
+### ESM migration
+
+Bun has [written an article recently](https://bun.sh/blog/commonjs-is-not-going-away), where they compare the performance of CommonJS and ES modules.
 
 ![ESM vs CommonJS](./cjs-vs-esm.png)
 
-As we can see, ESM takes 2.5 times longer to load than CommonJS. This benchmark was done on Bun, but the number are quite similar on Node.js. ESM takes longer to load because its design is more complex. In the Node.js documentation, you can find the resolution algorithm for these two module systems. Let's quickly look at that:
+As you can see, ESM takes 2.5 times longer to load than CommonJS. This benchmark was done on Bun, but the numbers are similar to those on Node.js. ESM takes longer to load because its design is more complex. In the Node.js documentation, you can find the resolution algorithm for these two module systems.
 
-- ESM resolution algorithm: https://nodejs.org/api/esm.html#resolution-algorithm
-- CommonJS resolution algorithm: https://nodejs.org/api/modules.html#all-together
+- **ESM resolution algorithm** - https://nodejs.org/api/esm.html#resolution-algorithm
+- **CommonJS resolution algorithm** - https://nodejs.org/api/modules.html#all-together
 
-We can quickly see that the ESM resolution algorithm is way more complex than the CommonJS one, which probably partly explains why it takes longer to load.
+So, migrating to ESM significantly slowed down the boot time of an AdonisJS application. We faced this problem last summer when we noticed that boot time began to explode as we migrated the packages. 
 
-So, just migrating to ESM significantly slowed down the boot time of an AdonisJS application. We faced this problem last summer when we noticed that boot time began to explode as we migrated the packages. Particularly on Windows, which has a very slow filesystem compared to Unix systems: on my PC, I could reach up to 2/3 seconds of boot time, where the rest of the team, on Mac, had a boot time of 300/400ms.
+This was particularly true on Windows, which has a very slow filesystem compared to Unix systems. On my Windows PC, I could reach up to 2/3 seconds of boot time, while the rest of the team on Mac had a boot time of 300/400ms.
 
-Therefore, to solve part of this issue, maybe some of you have noticed it, we decided to bundle most of the AdonisJS packages with `tsup`: resulting in fewer files for Node.js to load and thus a quicker boot time. Just by bundling most of the packages, we managed to cut boot time **by 2 to 3 times**.
+Therefore, to solve part of this issue, which maybe some of you have noticed, we decided to bundle most of the AdonisJS packages with `tsup`, resulting in fewer files for Node.js to load, thus, a quicker boot time. By bundling most of the packages, we are able to speed up the process by **2 to 3 times**.
 
-However, the problem still exists for less powerful PCs or larger applications. As we continue to add features and dependencies to our application, the boot time will inevitably increase.
+### TSX as a template engine
+Now, let's talk about TSX. TSX (TypeScript cousin of JSX) files are standard JavaScript modules imported and executed by the Node.js runtime.
 
-### TSX as Template Engine
+Therefore, modifying a TSX file means restarting the process to pick up new changes. This is where the boot time will start to annoy you. Adding a new class to a div and waiting a couple hundred milliseconds to verify the change is not a great developer experience.
 
-Now, let's talk about TSX and Edge. Before TSX, we didn't need HMR with Edge because, in the end, we already had a kind of HMR.
-
-Since Edge uses `.edge` files, which are just standard files loaded using `readFile` and not `import`, this means that `.edge` files are not cached by Node.js. Each time we call our endpoint, we re-read the `.edge` file using `readFile`, compile it, and render it. That's it. No need to restart the entire process when we add a `<div>`. Perfect.
-
-But now comes TSX. TSX is radically different, as it's just standard JavaScript that must be imported using `import`, which means the files are cached. And so, if we want to have the latest version of this file, we will inevitably need to restart the entire process.
-
-Thus, any minor template modification, like adding a `<div>`, adding a `class`, requires restarting the entire Adonis dev server. Over time, this can become very frustrating, especially when working on our layout.
-
-This problem has been raised several times by users, particularly Estéban, who explains the issue well here: https://github.com/adonisjs/core/discussions/4474
+The framework users, particularly Estéban, have raised this problem several times. Here's a [discussion thread](https://github.com/adonisjs/core/discussions/4474) for your reference.
 
 ### Vite
 
-Finally, as explained in this [article](https://adonisjs.com/blog/future-plans-for-adonisjs-6#adonisjsvite), we've changed our approach with Vite. To quickly refresh your memory, or if you're too lazy to read the article: We now launch Vite directly in the main process of AdonisJS, rather than, as before, launching it as a subprocess.
+Finally, as explained in this [article](https://adonisjs.com/blog/future-plans-for-adonisjs-6#adonisjsvite), we've changed our approach with Vite. To summarize, we are launching Vite directly in the main process of AdonisJS rather than as a subprocess.
 
-This means that, each time we restart the Adonis Dev Server, we also have to restart Vite. This has significantly impacted boot time, especially on less powerful PCs.
+This means that each time we restart the AdonisJS dev server, we also have to reboot Vite, which has significantly impacted boot time.
 
 ---
 
-These are the main reasons that pushed us to implement HMR in AdonisJS. And even putting all this aside: regardless of the framework, a large application with many features and dependencies will inevitably suffer from a significant boot time.
+These are the main reasons that pushed us to implement HMR in AdonisJS. Keeping aside the specifics of AdonisJS, any large application with many dependencies will inevitably suffer from a significant boot time.
 
-There are ways to mitigate this, notably the use of dynamic imports ( `await import` ), which we'll return to below, but even with that: there will probably be pieces of code that you must execute at the launch of your server, and that will slow down the boot time.
+The slow boot time is not a problem in production (since the app boots only once). However, it can slow you down in development.
 
-## Existing Solutions
+## Existing solutions
 
-So, before developing our own solution, we looked a bit at what was happening elsewhere.
+Before developing our solution, we looked at what was happening elsewhere.
 
 ### Hono / NestJS
 
-The approaches of Hono and NestJS are almost the same.
+[**NestJS proposes Webpack as a solution**](https://docs.nestjs.com/recipes/hot-reload#hot-module-replacement) - So, if you want HMR with NestJS, you must compile your application with Webpack. I don't need to expand much on this because using Webpack to compile a backend application will come with its own set of problems.
 
-NestJS proposes Webpack as a solution: https://docs.nestjs.com/recipes/hot-reload#hot-module-replacement
+[**Hono proposes Vite**](https://github.com/honojs/vite-plugins/tree/main/packages/dev-server) - Hono replaces Webpack with Vite, but the problem remains the same. Introducing a transpiler or a bundler to a backend application is not something we recommend.
 
-So, if you want HMR with NestJS, you will need to compile your application with Webpack. I think I don't need to expand much on this: I believe nobody wants to have to configure webpack for that and adding it to their backend application. 
-
-As for Hono, they propose the same approach but instead suggest Vite: https://github.com/honojs/vite-plugins/tree/main/packages/dev-server
-
-But the problem remains the same. Although Vite is an fantastic tool, it still adds a lot of complexity just for HMR.
-
-The philosophy of AdonisJS has always been to keep things simple and "use the platform" and therefore standard tools. That's why this solution didn't suit us.
+The philosophy of AdonisJS has always been to keep things simple. "Use the platform and standard tooling" is our mantra. That's why these existing solutions didn't suit us.
 
 ### Bun / Dynohot
 
-For those who might not know:
+Bun comes with [inbuilt support for HMR](https://bun.sh/docs/runtime/hot#hot-mode), and there is [Dynohot](https://github.com/braidnetworks/dynohot), a Node.js loader that enables HMR for applications using ES modules.
 
-- Dynohot is a loader for Node.js that allows HMR: https://github.com/braidnetworks/dynohot
-- Bun has a built-in `--hot` flag in their runtime: https://bun.sh/docs/runtime/hot#hot-mode
+Both are great tools but rely on code transformations to achieve HMR. The following is an example of a module that is transformed by Dynohot to achieve HMR.
 
-So, Bun and Dynohot have roughly the same approaches: perform code transformation and use static analysis.
-
-With dynohot, this code:
+Here is the code written by you 👇
 
 ```ts
 import { importedValue } from "./a-module";
@@ -145,163 +131,148 @@ export const exportedValue = "hello world";
 console.log(importedValue);
 ```
 
-will be transformed into:
+Here is the transformed output 👇
 
 ```ts
-import { acquire } from ["hot:runtime"](hot:runtime);
-import _a_module from ["hot:module?specifier=./a-module"](hot:module?specifier=./-a-module);
+import {
+  acquire
+} from ["hot:runtime"](hot: runtime);
+import _a_module from ["hot:module?specifier=./a-module"](hot: module ? specifier = . / -a - module);
+
 function* execute(_meta, _import) {
-    let _$ = yield [
-        next => { _$ = next },
-        { exportedValue: () => exportedValue },
-    ];
-    yield;
-    the exportedValue = "hello world";
-    console.log(_$.importedValue());
+  let _$ = yield [
+    next => {
+      _$ = next
+    },
+    {
+      exportedValue: () => exportedValue
+    },
+  ];
+  yield;
+  the exportedValue = "hello world";
+  console.log(_$.importedValue());
 }
-module().load(
-    { async: false, execute },
-    null,
-    false,
-    "module",
-    {},
-    [ {
-        controller: _a_module,
-        specifier: "./a-module",
-        bindings: [ {
-            type: "import",
-            name: "importedValue",
-        } ],
-    } ],
+module().load({
+    async: false,
+    execute
+  },
+  null,
+  false,
+  "module", {},
+  [{
+    controller: _a_module,
+    specifier: "./a-module",
+    bindings: [{
+      type: "import",
+      name: "importedValue",
+    }],
+  }],
 );
-export default function module() { return acquire("file:///main.mjs"); }
+export default function module() {
+  return acquire("file:///main.mjs");
+}
 ```
 
-More or less the same for Bun, [as seen here](https://stackoverflow.com/questions/73208846/hot-reload-hmr-with-bun-dev).
+More or less, the same approach is followed by Bun [as seen here](https://stackoverflow.com/questions/73208846/hot-reload-hmr-with-bun-dev).
 
-Their approach allows them to have better control over HMR and do more things. However, this results in compiled code that is radically different from the original code. And in the case of Dynohot, it forces you to install quite heavy dependencies like `@babel/traverse` and `@babel/generator`.
+Their approach allows them to have better control over HMR and do more things. However, this results in compiled code that radically differs from the original. And in the case of Dynohot, it forces you to install quite heavy dependencies like `@babel/traverse` and `@babel/generator`.
 
-Again, for keeping things simple, this approach did not suit us either.
+Again, to keep things simple, we needed a different approach.
 
 ## Hot Hook
 
-So, we finally decided to create our own solution: [Hot-Hook](https://github.com/julien-R44/hot-hook).
+So, we finally decided to create our solution - [Hot Hook](https://github.com/julien-R44/hot-hook). Hot Hook theoretically works with any framework and does not perform any static analysis or code transformations. It registers itself as a [Node.js loader hook](https://nodejs.org/api/module.html#customization-hooks) to intercept imports and perform its magic 😇.
 
-Hot-hook theoretically works with any framework and performs no static analysis, no heavy code transformations, no AST parsing, no bundling, no webpack/Vite.
+:::note
 
-I invite you to read the [README](https://github.com/julien-R44/hot-hook), which goes into great detail about how it works. But let's summarize it quickly.
+**What is a loader hook?** Loader hooks are actions that sit between your code and the Node.js ES modules loader implementation. You can use these actions to perform code transformations or rewrite import URLs.
 
-Hot-hook is a [hook](https://nodejs.org/api/module.html#customization-hooks) for NodeJS. What is a hook? It's a thing in Node.js that allows you to intercept the import of modules and perform certain actions, like replacing or adding code in the imported module. Exactly like `ts-node`, which is also a hook: it intercepts the imports of your codebase, transpiles on the fly, and returns JavaScript content to Node.js rather than TypeScript code, since Node.js doesn't understand TypeScript.
+For example, `ts-node` [exposes a loader hook](https://github.com/TypeStrong/ts-node/blob/main/esm.mjs#L7) to compile TypeScript code to JavaScript before handing it over to the Node.js for execution.
+:::
 
-What Hot-Hook hook will do is build a dependency tree of your modules. The relations they have between them: knowing who imports what and whom. Something like this that looks like this:
+Okay, now we know that Hot Hook is registered as a loader hook. Here's what happens under the hood.
+
+We start by creating a dependency tree of modules, which looks similar to the following image.
 
 ![dump viewer](hot-hook-dependency-graph.png)
 
-> This screenshot is taken from `@hot-hook/dump-viewer`, a small package that allows you to visualize your codebase dependency graph.
+> This screenshot is generated using the [@hot-hook/dump-viewer](https://www.npmjs.com/package/@hot-hook/dump-viewer) package.
 
-For each imported and intercepted file by Hot-Hook, we store a version number with it.
+We keep a version number for every module intercepted by Hot Hook. When you modify a file, Hot Hook detects this change (using a file watcher) and increments the version number associated with that file.
 
-Now, when you modify a file, Hot-Hook will detect this change and increment the version number associated with that file.
+Then, the next time that same file is imported, Hot Hook will intercept the import and add the version number as a query string to the module file URL.
 
-Then, the next time that same file is imported: Hot-hook will intercept the import, and add the version number at the end of the import. This means, in the background, Hot-hook will transform this import:
-
+In a nutshell, the URL of the following import:
 
 ```ts
-import('#controllers/users_controller.js')
+import('#controllers/users_controller')
 ```
 
-into this:
+Will be transformed into this.
 
 ```ts
-import('#controllers/users_controller.js?version=2')
+import('#controllers/users_controller?version=2')
 ```
 
-And by doing this, we bypass the Node.js cache, which allows us to retrieve the latest version of the file.
+By doing this, we bypass the Node.js cache and import the latest version of the module.
 
-Here's a brief summary of how Hot-Hook works. As mentioned above, I strongly encourage you to read the Hot-hook [README](https://github.com/Julien-R44/hot-hook), which is very detailed and also written in a way to be understood by those less experienced with Node. You should learn a thing or two along the way, I hope!
+To learn more about the internals, feel free to read the package's [README](https://github.com/Julien-R44/hot-hook).
 
-### Memory Leaks
+## Memory leaks
 
-There's a little problem with the query param approach to cache busting. There have been many discussions on this subject ([nodejs/node#49442](https://github.com/nodejs/node/issues/49442), [nodejs/help#2806](https://github.com/nodejs/help/issues/2806)) and it is currently the only way to bust the cache in ESM. The problem with this solution is that it causes memory leaks.
+There's a problem with the query param approach to cache busting. There have been many discussions on this subject ([nodejs/node#49442](https://github.com/nodejs/node/issues/49442), [nodejs/help#2806](https://github.com/nodejs/help/issues/2806)) and it is currently the only way to bust the cache in ESM (or bypass the cache to be technically correct). The problem with this solution is that it causes memory leaks.
 
-That said, these memory leaks are minor: first, it's only in local development (because Hot-hook is not used in production).
+Memory leaks sound like a scary term, and in fact, they are. However, in this case, they're not that bad for the following reasons.
 
-And secondly, these memory leaks are minor: only the files you modify directly will be affected, and in any case, you will restart your server from time to time. So, nothing super dramatic.
+- The memory leak only happens during development because Hot Hook is not used in production.
 
-### Limitations
+- These memory leaks are minor. In our internal testing, we noticed the memory consumption increasing by 10-20 MB after multiple days of continuous development.
 
-One of the limitations due to the fact that Hot-Hook does not perform code transformation is that it will only work with dynamic imports. Let's quickly explain why. Imagine the following file:
+- Also, whenever you install a new package or modify a config file, we perform a full restart of the process. This will reset the memory consumed by the modules' cache.
 
-```ts
-router.get('/users', () => {
-  return User.all()
-})
-```
+## Limitations
 
-Here we have literally no way to replace the logic of this route. There is nothing imported. A server restart is necessary if we modify the handler.
+Currently, Hot Hook works only with dynamic imports and not with top-level imports. However, dynamic imports (known as boundaries) can have top-level imports, and they will benefit from HMR.
 
-Now imagine the following case:
+For example, if you import a controller using the `import` statement (as shown in the following example), it will not be hot reloaded.
 
 ```ts
+// ❌ Cannot hot-reload this
 import UsersController from '#controllers/users_controller'
 
 router.get('/users', [UsersController, 'index'])
 ```
 
-Almost the same problem here. We indeed have an import, but it's at the top level of our file. That means, throughout the lifecycle of the application, the `UsersController` will be imported only once: at the launch of the application, when we register our routes. So here too, no way to do cache busting and update `UsersController` when it is modified.
-
-Now, the solution that works:
+However, if we replace the import expression with a dynamic import using a function, then your controller and its imports will be hot reloaded.
 
 ```ts
+// delete-start
+import UsersController from '#controllers/users_controller'
+// delete-end
+// insert-start
+// ✅ Can be hot-reloaded
 const UsersController = () => await import('#controllers/users_controller')
+// insert-end
 
 router.get('/users', [UsersController, 'index'])
 ```
 
-Here, `UsersController` can be hot-reloaded. Because, each time we call the `/users` endpoint, then the `UsersController` will be re-imported. And by re-importing this file each time, then Hot-Hook can intercept and add the query parameter with the version number we talked about earlier.
-
-## How AdonisJS Architecture is Perfect for Hot Hook
+## How AdonisJS architecture is perfect for Hot Hook
 
 As we have just seen, Hot-hook will only work with dynamic imports. Which ultimately is a good thing. Splitting your application with dynamic imports is a very good practice, and luckily, that's what we've been doing in AdonisJS for years.
 
-If you use top-level imports absolutely everywhere in your backend application, it will inevitably cause a problem, regardless of the framework you use. The problem is that when you boot your application, Node.js will have to load your entire application from the start. Which can take a lot of time.
+Using top-level imports everywhere in your backend application will inevitably cause a problem, regardless of the framework you use. The problem is that Node.js will have to load your entire application from the start when you boot it, which can take a lot of time.
 
-Whereas with dynamic imports, all the code hidden behind these imports will be loaded by Node.js only when necessary: when we reach the moment to import them.
+Meanwhile, with dynamic imports, all the code hidden behind these imports will be loaded by Node.js only when necessary.
 
-For example, in AdonisJS, we strongly recommend using dynamic imports for controllers (we even have an [eslint rule](https://docs.adonisjs.com/guides/tooling-config#eslint-config) that auto-fixes this). So, a `UsersController` (and all its dependencies, let's imagine a `UserService` and a `UserRepository`) will be loaded by Node.js ONLY when we make a call to the `/users` endpoint. If we never call this endpoint, then the `UsersController` will never be loaded by Node.js.
+In fact, in AdonisJS, we strongly recommend using dynamic imports for controllers (we even have an [eslint rule](https://docs.adonisjs.com/guides/tooling-config#eslint-config) that auto-fixes this). So, a `UsersController` (and all its dependencies; imagine a `UserService` and a `UserRepository`) will be loaded by Node.js ONLY when we call the `/users` endpoint. If we never call this endpoint, then the `UsersController` will never be loaded by Node.js.
 
-And by doing this, we allow the boot time not to explode as our codebase grows. This is also one of the reasons why we decided not to support the use of decorators for routing. In NestJS, they do it like this:
-
-```ts
-import aws from 'aws-sdk' // super heavy dependency to load
-import { Controller, Get } from '@nestjs/common';
-
-@Controller('users')
-export class UploadController {
-  @Get()
-  upload(): string {
-	  await aws.s3.UploadItem(...)
-    return 'Data uploaded!'
-  }
-}
-```
-
-So, to discover all the routes of your application, NestJS will have to open and load all your controllers when booting your application.
-
-Here, we have a simple `UploadController`. We use the AWS SDK. This means that at every restart of our application, we will load the AWS SDK, even if we had not planned to work on the upload system of our application at all. And `aws-sdk` is a very heavy dependency. Just by importing it, we take, roughly, at least an extra 100/200ms of load time.
-
-To be fair, with NestJS, there are ways to mitigate this, we could dynamically import the heavy modules directly within our controllers methods. But often, this will make the code harder to read, and it's especially something that has to be done manually, that you have to think about doing it. You have to take the initiative. Whereas in AdonisJS, the default structure imposes it on you.
-
-With AdonisJS, we also follow this architecture based on dynamic imports for packages that work based on Drivers. For example, `@adonisjs/mail` has a driver for SES and a driver for Sparkpost. If you only use SES, then we will not unnecessarily load the code for Sparkpost, thanks to dynamic imports.
-
-This story with dynamic import and boot time is well known by users of Serverless/Lambda/FaaS. Since they are also impacted by this boot time in production (otherwise known as a cold start) they absolutely need to use dynamic imports at strategic places if they do not want to see their cold start time explode.
-
-In short, that's why the default architecture of AdonisJS matches very well with Hot-Hook: most modules are lazy-imported, which makes it easy to replace them thanks to the cache busting technique proposed by Hot-hook.
+The middleware, exception handler, event listeners, and bouncer policies follow the same approach. **We lazy import every part of your codebase, so when using Hot Hook, you will not have to change a single line of code in your application**.
 
 ## Conclusion
 
-That's all for this long article!
+That's all for this lengthy article!
 
-We're super excited about the addition of HMR in AdonisJS: we hardly need to reload the server now, we find ourselves having to reload it maybe something like 90% less often than before, which is a real time saver and a comfort in development.
+We are super excited about HMR. It seems like we have got a perfect combination of simplicity and better developer experience with this addition.
 
-We are looking forward to read your feedback and hope you will enjoy this feature as much as we do, and if you encounter any problems, don't hesitate to open an issue or come and discuss it on the [Discord](https://discord.gg/vDcEjq6).
+We are looking forward to reading your feedback and hope you will enjoy HMR as much as we do. If you encounter any problems, don't hesitate to open an issue or come and discuss it on [Discord](https://discord.gg/vDcEjq6).
