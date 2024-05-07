@@ -93,19 +93,19 @@ This feature should help save time and reduce typing errors in your Inertia appl
 
 <div class="links_list">
 
-- **Add `env:add` command to define environment variable and its validation rules.**
+- **Add `env:add` command to define environment variable and its validation rules.**\
   https://github.com/adonisjs/core/releases/tag/v6.9.0
 
-- **Moving HMR out of experimental phase.**
+- **Moving HMR out of experimental phase.**\
   https://github.com/adonisjs/core/releases/tag/v6.8.0
 
-- **Experimental support for HMR.**
+- **Experimental support for HMR.**\
   https://github.com/adonisjs/core/releases/tag/v6.7.0
 
-- **Upgrade to VineJS 2.0.**
+- **Upgrade to VineJS 2.0.**\
   https://github.com/adonisjs/core/releases/tag/v6.6.0
 
-- **Configure basic auth guard and export authFinder mixin from its own subpath.**
+- **Configure basic auth guard and export authFinder mixin from its own subpath.**\
   https://github.com/adonisjs/auth/releases/tag/v9.2.0
 
 </div>
