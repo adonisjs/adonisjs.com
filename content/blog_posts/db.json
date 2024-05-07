@@ -1,5 +1,13 @@
 [
   {
+    "title": "Updates from April 2024",
+    "slug": "april-2024-updates",
+    "authorName": "julien-ripouteau",
+    "content_path": "./articles/april-2024-updates.md",
+    "publishedAt": "2024-05-07T09:04:00.328Z",
+    "category": "News"
+  },
+  {
     "title": "Hot module replacement (HMR) in AdonisJS",
     "slug": "hmr-in-adonisjs",
     "authorName": "julien-ripouteau",
