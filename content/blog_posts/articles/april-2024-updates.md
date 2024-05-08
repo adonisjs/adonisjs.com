@@ -55,7 +55,7 @@ export default class UsersController {
 ```
 
 ```ts
-import { InferPageProps } from '@adonisjs/inertia'
+import type { InferPageProps } from '@adonisjs/inertia'
 import type UsersController from '#controllers/users_controller'
 
 function UsersList(
