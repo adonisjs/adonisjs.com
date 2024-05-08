@@ -18,7 +18,7 @@ You can find more details on this [in the article](https://docs.adonisjs.com/gui
 
 Some weeks ago, we opened [an issue](https://github.com/adonisjs/v6-docs/issues/80) on the documentation repo to discuss restructuring the docs. Many of you read and shared your ideas. We've incorporated your feedback and have started working on a new structure, that is now [available and published](https://docs.adonisjs.com/). 
 
-![alt text](new_docs.png)
+![](new_docs.png)
 
 This revamped structure is more organized and easier to follow, and we've also added some new sections. Further improvements to the documentation are planned for the coming weeks. In the meantime, we welcome your thoughts!
 
