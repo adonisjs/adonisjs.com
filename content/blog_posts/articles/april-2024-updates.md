@@ -14,6 +14,14 @@ You can find more details on this [in the article](https://docs.adonisjs.com/gui
 
 - Article: https://docs.adonisjs.com/guides/hmr
 
+## Transmit
+
+We finally released the first 1.0.0 version of [Transmit](https://github.com/adonisjs/transmit), our opinionated [Server-Sent-Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) library, designed to make it easy to send real-time updates to your front-end applications. 
+
+The documentation [is now available](https://docs.adonisjs.com/guides/digging-deeper/transmit) and we plan to write an article about it in the coming weeks.
+
+- Documentation: https://docs.adonisjs.com/guides/digging-deeper/transmit
+
 ## Documentation improvements
 
 Some weeks ago, we opened [an issue](https://github.com/adonisjs/v6-docs/issues/80) on the documentation repo to discuss restructuring the docs. Many of you read and shared your ideas. We've incorporated your feedback and have started working on a new structure, that is now [available and published](https://docs.adonisjs.com/). 
