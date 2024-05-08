@@ -44,7 +44,7 @@ We've shipped an utility type in `@adonisjs/inertia` that makes it easier to sha
 
 ```ts
 export default class UsersController {
-  async index({ inertia }: HttpContextContract) {
+  async index({ inertia }: HttpContext) {
     const users = [
       { id: 1, name: 'John Doe', createdAt: new Date() }
     ]
