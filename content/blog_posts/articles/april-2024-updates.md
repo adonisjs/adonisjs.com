@@ -105,6 +105,9 @@ This feature should help save time and reduce typing errors in your Inertia appl
 
 <div class="links_list">
 
+- **Improvements to the DateTime comparison when using "orCreate" methods**\
+  https://github.com/adonisjs/lucid/releases/tag/v20.6.0
+
 - **Add `env:add` command to define environment variable and its validation rules.**\
   https://github.com/adonisjs/core/releases/tag/v6.9.0
 
