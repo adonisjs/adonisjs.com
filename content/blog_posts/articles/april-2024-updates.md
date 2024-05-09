@@ -99,7 +99,7 @@ This feature should help save time and reduce typing errors in your Inertia appl
   https://github.com/shiny/adonis-resque
 
 - **Edge-Components (UI Kit based on DaisyUI and Alpine.js) updated for AdonisJS 6**\
-  https://github.com/batosai/edge-components?tab=readme-ov-file
+  https://github.com/batosai/edge-components
 
 ## Notable Releases
 
