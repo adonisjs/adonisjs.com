@@ -28,7 +28,11 @@ Some weeks ago, we opened [an issue](https://github.com/adonisjs/v6-docs/issues/
 
 ![](new_docs.png)
 
-This revamped structure is more organized and easier to follow, and we've also added some new sections. Further improvements to the documentation are planned for the coming weeks. In the meantime, we welcome your thoughts!
+This revamped structure is more organized and easier to follow, and we've also added some new sections. We also have added pretty OG images for each page :
+
+![](og_images.png)
+
+Let us know what you think about the new structure and if you have any suggestions for further improvements.
 
 - New Documentation: https://docs.adonisjs.com/
 
