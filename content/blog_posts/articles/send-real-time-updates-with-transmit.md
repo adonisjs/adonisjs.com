@@ -17,12 +17,12 @@ By default, when the browser sends an HTTP request to your backend, you will sen
 Doing this will allow your backend to send data over time by writing to the open stream.
 
 :::note
-**When not used over HTTP/2**, SSE is limited to the maximum number of open connections, which can be especially painful when opening various tabs as the limit is per browser and set to a very low number (6).
+**When not used over HTTP/2**, SSE suffers from a limitation to the maximum number of open connections, which can be specially painful when opening various tabs as the limit is per browser and set to a very low number (6).
 :::
 
 ## Difference from WebSocket
 
-I know many people who rely on WebSocket to handle their real-time needs. While it is working, you may not need it.
+I know many people relies on WebSocket to handle any real-time needs.. While it is working, you may not need it.
 
 There are two main differences between WebSocket and SSE:
 
