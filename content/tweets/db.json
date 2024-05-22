@@ -28,11 +28,11 @@
     "html": "The more I work with @adonisframework the more I'm convinced that it is the best framework in the Nodejs Ecosystem. <br /> The docs are well written, well designed, you just want to stay there and learn more. <br />Thanks to all the people who are working on this project."
   },
   {
-    "name": "Josh Manders",
-    "twitterHandle": "@joshmanders",
-    "profilePictureUrl": "./avatars/joshmanders.jpeg",
-    "href": "https://twitter.com/joshmanders/status/1697291138510569854",
-    "html": "Completely bailed on everything this past weekend. <span class=\"text-highlight\"> No React, No Remix, No Next.js </span>, still sipping that Tailwind sizzurup though. <br /> Now we rocking @vuejs & @adonisframework"
+    "name": "Dragos Nedelcu",
+    "twitterHandle": "@Drag0sNedelcu",
+    "profilePictureUrl": "./avatars/drag0snedelcu.jpeg",
+    "href": "https://x.com/Drag0sNedelcu/status/1751173678295928837",
+    "html": "Tried recently @adonisframework v6 and I am blown away. I love how the modules are separated, like orm, validation etc. Wish there were more discussions on this. Feels highly underrated..."
   },
   {
     "name": "Carl Mathisen",
