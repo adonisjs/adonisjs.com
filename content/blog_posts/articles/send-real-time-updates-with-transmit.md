@@ -84,9 +84,9 @@ You can place this code anywhere in your codebase. We have a [syncing layer](htt
 
 Since we keep a connection open in memory, you cannot broadcast any messages to your client outside of the same process.
 
-For example, if you run a job inside a queue, you cannot call transmit.broadcast to notify your client that the process has ended.
+For example, if you run a job inside a queue, you cannot call `transmit.broadcast` to notify your client that the process has ended.
 
-However, if you activate the syncing layer, a Message Bus will ensure your message is broadcast no matter where you call `transmit.broadcast`.
+However, if you activate the syncing layer, a `Message Bus` will ensure your message is broadcast no matter where you call `transmit.broadcast`.
 
 ## Conclusion
 
