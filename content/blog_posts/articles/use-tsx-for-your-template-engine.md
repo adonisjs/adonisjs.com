@@ -92,7 +92,7 @@ We will also install their plugin to enable editor intellisense.
 npm install @kitajs/html @kitajs/ts-html-plugin
 ```
 
-Once done, will edit `tsconfig.json` file to add JSX support.
+Once done, will edit the `tsconfig.json` file to add JSX support.
 
 ```js
 {
