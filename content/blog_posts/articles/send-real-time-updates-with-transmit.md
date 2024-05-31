@@ -6,6 +6,12 @@ Transmit is a new package in the AdonisJS family. Its goal is to provide an opin
 
 SSE allows you to send real-time updates to your clients, such as notifications, live chat messages, or any other type of real-time data you might need.
 
+:::note
+Learn more about Transmit inside the [official documentation](https://docs.adonisjs.com/guides/digging-deeper/transmit).
+:::
+
+::video{url="/transmit-example.mp4"}
+
 ## What is SSE?
 
 First of all, Server-Sent-Events is not new. It has been available and supported in browsers for nearly two decades.
@@ -67,6 +73,20 @@ subscription.onMessage((data) => {
 ```
 
 You can create as many subscriptions as you want; they will all be linked to the same open connection. We handle calling the right listener for the right event.
+
+## Creating private channels
+
+You can add an authorization layer before a client can subscribe to a channel. This is done by calling the `authorizeChannel` method on the Transmit instance and passing the "path" of the channel you want to secure. Then, you can return a boolean or a promise resolving to a boolean to allow or deny access.
+
+Here is an example where we authorize access to a channel based on the user's permissions.
+
+```ts
+transmit.authorizeChannel<{ id: string }>('chats/:id/messages', async (ctx: HttpContext, { id }) => {
+  const chat = await Chat.findOrFail(+id)
+
+  return ctx.bouncer.allows('accessChat', chat)
+})
+```
 
 ## Sending events from the backend
 
