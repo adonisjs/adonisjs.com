@@ -15,7 +15,7 @@ const AboutController = () => import('#controllers/about_controller')
 const SupportProgramController = () => import('#controllers/support_program_controller')
 
 router.get('/', [HomeController])
-router.get('/support_program', [SupportProgramController])
+router.get('/contact', [SupportProgramController])
 router.get('/about', [AboutController])
 
 router.resource('blog', BlogController).params({ blog: 'slug' }).only(['index', 'show'])
