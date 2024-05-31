@@ -40,11 +40,11 @@ export default class BuildStatic extends BaseCommand {
   /**
    * Creates a static copy of the support program page
    */
-  protected async buildSupportProgramPage() {
+  protected async buildContactPage() {
     const ctx = new HttpContextFactory().create()
     const html = await new SupportProgramController().handle(ctx)
-    await writeFile(app.makePath('dist/support_program.html'), html)
-    this.logger.success('created dist/support_program.html')
+    await writeFile(app.makePath('dist/contact.html'), html)
+    this.logger.success('created dist/contact.html')
   }
 
   /**
@@ -124,7 +124,7 @@ export default class BuildStatic extends BaseCommand {
     await mkdir(app.makePath('dist'), { recursive: true })
     await this.buildHomePage()
     await this.buildAboutPage()
-    await this.buildSupportProgramPage()
+    await this.buildContactPage()
     await this.buildBlog()
     // await this.buildCaseStudies()
   }
