@@ -10,8 +10,6 @@ SSE allows you to send real-time updates to your clients, such as notifications,
 Learn more about Transmit inside the [official documentation](https://docs.adonisjs.com/guides/digging-deeper/transmit).
 :::
 
-::video{url="/transmit-example.mp4"}
-
 ## What is SSE?
 
 First of all, Server-Sent-Events is not new. It has been available and supported in browsers for nearly two decades.
