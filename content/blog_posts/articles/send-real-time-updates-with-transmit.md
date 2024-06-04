@@ -35,7 +35,7 @@ There are two main differences between WebSocket and SSE:
 1. Data transmission with SSE occurs only from server to client, not the other way around. For client-to-server communication, you need to use a form or a fetch request. WebSocket, on the other hand, creates a duplex connection, allowing the client to also push data to the server.
 2. SSE uses the HTTP stack, enabling you to use middleware to authenticate your users.
 
-Since SSE is much simpler to use and set up, you should use it instead of WebSocket if your goal is to send notifications to your clients, such as flash messages.
+Since SSE is much simpler to use and set up, you may prefer to use it instead of WebSocket if your goal is to send notifications to your clients, such as flash messages.
 
 ## Transmit opinion
 
