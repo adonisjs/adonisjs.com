@@ -18,10 +18,10 @@
     "description": "Bouncer provides low-level APIs to build custom authorization workflows like RBAC or ACL."
   },
   {
-    "name": "Drive",
+    "name": "FlyDrive",
     "colorShade": "indigo",
     "iconName": "tabler:cloud-upload",
-    "description": "AdonisJS Drive provides a unified API to manage user-uploaded files on S3, GCS, and the local filesystem."
+    "description": "FlyDrive provides a unified API to manage user-uploaded files on S3, GCS, and the local filesystem."
   },
   {
     "name": "Limiter",
@@ -54,7 +54,7 @@
     "description": "Add support for Social login to your apps. Ally ships Twitter, GitHub, Google, LinkedIn, and many more drivers."
   },
   {
-    "name": "i18n",
+    "name": "I18n",
     "colorShade": "teal",
     "iconName": "tabler:globe",
     "description": "Create multi-lingual web apps. We provide APIs for localization, formatting values, and managing translations."
@@ -70,5 +70,29 @@
     "colorShade": "cyan",
     "iconName": "tabler:mail",
     "description": "Send emails from your application using a multi-driver mailer. Supports SMTP, SES, Mailgun, Resend and much more."
+  },
+  {
+    "name": "Transmit",
+    "colorShade": "teal",
+    "iconName": "tabler:transfer",
+    "description": "Send real-time updates by leveraging the power of Server Sent Events (SSE)."
+  },
+  {
+    "name": "Lock",
+    "colorShade": "pink",
+    "iconName": "tabler:lock",
+    "description": "Synchronize the access to a shared resource to prevents several processes, or concurrent code, from executing a section of code at the same time."
+  },
+  {
+    "name": "Vite",
+    "colorShade": "indigo",
+    "iconName": "tabler:brand-vite",
+    "description": "Bundle the frontend assets of your applications using Vite."
+  },
+  {
+    "name": "Inertia",
+    "colorShade": "cyan",
+    "iconName": "tabler:brand-inertia",
+    "description": "Make your frontend and backend work together in perfect harmony."
   }
 ]
