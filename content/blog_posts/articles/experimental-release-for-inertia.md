@@ -59,7 +59,7 @@ export default defineConfig({
 })
 ```
 
-Finally, you can install and configure the `@adonisjs/inertia` package and start using it. Also, consult the [Interia adapter documentation](https://docs.adonisjs.com/guides/inertia).
+Finally, you can install and configure the `@adonisjs/inertia` package and start using it. Also, consult the [Inertia adapter documentation](https://docs.adonisjs.com/guides/inertia).
 
 ```sh
 node ace add @adonisjs/inertia
