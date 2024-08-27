@@ -18,5 +18,10 @@
     "name": "Vehicle Routing and Route Optimization Software",
     "website": "https://route4me.com/",
     "logo": "./logos/route4me.svg"
+  },
+  {
+    "name": "Ezycourse",
+    "website": "https://ezycourse.com/",
+    "logo": "./logos/ezycourse.svg"
   }
 ]
