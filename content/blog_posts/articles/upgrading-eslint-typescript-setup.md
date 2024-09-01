@@ -73,7 +73,7 @@ npm i -D @adonisjs/prettier-config@latest
 
 Feel free to report any rough edges with the Edge plugin for prettier on the [Github repo](https://github.com/sajansharmanz/prettier-plugin-edgejs).
 
-## Upgrading to the maintained fork of `ts-node`
+## Upgrading to the maintained fork of ts-node
 
 [TSNode](https://typestrong.org/ts-node/) is a fantastic project. It is the only TypeScript JIT compiler that is 100% compatible with the Node.js ESM implementation. Therefore, we have been using it despite the other popular alternatives like [TSX](https://tsx.is/).
 
