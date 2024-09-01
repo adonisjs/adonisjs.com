@@ -381,6 +381,10 @@
   display: flex;
 }
 
+.markdown pre code {
+  flex: 1;
+}
+
 .markdown code .line::before {
   left: 10px;
 }
