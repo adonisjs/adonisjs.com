@@ -2,13 +2,7 @@
 summary: In this post, we will upgrade the tooling config of an AdonisJS application to use the latest version of ESLint, move to the maintained fork of TSNode, and update the prettier config to format Edge templates.
 ---
 
-JavaScript ecosystem moves faster than the light of speed. Therefore, every once in a while, we find ourselves making changes to our apps that do not correlate to the app's main features.
-
-For better or worse, staying up to date is always sane. Yes, sometimes, keeping up with changes can be taxing. Therefore, let me make that part easier for you.
-
 In this post, we will upgrade the tooling config of an AdonisJS application to use the latest version of ESLint, move to the maintained fork of `ts-node`, and update the prettier config to format Edge templates.
-
-But one thing at a time.
 
 ## Upgrading to ESLint 9.0
 
@@ -34,7 +28,7 @@ The `@adonisjs/eslint-config` package is published under the `@beta` tag because
 
 ```sh
 # First upgrade eslint
-npm i -D eslint@9
+npm i -D eslint@^9
 
 # Then upgrade the config preset
 npm i -D @adonisjs/eslint-config@beta
@@ -61,7 +55,7 @@ Finally, you must remove the old config from the `package.json` file.
 // delete-end
 ```
 
-Run the `npm run lint` command to test the new setup. Feel free to join the [Discord server](https://discord.gg/vDcEjq6) and ask for help, or [create a new discussion thread on Github](https://github.com/orgs/adonisjs/discussions/new?category=help)
+Run the `npm run lint` command to test the new setup. Feel free to join the [Discord server](https://discord.gg/vDcEjq6) and ask for help, or [create a new discussion thread on GitHub](https://github.com/orgs/adonisjs/discussions/new?category=help)
 
 ## Upgrading to the latest preset of Prettier
 
@@ -71,7 +65,7 @@ This one is simple. We have updated our Prettier preset to include the [prettier
 npm i -D @adonisjs/prettier-config@latest
 ```
 
-Feel free to report any rough edges with the Edge plugin for prettier on the [Github repo](https://github.com/sajansharmanz/prettier-plugin-edgejs).
+Feel free to report any rough edges with the Edge plugin for prettier on the [GitHub repo](https://github.com/sajansharmanz/prettier-plugin-edgejs).
 
 ## Upgrading to the maintained fork of ts-node
 
