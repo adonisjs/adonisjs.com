@@ -378,7 +378,10 @@
   overflow: auto;
   line-height: var(--pre-line-height);
   margin: var(--prose-elements-margin) 0;
-  display: flex;
+}
+
+.markdown pre code {
+  width: 100%;
 }
 
 .markdown code .line::before {

@@ -1,5 +1,13 @@
 [
   {
+    "title": "Upgrading ESLint and TypeScript setup",
+    "slug": "upgrading-eslint-typescript-setup",
+    "authorName": "virk",
+    "content_path": "./articles/upgrading-eslint-typescript-setup.md",
+    "publishedAt": "2024-09-01T07:11:48.789Z",
+    "category": "Tutorial"
+  },
+  {
     "title": "Send real-time updates with Transmit",
     "slug": "send-real-time-updates-with-transmit",
     "authorName": "romainlanz",
