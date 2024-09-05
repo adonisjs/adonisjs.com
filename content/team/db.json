@@ -2,28 +2,28 @@
   {
     "name": "Harminder Virk",
     "about": "Creator and lead maintainer of AdonisJS",
-    "profilePictureUrl": "./avatars/virk.png",
+    "profilePictureUrl": "./avatars/virk.jpeg",
     "twitterHandle": "AmanVirk1",
     "ghUsername": "thetutlage"
   },
   {
     "name": "Romain Lanz",
     "about": "Developer at the FIVB and creator of Streali",
-    "profilePictureUrl": "./avatars/romain.png",
+    "profilePictureUrl": "./avatars/romain.jpeg",
     "twitterHandle": "romainlanz",
     "ghUsername": "romainlanz"
   },
   {
     "name": "Michaël Zasso",
     "about": "Member of the Node.js Technical Steering Committee",
-    "profilePictureUrl": "./avatars/targos.png",
+    "profilePictureUrl": "./avatars/targos.jpeg",
     "twitterHandle": "targos89",
     "ghUsername": "targos"
   },
   {
     "name": "Julien Ripouteau",
     "about": "Freelancer. Creator of AdonisJS and Japa VSCode extensions",
-    "profilePictureUrl": "./avatars/julien.jpg",
+    "profilePictureUrl": "./avatars/julien.jpeg",
     "twitterHandle": "julien_rpt",
     "ghUsername": "Julien-R44"
   }
