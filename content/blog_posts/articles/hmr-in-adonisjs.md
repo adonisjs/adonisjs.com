@@ -50,7 +50,7 @@ Note that you no longer need the `--watch` flag. Only `--hmr` is enough. If you 
 
 Now, try modifying a controller. You will see that the server does not restart, but the modifications will be considered: you'll always have the latest version of your code.
 
-For more information, please consult the [official documentation](https://docs.adonisjs.com/guides/hot-module-reloading).
+For more information, please consult the [official documentation](https://docs.adonisjs.com/guides/concepts/hot-module-replacement).
 
 ## Backstory
 
