@@ -7,15 +7,15 @@ import type { HttpContext } from '@adonisjs/core/http'
 
 export default class PostsController {
   async index({}: HttpContext) {
-    // return list of posts
+    // we want to return a paginated list of posts
   }
 
   async store({}: HttpContext) {
-    // save post
+    // we want to save a post
   }
 
   async show({}: HttpContext) {
-    // return post by id
+    // we want to return a post by its id
   }
 }
 ```

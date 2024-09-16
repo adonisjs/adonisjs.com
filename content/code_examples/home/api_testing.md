@@ -3,6 +3,9 @@ import { test } from '@japa/runner'
 import { UserFactory } from '#factories/user_factory'
 
 test('get list of expenses for the logged-in user', async ({ client }) => {
+  /**
+   * Create a user with 10 expenses using Model factories
+   */
   const user = await UserFactory.with('expenses', 10).create()
 
   /**

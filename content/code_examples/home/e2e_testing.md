@@ -3,6 +3,9 @@ import { test } from '@japa/runner'
 import { UserFactory } from '#factories/user_factory'
 
 test('render polls created by the logged-in user', async ({ visit, browserContext }) => {
+  /**
+   * Create a user with 5 polls using Model factories
+   */
   const user = await UserFactory.with('polls', 5).create()
   
   /**
