@@ -1,5 +1,13 @@
 [
   {
+    "title": "Tuyau - An E2E client for your AdonisJS APIs",
+    "slug": "introducing-tuyau",
+    "authorName": "julien-ripouteau",
+    "content_path": "./articles/introducing-tuyau.md",
+    "publishedAt": "2024-10-20T07:11:48.789Z",
+    "category": "News"
+  },
+  {
     "title": "Upgrading ESLint and TypeScript setup",
     "slug": "upgrading-eslint-typescript-setup",
     "authorName": "virk",
