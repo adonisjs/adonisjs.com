@@ -36,7 +36,7 @@
     "description": "A modern and batteries-included template engine for the ones who keep things simple."
   },
   {
-    "name": "Bento Cache",
+    "name": "Bentocache",
     "colorShade": "cyan",
     "iconName": "tabler:server-bolt",
     "description": "Speed up your applications by storing slowly changing data in a multi-tier cache store."
@@ -94,5 +94,11 @@
     "colorShade": "cyan",
     "iconName": "tabler:brand-inertia",
     "description": "Make your frontend and backend work together in perfect harmony."
+  },
+  {
+    "name": "Tuyau",
+    "colorShade": "teal",
+    "iconName": "tabler:test-pipe",
+    "description": "An end-to-end type-safe client for interacting with your AdonisJS APIs."
   }
 ]
