@@ -13,7 +13,7 @@
     <link>https://adonisjs.com/blog</link>
     </image>
     <atom:link href="https://adonisjs.com/feeds/blog.xml" rel="self" type="application/rss+xml"/>
-    @each(post in await blogPosts.published())
+    @each(post in blogPosts)
       <item>
         <title><![CDATA[{{ post.title }}]]></title>
         <link>{{ route('blog.show', [post.slug]) }}</link>
