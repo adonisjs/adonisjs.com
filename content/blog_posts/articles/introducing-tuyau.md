@@ -2,15 +2,22 @@
 summary: Announcing Tuyau, a new library in the AdonisJS ecosystem for having an E2E typesafe client-server communication.
 ---
 
-![](https://static.julr.dev/tuyau.png)
+We are super excited to announce the first release of [Tuyau](https://github.com/Julien-Sponsors/tuyau). Tuyau is a collection of libraries that provides you with a **type-safe request client**, **type-safe Interia Link helpers**, and **an Open-API spec generator**.
 
-We are thrilled to announce the first release of [Tuyau](https://github.com/Julien-Sponsors/tuyau), a new library in the AdonisJS ecosystem, offering a typesafe, end-to-end client for interacting with your AdonisJS APIs.
+[![](https://static.julr.dev/tuyau.png)](https://tuyau.julr.dev)
 
-You can find the repository [here](https://github.com/Julien-R44/tuyau) and the documentation [here](https://tuyau.julr.dev/).
+**Website:** [https://tuyau.julr.dev](https://tuyau.julr.dev) \
+**Github Repo:** [Julien-R44/tuyau](https://github.com/Julien-R44/tuyau)
 
-## Typesafe E2E Client? What’s that?
+## Type-safe request client
 
-Imagine you have an AdonisJS API ready to go, and you want to consume it in your frontend, whether it’s built in React, Vue, or another framework. Typically, you would create a class or file that contains methods to call various API routes, like this:
+Before we dig deeper into the usage of Tayau's request client, let's look at the problem we are trying to solve here.
+
+### 🤦 Problem - Headache of keeping frontend types in sync with the backend
+
+Imagine you have built an AdonisJS API that you want to consume within your front-end application, which is written in React, Vue, or any other framework of your choice. 
+
+Typically, you would create helper functions or classes that issue a `fetch` request to the API, and elsewhere within your application, you will interact with these helpers. For example:
 
 ```ts
 export class MyAPI {
@@ -26,12 +33,12 @@ export class MyAPI {
 }
 ```
 
-This works, but there are a few issues with this code:
+While creating these helpers will keep your front-end code DRY by encapsulating all API calls in a single place. They are still far from offering a great development experience. For example:
 
-- No type safety: You don’t know what you’re sending or receiving.
-- A lot of boilerplate code to write for each API route. Here, we have just two routes, but if you have 10, 20, or 50, it becomes quickly tedious and repetitive.
+- **There is no type safety**. You don't know what you're sending or receiving.
+- **A lot of boilerplate code** to write for each API route. Here, we have just two routes, but it becomes tedious and repetitive if you have 10, 20, or 50.
 
-To fix the first issue, you can manually add your types like this:
+You can get around the issue of type-safety by creating interfaces for the data you send and receive. However, it will still be a manual process and you will have to make sure that your backend API and front-end types are always in sync.
 
 ```ts
 interface Post {
@@ -57,12 +64,12 @@ export class MyAPI {
 }
 ```
 
-While this is better, we still face the issue of keeping types in sync. If a field name changes in your API, you’ll need to update it in the client too, which risks desynchronization between the backend and frontend. Also, manually creating and maintaining these types is time-consuming, error-prone and not very fun.
+### ✅ Solution: Auto generated type-safe request client
 
-This is where Tuyau comes in. Tuyau offers an alternative way: an automatically generated frontend client from your AdonisJS API that is 100% typesafe without the need to maintain any types or runtime code yourself. Tuyau uses code generation to detect input and output types for your routes. Let’s take the same API example, now using Tuyau:
+Tuyau offers an automatically generated front-end client from your AdonisJS API that is 100% typesafe without the need to maintain any types or runtime code yourself. Tuyau uses code generation to detect input and output types for your routes. Let’s take the same API example, now using Tuyau:
 
 ```ts
-// In your frontend
+// In your front-end
 import { createTuyau } from '@tuyau/client'
 import { api } from '@your-monorepo/my-adonisjs-app/.adonisjs/api'
 
@@ -75,13 +82,13 @@ const posts = tuyau.posts.$get({ page: 1, limit: 10 })
 const post = tuyau.posts({ id: 1 }).$get()
 ```
 
-**Everything in this example is fully typesafe**: routes parameters (like `/posts/:id`), payloads, query params, and responses and errors. TypeScript ensures you avoid many errors: missing payload properties, forgotten request parameters, or typos in response data. TypeScript will scream at you, and your code won’t compile until you fix the errors.
+**Everything in this example is fully typesafe**: Route parameters (like `/posts/:id`), payloads, query params, and responses and errors. TypeScript prevents many errors: missing payload properties, forgotten request parameters, or typos in response data. TypeScript will scream at you, and your code won’t compile until you fix the errors.
 
-This also means you can use `tsc` in your CI pipeline to verify that your frontend remains in sync with your backend. In short, Tuyau saves you time and reduces errors.
+This also means you can use `tsc` in your CI pipeline to verify that your front end remains in sync with your backend. In short, Tuyau saves you time and reduces errors.
 
 If you’re familiar with [tRPC](https://trpc.io/), [Elysia Eden](https://elysiajs.com/eden/overview), or [Hono RPC](https://hono.dev/docs/guides/rpc), it’s the same concept.
 
-The Tuyau client works with any stack, whether React, React Native, Vue, or Node.js. However, you will need a monorepo setup for Tuyau to function.
+The Tuyau client works with any stack, including React, React Native, Vue, and Node.js. However, for it to function, you will need a monorepo setup.
 
 ## Installation
 
@@ -99,12 +106,12 @@ npm install @tuyau/client
 
 Now, you’ll need to generate the types. The `@tuyau/core` package exposes a command, `node ace tuyau:generate`, which will create a `.adonisjs/api.ts` file at the root of your AdonisJS project. This file contains all the types necessary for the client to function. This command does **not** run automatically at the moment. You will need to run it manually after certain changes in your AdonisJS project, such as:
 
-- Adding a new route/controller in your project
+- Adding a new route/controller to your project
 - Adding a `request.validateUsing` call in your controller method
 
-Other than that, you won’t need to run this command frequently. For example, if you update the return type of a controller method or update the Vine schema, you **don’t need** to run the command again.
+Other than that, you won’t need to run this command frequently. For example, if you update the controller method's return type or the Vine schema, you **don’t need** to run the command again.
 
-Once done, you can import and configure the client in your frontend as follows:
+Once done, you can import and configure the client in your front-end as follows:
 
 ```ts
 /// <reference path="../../adonisrc.ts" />
@@ -118,9 +125,9 @@ export const tuyau = createTuyau({
 })
 ```
 
-You’ll need to configure your monorepo so that your frontend depends on your backend to import the `.adonisjs/api.ts` file. More information [here](https://tuyau.julr.dev/docs/installation#sharing-the-api-definition).
+You’ll need to configure your mono repo so that your front end depends on your backend when importing the `.adonisjs/api.ts` file. More information [here](https://tuyau.julr.dev/docs/installation#sharing-the-api-definition).
 
-And that’s it! You’re ready to use Tuyau in your frontend!
+And that’s it! You’re ready to use Tuyau on your front end!
 
 ## Cool Features
 
@@ -128,7 +135,7 @@ Tuyau comes with a lot of cool features to make your life easier. Here are some 
 
 ### Making Requests
 
-Of course, making requests is the primary goal of Tuyau. Here's a quick peek at multiple request methods:
+Of course, making requests is Tuyau's primary goal. Here's a quick peek at multiple request methods:
 
 ```ts
 // GET /users
@@ -162,7 +169,7 @@ This is also available for React.
 
 ### Ziggy-like Helpers
 
-If you’ve used Laravel and Inertia, you’re likely familiar with Ziggy, which allows you to reference route names in your frontend instead of explicitly writing URLs. Tuyau offers similar functionality. Here’s an example:
+If you’ve used Laravel and Inertia, you’re likely familiar with Ziggy, which allows you to reference route names on your front end instead of explicitly writing URLs. Tuyau offers similar functionality. Here’s an example:
 
 ```ts
 /**
@@ -249,11 +256,11 @@ console.log(data.token)
 //          ^? { token: string }
 ```
 
-As you can see, Tuyau provides a clean and typesafe way to handle errors. However, if you handle errors through middleware, Tuyau will not be able to detect that. 
+As you can see, Tuyau provides a clean and typesafe way to handle errors. However, if you handle errors through middleware, Tuyau cannot detect them. 
 
 ### Unwrapping the Response
 
-As seen in the previous example, you need to “narrow down” the response type to access its properties. Tuyau provides an `unwrap` function if you don’t need custom error handling and just want to access the data:
+As the previous example shows, you need to “narrow down” the response type to access its properties. Tuyau provides an `unwrap` function if you don’t need custom error handling and just want to access the data:
 
 ```ts
 const data = await tuyau
@@ -289,6 +296,6 @@ type LoginError = InferErrorType<typeof tuyau.login.post>;
 
 ## Conclusion
 
-Tuyau is a powerful tool for saving a lot of time and reducing errors in your frontend code. Make sure to check out the [documentation](https://tuyau.julr.dev/) for more information on how to use Tuyau in your projects.
+Tuyau is a powerful tool for saving time and reducing errors in your front-end code. For more information on how to use Tuyau in your projects, make sure to check out the [documentation](https://tuyau.julr.dev/).
 
-Give it a try and please let us know if you have any feedback on [GitHub](https://github.com/Julien-R44/tuyau) !
+Please give it a try and let us know if you have any feedback on [GitHub](https://github.com/Julien-R44/tuyau)!
