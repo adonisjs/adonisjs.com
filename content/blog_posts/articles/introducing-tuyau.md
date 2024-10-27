@@ -11,7 +11,7 @@ We are super excited to announce the first release of [Tuyau](https://github.com
 
 ## Type-safe request client
 
-Before we dig deeper into the usage of Tayau's request client, let's look at the problem we are trying to solve here.
+Before we dig deeper into the usage of Tuyau's request client, let's look at the problem we are trying to solve here.
 
 ### 🤦 Problem - Headache of keeping frontend types in sync with the backend
 
