@@ -125,7 +125,7 @@ export const tuyau = createTuyau({
 })
 ```
 
-You’ll need to configure your mono repo so that your front end depends on your backend when importing the `.adonisjs/api.ts` file. More information [here](https://tuyau.julr.dev/docs/installation#sharing-the-api-definition).
+You’ll need to configure your monorepo so that your front end depends on your backend when importing the `.adonisjs/api.ts` file. More information [here](https://tuyau.julr.dev/docs/installation#sharing-the-api-definition).
 
 And that’s it! You’re ready to use Tuyau on your front end!
 
