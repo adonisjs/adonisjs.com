@@ -7,7 +7,7 @@ We are super excited to announce the first release of [Tuyau](https://github.com
 [![](https://static.julr.dev/tuyau.png)](https://tuyau.julr.dev)
 
 **Website:** [https://tuyau.julr.dev](https://tuyau.julr.dev) \
-**Github Repo:** [Julien-R44/tuyau](https://github.com/Julien-R44/tuyau)
+**GitHub Repo:** [Julien-R44/tuyau](https://github.com/Julien-R44/tuyau)
 
 ## Type-safe request client
 
