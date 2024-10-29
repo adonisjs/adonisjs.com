@@ -2,7 +2,7 @@
 summary: Announcing Tuyau, a new library in the AdonisJS ecosystem for having an E2E typesafe client-server communication.
 ---
 
-We are super excited to announce the first release of [Tuyau](https://github.com/Julien-Sponsors/tuyau). Tuyau is a collection of libraries that provides you with a **type-safe request client**, **type-safe Interia Link helpers**, and **an Open-API spec generator**.
+We are super excited to announce the first release of [Tuyau](https://github.com/Julien-Sponsors/tuyau). Tuyau is a collection of libraries that provides you with a **type-safe request client**, **type-safe Inertia Link helpers**, and **an Open-API spec generator**.
 
 [![](https://static.julr.dev/tuyau.png)](https://tuyau.julr.dev)
 
