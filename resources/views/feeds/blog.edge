@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>AdonisJS Framework Blog</title>
+    <link>https://adonisjs.com/</link>
+    <description>All the latest AdonisJS Framework news.</description>
+    <lastBuildDate>{{new Date()}}</lastBuildDate>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <language>en</language>
+    <image>
+    <title>AdonisJS Framework Blog</title>
+    <url>https://adonisjs.com/icons/favicon-32x32.png</url>
+    <link>https://adonisjs.com/blog</link>
+    </image>
+    <atom:link href="https://adonisjs.com/feeds/blog.xml" rel="self" type="application/rss+xml"/>
+    @each(post in blogPosts)
+      <item>
+        <title><![CDATA[{{ post.title }}]]></title>
+        <link>{{ route('blog.show', [post.slug]) }}</link>
+        <guid>{{ post.slug }}</guid>
+        <pubDate>{{ post.publishedAt }}</pubDate>
+        <description><![CDATA[ {{{ post.contentHtml.summary }}} ]]></description>
+        <content:encoded><![CDATA[ {{{ post.contentHtml.contents }}} ]]></content:encoded>
+      </item>
+    @end
+  </channel>
+</rss>

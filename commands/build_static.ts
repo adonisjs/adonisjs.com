@@ -9,6 +9,7 @@ import type { CommandOptions } from '@adonisjs/core/types/ace'
 import { HttpContextFactory } from '@adonisjs/core/factories/http'
 import SupportProgramController from '#controllers/support_program_controller'
 import CaseStudiesController from '#controllers/case_studies_controller'
+import BlogFeedController from '#controllers/blog_feed_controller'
 
 export default class BuildStatic extends BaseCommand {
   static commandName = 'build:static'
@@ -45,6 +46,22 @@ export default class BuildStatic extends BaseCommand {
     const html = await new SupportProgramController().handle(ctx)
     await writeFile(app.makePath('dist/contact.html'), html)
     this.logger.success('created dist/contact.html')
+  }
+
+  /**
+   * Creates a static copy of the RSS feeds.
+   */
+  protected async buildFeeds() {
+    const blogFeedController = new BlogFeedController()
+    const ctx = new HttpContextFactory().create()
+    await mkdir(app.makePath('dist/feeds'), { recursive: true })
+
+    /**
+     * Create blog feed
+     */
+    const feed = await blogFeedController.handle(ctx)
+    await writeFile(app.makePath('dist/feeds/blog.xml'), feed)
+    this.logger.success('created dist/feeds/blog.xml')
   }
 
   /**
@@ -126,6 +143,7 @@ export default class BuildStatic extends BaseCommand {
     await this.buildAboutPage()
     await this.buildContactPage()
     await this.buildBlog()
+    await this.buildFeeds()
     // await this.buildCaseStudies()
   }
 }
