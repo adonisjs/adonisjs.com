@@ -19,8 +19,8 @@
         <link>https://adonisjs.com{{ route('blog.show', [post.slug]) }}</link>
         <guid>https://adonisjs.com{{ route('blog.show', [post.slug]) }}</guid>
         <pubDate>{{ post.publishedAt }}</pubDate>
-        <description><![CDATA[ {{{ post.contentHtml.summary }}} ]]></description>
-        <content:encoded><![CDATA[ {{{ post.contentHtml.contents }}} ]]></content:encoded>
+        <description><![CDATA[ {{{ sanitize(post.contentHtml.summary) }}} ]]></description>
+        <content:encoded><![CDATA[ {{{ sanitize(post.contentHtml.contents) }}} ]]></content:encoded>
       </item>
     @end
   </channel>
