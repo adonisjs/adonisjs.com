@@ -16,7 +16,7 @@
     @each(post in blogPosts)
       <item>
         <title><![CDATA[{{ post.title }}]]></title>
-        <link>{{ route('blog.show', [post.slug]) }}</link>
+        <link>https://adonisjs.com{{ route('blog.show', [post.slug]) }}</link>
         <guid>{{ post.slug }}</guid>
         <pubDate>{{ post.publishedAt }}</pubDate>
         <description><![CDATA[ {{{ post.contentHtml.summary }}} ]]></description>
