@@ -17,7 +17,7 @@
       <item>
         <title><![CDATA[{{ post.title }}]]></title>
         <link>https://adonisjs.com{{ route('blog.show', [post.slug]) }}</link>
-        <guid>{{ post.slug }}</guid>
+        <guid>https://adonisjs.com{{ route('blog.show', [post.slug]) }}</guid>
         <pubDate>{{ post.publishedAt }}</pubDate>
         <description><![CDATA[ {{{ post.contentHtml.summary }}} ]]></description>
         <content:encoded><![CDATA[ {{{ post.contentHtml.contents }}} ]]></content:encoded>
