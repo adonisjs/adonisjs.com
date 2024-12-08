@@ -4,6 +4,7 @@ import edgeUiKit from 'edge-uikit'
 import { icons as uiwIcons } from '@iconify-json/uiw'
 import { edgeIconify, addCollection } from 'edge-iconify'
 import { icons as tablerIcons } from '@iconify-json/tabler'
+import sanitizeHtml from 'sanitize-html'
 
 /**
  * Icons in use
@@ -17,3 +18,4 @@ addCollection(tablerIcons)
 edge.use(edgeUiKit)
 edge.use(edgeIconify)
 edge.global('dayjs', dayjs)
+edge.global('sanitize', sanitizeHtml)

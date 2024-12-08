@@ -2,9 +2,9 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>AdonisJS Framework Blog</title>
-    <link>https://adonisjs.com/</link>
+    <link>https://adonisjs.com/blog</link>
     <description>All the latest AdonisJS Framework news.</description>
-    <lastBuildDate>{{new Date()}}</lastBuildDate>
+    <lastBuildDate>{{new Date().toUTCString()}}</lastBuildDate>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <language>en</language>
     <image>
@@ -16,11 +16,11 @@
     @each(post in blogPosts)
       <item>
         <title><![CDATA[{{ post.title }}]]></title>
-        <link>{{ route('blog.show', [post.slug]) }}</link>
-        <guid>{{ post.slug }}</guid>
+        <link>https://adonisjs.com{{ route('blog.show', [post.slug]) }}</link>
+        <guid>https://adonisjs.com{{ route('blog.show', [post.slug]) }}</guid>
         <pubDate>{{ post.publishedAt }}</pubDate>
-        <description><![CDATA[ {{{ post.contentHtml.summary }}} ]]></description>
-        <content:encoded><![CDATA[ {{{ post.contentHtml.contents }}} ]]></content:encoded>
+        <description><![CDATA[ {{{ sanitize(post.contentHtml.summary) }}} ]]></description>
+        <content:encoded><![CDATA[ {{{ sanitize(post.contentHtml.contents) }}} ]]></content:encoded>
       </item>
     @end
   </channel>
