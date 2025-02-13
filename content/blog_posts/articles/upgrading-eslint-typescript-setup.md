@@ -19,19 +19,12 @@ If you use our preset for the ESLint config (i.e., `@adonisjs/eslint-config` pac
 
 Start by upgrading the `eslint` package and then the `@adonisjs/eslint-config` package. **Make sure to do it in two steps. Otherwise, you might encounter some peer dependency errors**.
 
-
-:::note
-
-The `@adonisjs/eslint-config` package is published under the `@beta` tag because we want to test our config preset against the latest version of ESLint first. We will publish a stable release once all the edge cases have been ironed out.
-
-:::
-
 ```sh
 # First upgrade eslint
 npm i -D eslint@^9
 
 # Then upgrade the config preset
-npm i -D @adonisjs/eslint-config@beta
+npm i -D @adonisjs/eslint-config@latest
 ```
 
 Once you have upgraded the dependencies, you must create the `eslint.config.js` in the root of your application and copy/paste the following contents inside it.
