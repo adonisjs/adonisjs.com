@@ -10,6 +10,7 @@ import.meta.glob([
   '../../content/tweets/avatars/*.(jpeg|png|jpg)',
   '../../content/authors/avatars/*.(jpeg|png|jpg)',
   '../../content/blog_posts/articles/*.(jpeg|png|jpg)',
+  '../../content/companies_using_adonisjs/logos/*.(jpeg|png|jpg|svg)',
 ])
 
 up.on('up:location:changed', (event) => {
