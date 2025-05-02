@@ -1,5 +1,35 @@
 [
   {
+    "name": "Ledger",
+    "website_url": "https://www.ledger.com/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/ledger.svg"
+  },
+  {
+    "name": "Renault Group",
+    "website_url": "https://www.renaultgroup.com/en/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/renault.svg"
+  },
+  {
+    "name": "Bouygues Telecom",
+    "website_url": "https://www.bouyguestelecom.fr/",
+    "verifiedBy": ["Romain"],
+    "logo": "./logos/bouygues.svg"
+  },
+  {
+    "name": "France Travail",
+    "website_url": "https://www.francetravail.fr/accueil/",
+    "verifiedBy": ["Romain"],
+    "logo": "./logos/france_travail.svg"
+  },
+  {
+    "name": "NISSAN",
+    "website_url": "https://www.nissan.fr/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/nissan.svg"
+  },
+  {
     "name": "ZenChef",
     "website_url": "https://www.zenchef.com/en-us",
     "logo": "./logos/zenchef.svg",
@@ -12,22 +42,28 @@
     "logo": "./logos/marie_claire.svg"
   },
   {
-    "name": "Cavai",
-    "website_url": "https://www.cavai.com/",
-    "logo": "./logos/cavai.svg",
-    "verifiedBy": ["Virk"]
+    "name": "Leroy Merlin",
+    "website_url": "https://www.leroymerlin.fr/",
+    "verifiedBy": ["Virk on => https://github.com/adonisjs-community/awesome-adonisjs"],
+    "logo": "./logos/leroy_merlin.svg"
   },
   {
-    "name": "Ledger",
-    "website_url": "https://www.ledger.com/",
-    "verifiedBy": ["Julien"],
-    "logo": "./logos/ledger.svg"
-  },
-  {
-    "name": "Cleavr",
-    "website_url": "https://cleavr.io/",
+    "name": "PAYTM",
+    "website_url": "https://paytm.com/",
     "verifiedBy": ["Virk"],
-    "logo": "./logos/cleavr.svg"
+    "logo": "./logos/paytm.svg"
+  },
+  {
+    "name": "Evian",
+    "website_url": "https://www.evian.com/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/evian.svg"
+  },
+  {
+    "name": "VolleyBall World",
+    "website_url": "https://en.volleyballworld.com/",
+    "verifiedBy": ["Romain"],
+    "logo": "./logos/volleyball_world.svg"
   },
   {
     "name": "FIVB",
@@ -36,15 +72,63 @@
     "logo": "./logos/fivb.svg"
   },
   {
+    "name": "Edmond de Rothschild",
+    "website_url": "https://www.edmond-de-rothschild.com/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/edmond_rotschild.svg"
+  },
+  {
+    "name": "Cleavr",
+    "website_url": "https://cleavr.io/",
+    "verifiedBy": ["Virk"],
+    "logo": "./logos/cleavr.svg"
+  },
+  {
+    "name": "EQWIN",
+    "website_url": "https://eqwin.com/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/eqwin.svg"
+  },
+  {
+    "name": "Pappers",
+    "website_url": "https://www.pappers.fr/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/pappers.png"
+  },
+  {
+    "name": "ZEVENT",
+    "website_url": "https://zevent.fr/",
+    "verifiedBy": ["Romain"],
+    "logo": "./logos/zevent.svg"
+  },
+  {
+    "name": "Lighthouse",
+    "website_url": "https://lighthouse.app/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/lighthouse.svg"
+  },
+  {
+    "name": "TWN",
+    "website_url": "https://thewalkingnerds.com/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/twn.png"
+  },
+  {
     "name": "Zakodium",
     "website_url": "https://www.zakodium.com/",
     "verifiedBy": ["Michaël"],
     "logo": "./logos/zakodium.svg"
   },
   {
-    "name": "Renault Group",
-    "website_url": "https://www.renaultgroup.com/en/",
-    "verifiedBy": ["Julien"],
-    "logo": "./logos/renault.svg"
+    "name": "Cavai",
+    "website_url": "https://www.cavai.com/",
+    "logo": "./logos/cavai.svg",
+    "verifiedBy": ["Virk"]
+  },
+  {
+    "name": "INDIEVIDUALS",
+    "website_url": "https://indieviduals.fr/",
+    "verifiedBy": ["Romain"],
+    "logo": "./logos/indieviduals.svg"
   }
 ]

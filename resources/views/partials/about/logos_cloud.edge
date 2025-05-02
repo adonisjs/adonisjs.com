@@ -1,9 +1,23 @@
 <section class="py-8">
   <div class="content-container-small relative">
     <div class="absolute right-4 md:right-0 top-[-60px]">
-      <img src="/arrow.svg" alt="">
+      <img src="/arrow.svg" alt="" />
     </div>
-    <img src="/companies_logo_cloud.svg" alt="" class="w-full hidden md:block">
-    <img src="/companies_logo_cloud_mobile.svg" alt="" class="w-full md:hidden">
+    <div class="flex flex-wrap gap-x-12 gap-y-6 justify-center items-center">
+      @each(company in await companies.all())
+        <div
+          class="w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+        >
+          <a href="{{ company.website_url }}" target="_blank" rel="noopener">
+            <img
+              loading="lazy"
+              src="{{ company.logo }}"
+              alt="Logo of {{ company.name }}"
+              class="max-w-32 h-12 object-contain"
+            />
+          </a>
+        </div>
+      @end
+    </div>
   </div>
 </section>
