@@ -3,19 +3,25 @@
     <div class="absolute right-4 md:right-0 top-[-60px]">
       <img src="/arrow.svg" alt="" />
     </div>
-    <div class="flex flex-wrap gap-x-12 gap-y-6 justify-center items-center">
-      @each(company in await companies.all())
-        <div
-          class="w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-        >
-          <a href="{{ company.website_url }}" target="_blank" rel="noopener">
-            <img
-              loading="lazy"
-              src="{{ company.logo }}"
-              alt="Logo of {{ company.name }}"
-              class="max-w-32 h-12 object-contain"
-            />
-          </a>
+    <div class="grid grid-cols-2 md:grid-cols-4 bg-sand3 gap-[1px]">
+      @let(companiesList = await companies.all())
+      @assign(companiesList = companiesList.concat(new Array(companiesList.length % 4)))
+      @each(company in companiesList)
+        <div class="bg-white">
+          @if(company)
+            <a
+              href="{{ company.website_url }}"
+              target="_blank" rel="noopener"
+              class="flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 px-8 py-8"
+            >
+              <img
+                loading="lazy"
+                src="{{ company.logo }}"
+                alt="Logo of {{ company.name }}"
+                class="max-w-32 h-12 object-contain"
+              />
+            </a>
+          @end
         </div>
       @end
     </div>
