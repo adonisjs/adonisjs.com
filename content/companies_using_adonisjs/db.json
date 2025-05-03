@@ -114,6 +114,12 @@
     "logo": "./logos/twn.png"
   },
   {
+    "name": "Verifiables",
+    "website_url": "https://verifiables.com/",
+    "verifiedBy": ["Julien"],
+    "logo": "./logos/verifiables.svg"
+  },
+  {
     "name": "Zakodium",
     "website_url": "https://www.zakodium.com/",
     "verifiedBy": ["Michaël"],
