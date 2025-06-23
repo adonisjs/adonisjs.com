@@ -24,7 +24,7 @@ We want to give you full control to diagnose, trace, and debug your application.
 
 Each AdonisJS module will define multiple channels that you will be able to tap into to trace your application's behavior in real time, **without sacrificing performance**.
 
-We also plan to provide adapters for popular tools like _OpenTelemetry_, _DataDog_, and others, so you will be able to integrate AdonisJS tracing seamlessly into your existing observability stack.
+This will enable to write adapters for popular tools like _OpenTelemetry_, _DataDog_, and others, so you will be able to integrate AdonisJS tracing seamlessly into your existing observability stack.
 
 ## New Lucid Major
 
