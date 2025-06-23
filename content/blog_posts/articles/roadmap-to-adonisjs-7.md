@@ -386,4 +386,4 @@ That wraps up our overview of what's coming in AdonisJS 7. This new release sets
 
 We are proud to keep pushing the Node.js ecosystem forward, helping developers build better, more reliable, and faster applications all around the world.
 
-We would love to hear what you think. Join the conversation on [Discord](https://discord.gg/vDcEjq6) or share your thoughts in the GitHub Discussion linked to this article.
+We would love to hear what you think. Join the conversation on [Discord](https://discord.gg/vDcEjq6) or share your thoughts in the [GitHub Discussion](https://github.com/orgs/adonisjs/discussions/4960) linked to this article.
