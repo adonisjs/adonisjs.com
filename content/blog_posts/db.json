@@ -1,5 +1,13 @@
 [
   {
+    "title": "Roadmap to AdonisJS 7",
+    "slug": "roadmap-to-adonisjs-7",
+    "authorName": "romainlanz",
+    "content_path": "./articles/roadmap-to-adonisjs-7.md",
+    "publishedAt": "2025-06-23T07:35:05.073Z",
+    "category": "News"
+  },
+  {
     "title": "Tuyau - An E2E client for your AdonisJS APIs",
     "slug": "introducing-tuyau",
     "authorName": "julien-ripouteau",
