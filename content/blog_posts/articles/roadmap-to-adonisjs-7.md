@@ -139,7 +139,7 @@ class Point {
     return oldValue.latitude !== this.latitude || oldValue.longitude !== this.longitude
   }
 
-  fromDatabase(latitude: number, longitude: number) {
+  static fromDatabase(latitude: number, longitude: number) {
     return new Point(latitude, longitude)
   }
 
