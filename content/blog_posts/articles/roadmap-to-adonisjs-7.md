@@ -243,22 +243,22 @@ You will be able to generate a client for your frontend application automaticall
 Here's what the developer experience will look like:
 
 ```ts
-import { route } from '@adonisjs/core/http/url_builder';
+import { urlFor } from '@adonisjs/core/http/url_builder';
 
 // Will suggest all the routes
-route('users.show', [1]); // /users/1
+urlFor('users.show', [1]); // /users/1
 
 // Will suggest only GET routes
-route.get('users.show', [1]); // { method: 'get', url: 'users/1' }
+urlFor.get('users.show', [1]); // { method: 'get', url: 'users/1' }
 
 // Will suggest only POST routes
-route.post('users.show', [1]); // Error (no users.show) route exists for POST method
+urlFor.post('users.show', [1]); // Error (no users.show) route exists for POST method
 
 // Creating a signed URL
-route.post('email.verify').signed(); // { method: 'post', url: '...' }
+urlFor.post('email.verify').signed(); // { method: 'post', url: '...' }
 ```
 
-This tight integration between routes and types will help catch mistakes early and reduce hardcoded strings in your application
+This tight integration between routes and types will help catch mistakes early and reduce hardcoded strings in your application.
 
 When using the `response.redirect()` method, you will only be able to target `GET` routes, ensuring that redirects are valid and safe by design:
 
@@ -273,19 +273,19 @@ The generated URL builder client will be usable in any frontend application, whe
 You will be able to import and use it just like on the backend, with full type safety and auto-completion. However, keep in mind that **you will not be able to generate signed URLs from the frontend.** This must always happen server-side.
 
 ```tsx
-import { route } from '~generated/url_builder';
+import { urlFor } from '~generated/url_builder';
   
-<Link href={route.get('posts.show', [1])}> View post </Link>
+<Link href={urlFor.get('posts.show', [1])}> View post </Link>
 ```
 
 Submitting a form with Inertia:
 
 ```tsx
 import { useForm } from '@inertiajs/react';
-import { route } from '~generated/url_builder';
+import { urlFor } from '~generated/url_builder';
   
 const form = useForm({});
-form.post(route.post('signup.action'));
+form.post(urlFor.post('signup.action'));
 ```
 
 This consistent API across the backend and frontend will help reduce errors and keep route definitions in sync throughout your stack.
