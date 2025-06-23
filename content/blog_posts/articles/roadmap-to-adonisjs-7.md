@@ -6,7 +6,7 @@ It has been a while since we published our last article. We've been cooking "und
 
 First and foremost, you've probably heard me say it before: we don't ship major releases without a solid reason. AdonisJS 5 introduced TypeScript at the core of the framework, while AdonisJS 6 embraced ESM and brought the framework up to speed with modern JavaScript standards.
 
-This time, we're shifting gears. Instead of waiting for external changes in the ecosystem, we've decided to publish major releases more frequently. But don't worry, the stability of your application remains a top priority. In fact, upgrades will be significantly smoother from now on. A major version bump will no longer mean a full rewrite. You'll be able to upgrade in just a few minutes.
+This time, we're shifting gears. Instead of waiting for external changes in the ecosystem, **we've decided to publish major releases more frequently**. But don't worry, the stability of your application remains a top priority. In fact, upgrades will be significantly smoother from now on. **A major version bump will no longer mean a full rewrite. You'll be able to upgrade in just a few minutes.**
 
 This article offers a broad look at what's coming in AdonisJS 7. Some topics will get their own deep-dive articles closer to release.
 
@@ -22,9 +22,9 @@ By aligning with the current LTS release, we will be able to take advantage of m
 
 We want to give you full control to diagnose, trace, and debug your application. To make that possible, AdonisJS 7 will embrace the [Node.js diagnostic channel](https://nodejs.org/api/diagnostics_channel.html), a built-in module that lets libraries create named channels for reporting diagnostic messages.
 
-Each AdonisJS module will define multiple channels that you will be able to tap into to trace your application's behavior in real time, without sacrificing performance.
+Each AdonisJS module will define multiple channels that you will be able to tap into to trace your application's behavior in real time, **without sacrificing performance**.
 
-We also plan to provide adapters for popular tools like OpenTelemetry, DataDog, and others, so you will be able to integrate AdonisJS tracing seamlessly into your existing observability stack.
+We also plan to provide adapters for popular tools like _OpenTelemetry_, _DataDog_, and others, so you will be able to integrate AdonisJS tracing seamlessly into your existing observability stack.
 
 ## New Lucid Major
 
