@@ -37,10 +37,7 @@
 
       {{-- Hamburger (mobile only) --}}
       <div class="xs:block md:hidden">
-        <button
-          class="font-medium flex space-x-2 items-center"
-          @click.prevent="mobileNavExpanded = true"
-        >
+        <button class="font-medium flex space-x-2 items-center" @click.prevent="mobileNavExpanded = true">
           @svg('tabler:menu-2', { class: 'w-5 h-5' })
           <span>Menu</span>
         </button>
@@ -55,10 +52,7 @@
           class="flex flex-col justify-center items-center h-full space-y-8 md:flex-row md:space-x-10 md:space-y-0"
         >
           {{-- Close button (mobile only) --}}
-          <button
-            class="absolute right-6 top-6 md:hidden"
-            @click.prevent="mobileNavExpanded = false"
-          >
+          <button class="absolute right-6 top-6 md:hidden" @click.prevent="mobileNavExpanded = false">
             @svg('tabler:x', { class: 'w-6 h-6' })
           </button>
 
@@ -68,8 +62,8 @@
               @each(item in navItems)
                 @let(isExternalLink = item.href.startsWith('https://'))
                 <li>
-                  <a {{
-                    html.attrs({
+                  <a
+                    {{ html.attrs({
                       href: item.href,
                       'up-follow': !isExternalLink,
                       'up-preload': !isExternalLink,
@@ -87,8 +81,8 @@
                         'text-xl',
                         'md:text-sm',
                       ]
-                    })
-                  }}>
+                    }) }}
+                  >
                     {{ item.text }}
                   </a>
                 </li>
@@ -106,7 +100,7 @@
                   class="flex items-center transition-colors ease-in-out duration-200 text-sand13 text-xl md:text-sm"
                 >
                   {{ svg('uiw:github', { class: 'w-5 h-5' }) }}
-                  <span class="text-sm ml-2 font-medium"> 17.3k </span>
+                  <span class="text-sm ml-2 font-medium">17.9k </span>
                 </a>
               </li>
             </ul>
