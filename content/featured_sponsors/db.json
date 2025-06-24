@@ -1,15 +1,5 @@
 [
   {
-    "name": "Relancer",
-    "website": "https://relancer.com/",
-    "logo": "./logos/relancer.svg"
-  },
-  {
-    "name": "ToolZZ",
-    "website": "https://www.toolzz.com.br/",
-    "logo": "./logos/toolzz.svg"
-  },
-  {
     "name": "Vehicle Routing and Route Optimization Software",
     "website": "https://route4me.com/",
     "logo": "./logos/route4me.svg"
@@ -18,5 +8,15 @@
     "name": "Ezycourse",
     "website": "https://ezycourse.com/",
     "logo": "./logos/ezycourse.svg"
+  },
+  {
+    "name": "Galaxy Cloud",
+    "website": "https://meteor.software/g6h",
+    "logo": "./logos/galaxy.svg"
+  },
+  {
+    "name": "Relancer",
+    "website": "https://relancer.com/",
+    "logo": "./logos/relancer.svg"
   }
 ]
