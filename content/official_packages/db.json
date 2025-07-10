@@ -81,7 +81,7 @@
     "name": "Lock",
     "colorShade": "pink",
     "iconName": "tabler:lock",
-    "description": "Synchronize the access to a shared resource to prevents several processes, or concurrent code, from executing a section of code at the same time."
+    "description": "Synchronize the access to a shared resource to prevent several processes, or concurrent code, from executing a section of code at the same time."
   },
   {
     "name": "Vite",
