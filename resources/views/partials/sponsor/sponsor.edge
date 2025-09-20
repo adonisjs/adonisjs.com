@@ -1,0 +1,31 @@
+<section class="py-20">
+    <div class="content-container">
+        <h4 class="font-semibold text-lg text-sand12 mb-2">PARTNERS</h4>
+        <div class="border border-sand3 p-4 rounded-md">
+            <div class="grid md:grid-cols-4 items-center bg-sand2 gap-[1px]">
+                @let(sponsorsList = await featuredSponsors.all())
+                @assign(sponsorsList = sponsorsList.concat([{ placeholder: true }]))
+                @assign(sponsorsList = sponsorsList.concat(new Array(4 - (sponsorsList.length % 4))))
+
+                @each(sponsor in await sponsorsList)
+                    @if(sponsor && sponsor.website)
+                        <div
+                            class="h-20 bg-white flex justify-center items-center filter grayscale hover:grayscale-0 transition duration-300 ease-in-out"
+                            >
+                            <a href="{{ sponsor.website }}?utm_source=adonisjs.com" class="text-sand12" target="_blank">
+                                {{{ sponsor.logo }}}
+                            </a>
+                        </div>
+                    @elseif(sponsor && sponsor.placeholder)
+                        <div class="h-20 uppercase text-sm font-semibold text-sand9 bg-white flex justify-center items-center">
+                            your logo 
+                        </div>
+                    @else
+                        <div class="h-20 bg-white hidden md:flex justify-center items-center">
+                        </div>
+                    @end
+                @end
+            </div> 
+        </div>
+    </div>
+</section>

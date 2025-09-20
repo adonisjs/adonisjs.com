@@ -21,6 +21,7 @@
 @import '@radix-ui/colors/violet-alpha.css';
 @import '@radix-ui/colors/orange-alpha.css';
 @import './markdown.css';
+@import './faq.css';
 
 @tailwind base;
 @tailwind components;
@@ -157,4 +158,51 @@ nav a.up-current {
 
 .links_list ul li a {
   color: var(--sand-11);
+}
+
+.to-be-animated rect {
+  animation: pixel-pulse 3s infinite;
+}
+
+@keyframes pixel-pulse {
+  0%, 100% {
+    fill: #FFBDD4;
+  }
+  50% {
+    fill: #FF96BB;
+  }
+}
+
+.accordion_summary {
+  position: relative;
+  anchor-name: --summary;
+  user-select: none;
+  cursor: pointer;
+}
+
+.accordion_summary::marker {
+  content: '';
+}
+
+.accordion_summary::before,
+.accordion_summary::after {
+  content: '';
+  border-block-start: 1.5px solid oklch(0.205 0 0);
+  border-radius: 4px;
+  height: 0;
+  width: 14px;
+  inset-block-start: 50%;
+  inset-inline-end: 0;
+  position: absolute;
+  position-anchor: --summary;
+  position-area: top end;
+}
+
+.accordion_summary::after {
+  transform: rotate(90deg);
+  transform-origin: 50%;
+}
+
+.accordion[open] .accordion_summary::after {
+  transform: rotate(0deg);
 }

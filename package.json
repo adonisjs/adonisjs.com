@@ -77,7 +77,6 @@
     "luxon": "^3.6.1",
     "reflect-metadata": "^0.2.2",
     "sanitize-html": "^2.16.0",
-    "sqlite3": "^5.1.7",
     "unist-util-map": "^4.0.0"
   },
   "prettier": "@adonisjs/prettier-config",

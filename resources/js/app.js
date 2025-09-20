@@ -3,6 +3,19 @@ import Alpine from 'alpinejs'
 import { tabs } from 'edge-uikit/tabs'
 
 Alpine.plugin(tabs)
+
+Alpine.data('sponsorHeart', () => ({
+  isAnimating: false,
+  init() {
+    this.animate(document.querySelectorAll('.to-be-animated rect'))
+  },
+  animate(elements) {
+    elements.forEach((element, index) => {
+      element.style['animation-delay'] = `${0.3 * (index + 1)}s`
+    });
+  },
+}))
+
 Alpine.start()
 
 import.meta.glob([

@@ -14,10 +14,12 @@ const BlogFeedController = () => import('#controllers/blog_feed_controller')
 const HomeController = () => import('#controllers/home_controller')
 const AboutController = () => import('#controllers/about_controller')
 const SupportProgramController = () => import('#controllers/support_program_controller')
+const SponsorsController = () => import('#controllers/sponsors_controller')
 
 router.get('/', [HomeController])
 router.get('/contact', [SupportProgramController])
 router.get('/about', [AboutController])
+router.get('/sponsor', [SponsorsController])
 router.get('feeds/blog.xml', [BlogFeedController])
 
 router.resource('blog', BlogController).params({ blog: 'slug' }).only(['index', 'show'])

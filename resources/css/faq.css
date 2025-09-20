@@ -1,0 +1,38 @@
+:root {
+    --faq-font-size: 15px;
+    --faq-line-height: 24px;
+    --faq-p-margin-bottom: 15px;
+
+    --faq-elements-margin: 24px;
+    --faq-elements-spacing: 25px;
+}
+
+.faq-markdown {
+    font-size: var(--faq-font-size);
+    line-height: var(--faq-line-height);
+}
+
+.faq-markdown p {
+    margin-bottom: var(--faq-p-margin-bottom);
+}
+
+.faq-markdown a {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.faq-markdown strong {
+    font-weight: var(--strong-font-weight);
+}
+
+.faq-markdown ul {
+    list-style-type: disc;
+    padding-left: 1.15em;
+    margin: var(--faq-elements-margin) 0 0;
+}
+
+.faq-markdown ol {
+    list-style-type: numeric;
+    padding-left: 1.15em;
+    margin: var(--faq-elements-margin) 0 0;
+}
