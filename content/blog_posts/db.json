@@ -1,5 +1,13 @@
 [
   {
+    "title": "10 Years of AdonisJS — A Personal Reflection and What’s Next",
+    "slug": "a-decade-of-adonisjs-and-the-future",
+    "authorName": "virk",
+    "content_path": "./articles/a-decade-of-adonisjs-and-the-future.md",
+    "publishedAt": "2025-09-26T07:02:31.492Z",
+    "category": "Philosophy"
+  },
+  {
     "title": "Roadmap to AdonisJS 7",
     "slug": "roadmap-to-adonisjs-7",
     "authorName": "romainlanz",

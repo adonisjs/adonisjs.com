@@ -2,7 +2,6 @@
 summary: We have been working hard to refine the framework, engage with the alpha testers, and migrate more official packages to the v6 core. Today, we're thrilled to share our progress around what has been accomplished since the last update.
 ---
 
-
 On July 24th, [we announced the availability of AdonisJS 6](https://github.com/adonisjs/core/discussions/4201) in its "alpha state" exclusively for our sponsors to explore the framework and provide valuable feedback.
 
 Since that moment, we have been working hard to refine the framework, engage with the alpha testers, and migrate more official packages to the v6 core. Today, we're thrilled to share our progress around what has been accomplished since the last update.
