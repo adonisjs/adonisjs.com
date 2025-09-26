@@ -1,0 +1,37 @@
+@layouts.main({
+  page: {
+    title: 'Sponsor AdonisJS and help build the framework you believe in',
+    description: 'AdonisJS is an open-source framework independently owned by its  creator with no external investors or conflicting interests.  We are backed by individuals like you who help  us shape the future of the framework.',
+    ogImage: '/sponsor_og_image.jpeg',
+    canonical: `/sponsor`
+  }
+})
+  @sections.gray()
+    @include('partials/shared/header')
+    <div layout-hero>
+      @include('partials/sponsor/hero')
+    </div>
+  @end
+
+  <main layout-main>
+    @sections.white()
+      @include('partials/sponsor/sponsor')
+      <section class="pb-20">
+        <div class="content-container">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-24" id="programs-and-benefits">
+            @include('partials/sponsor/insider')
+            @include('partials/sponsor/partner')
+          </div>
+        </div>
+      </section>
+    @end
+
+    @sections.gray()
+      @include('partials/sponsor/faq')
+    @end
+  </main>
+
+  @sections.gray()
+    @include('partials/shared/footer')
+  @end
+@end

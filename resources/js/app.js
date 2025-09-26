@@ -4,12 +4,16 @@ import { tabs } from 'edge-uikit/tabs'
 
 Alpine.plugin(tabs)
 
-Alpine.data('sponsorHeart', () => ({
+Alpine.data('sponsorHeart', (sponsorsList) => ({
   isAnimating: false,
+  sponsorFace: '',
   init() {
-    this.animate(document.querySelectorAll('.to-be-animated rect'))
+    this.animateHeart(document.querySelectorAll('.to-be-animated rect'))
+    const randomIndex = Math.floor(Math.random() * sponsorsList.length);
+    this.sponsorFace = sponsorsList[randomIndex]
+    this.$refs.sponsorFace.setAttribute('href', this.sponsorFace)
   },
-  animate(elements) {
+  animateHeart(elements) {
     elements.forEach((element, index) => {
       element.style['animation-delay'] = `${0.3 * (index + 1)}s`
     });

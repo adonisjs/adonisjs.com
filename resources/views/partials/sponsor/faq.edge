@@ -1,3 +1,71 @@
+@let(faqs = [
+  {
+    title: 'How frequently do you release?',
+    content: `<p>We follow a "release when ready" approach. We prioritize stability and thoughtful
+design over arbitrary deadlines. That said, we frequently share updates, previews,
+and RFCs so sponsors can stay ahead of what's coming next</p>`,
+  },
+  {
+    title: 'What is coming next?',
+    content: `<p>We regularly publish roadmaps, RFCs, and preview releases on <a href="https://github.com/orgs/adonisjs/projects/8">GitHub</a> and
+the <a href="https://insiders.adonisjs.com/">Insiders website</a>. If you're an Insider or Partner sponsor, you'll get early
+access to what's in the pipeline—including upcoming features, breaking changes,
+and major improvements.</p>`
+  },
+  {
+    title: 'How do I cancel my sponsorship?',
+    content: `<p>You can cancel your sponsorship at any time from your GitHub Sponsors dashboard.</p>`,
+  },
+  {
+    title: 'What happens when I stop sponsoring?',
+    content: `
+<p>When your sponsorship ends</p>
+<ul>
+<li>
+  You'll lose access to perks such as the Insiders repo, early releases, and sponsor-only updates.
+</li>
+<li>
+  Your role in the Discord server (if any) will be removed automatically.
+</li>
+<li>
+  No hard feelings — you're always welcome back when ready ✌️
+</li>
+</ul>
+`,
+  },
+  {
+    title: 'Do you offer technical support with SLAs?',
+    content: `<p>No, we do not provide technical support or SLAs as part of the sponsorship program. Sponsorship is meant to support the project's development, not as a substitute for consulting or enterprise-level support.</p>`,
+  },
+  {
+    title: 'How are the Insiders perks delivered?',
+    content: `
+<p>Once your sponsorship is confirmed:</p>
+<ul>
+  <li>
+    You'll receive access to a private GitHub repo containing preview releases and behind-the-scenes updates.
+  </li>
+  <li>
+    You'll also get a special role on our Discord server, recognizing your contribution and providing early insight into discussions.
+  </li>
+</ul>`
+  },
+  {
+    title: 'How are the Partners perks delivered?',
+    content: `<p>Partner perks are delivered directly and manually after confirming your sponsorship</p>
+<ul>
+  <li>We will reach out via email to set up deliverables like logo placement,
+website mentions, and any other agreed benefits.</li>
+<li>Partner sponsors also get priority access to discussions around
+roadmap planning and major decisions.</li>
+</ul>`
+  },
+  {
+    title: 'How is taxation and invoicing handled?',
+    content: `<p>All billing, taxation, and invoicing are handled entirely by GitHub. You can access invoices directly from your GitHub account</p>`,
+  }
+])
+
 <section class="pb-16 pt-20 md:pt-28">
   <div class="content-container-small">
     <div class="mb-6">
@@ -6,64 +74,16 @@
       @end
     </div>
     <div class="border border-sand3 bg-white rounded-md">
-      <details class="accordion border-b border-sand3 faq-markdown">
-        <summary class="accordion_summary text-sand12 font-medium pl-9 mr-9 pt-5 pb-5 text-sm">
-          How are the Partners perks delivered?
-        </summary>
-        <div class="px-9 pb-7 max-w-[94%]">
-          <p class="mb-3">
-            Partner perks are delivered directly and manually after confirming your sponsorship:
-          </p>
-          <ul>
-            <li>
-              <p>
-                We will reach out via email to set up deliverables like logo placement, website mentions, and any other agreed benefits.
-              </p>
-            </li>
-            <li>
-              <p>
-                Partner sponsors also get priority access to discussions around roadmap planning and major decisions.
-              </p>
-            </li>
-          </ul>
-          <ol>
-            <li>
-              <p>
-                We will reach out via email to set up deliverables like logo placement, website mentions, and any other agreed benefits.
-              </p>
-            </li>
-            <li>
-              <p>
-                Partner sponsors also get priority access to discussions around roadmap planning and major decisions. 
-                        <a href="">Anchor tag</a>
-              </p>
-            </li>
-          </ol>
-        </div>
-      </details>
-
-      <details class="accordion border-b border-sand3 faq-markdown">
-        <summary class="accordion_summary text-sand12 font-medium pl-9 mr-9 pt-5 pb-5 text-sm">
-          How are the Partners perks delivered?
-        </summary>
-        <div class="px-9 pb-7 max-w-[94%]">
-          <p class="mb-3">
-            Partner perks are delivered directly and manually after confirming your sponsorship:
-          </p>
-          <ul>
-            <li>
-              <p>
-                We will reach out via email to set up deliverables like logo placement, website mentions, and any other agreed benefits.
-              </p>
-            </li>
-            <li>
-              <p>
-                Partner sponsors also get priority access to discussions around roadmap planning and major decisions.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </details>
+      @each(faq in faqs)
+        <details class="accordion border-b border-sand3 faq-markdown">
+          <summary class="accordion_summary text-sand12 font-medium pl-9 mr-9 pt-5 pb-5 text-sm">
+            {{ faq.title }}
+          </summary>
+          <div class="px-9 pb-7 max-w-[94%]">
+            {{{ faq.content }}}
+          </div>
+        </details>
+      @end
     </div>
   </div>
 </section>
