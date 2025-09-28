@@ -10,6 +10,7 @@ import { HttpContextFactory } from '@adonisjs/core/factories/http'
 import SupportProgramController from '#controllers/support_program_controller'
 import CaseStudiesController from '#controllers/case_studies_controller'
 import BlogFeedController from '#controllers/blog_feed_controller'
+import SponsorsController from '#controllers/sponsors_controller'
 
 export default class BuildStatic extends BaseCommand {
   static commandName = 'build:static'
@@ -100,6 +101,13 @@ export default class BuildStatic extends BaseCommand {
     }
   }
 
+  protected async buildSponsorPage() {
+    const ctx = new HttpContextFactory().create()
+    const html = await new SponsorsController().handle(ctx)
+    await writeFile(app.makePath('dist/sponsor.html'), html)
+    this.logger.success('created dist/sponsor.html')
+  }
+
   /**
    * Creates a static copy of the case studies listing and
    * individual case studies.
@@ -143,6 +151,7 @@ export default class BuildStatic extends BaseCommand {
     await this.buildAboutPage()
     await this.buildContactPage()
     await this.buildBlog()
+    await this.buildSponsorPage()
     await this.buildFeeds()
     // await this.buildCaseStudies()
   }
