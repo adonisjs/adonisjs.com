@@ -76,10 +76,10 @@ roadmap planning and major decisions.</li>
     <div class="border border-sand3 bg-white rounded-md">
       @each(faq in faqs)
         <details class="accordion border-b border-sand3 faq-markdown">
-          <summary class="accordion_summary text-sand12 font-medium pl-9 mr-9 pt-5 pb-5 text-sm">
+          <summary class="accordion_summary text-sand12 font-medium pl-4 sm:pl-9 pr-4 mr-4 sm:mr-9 pt-5 pb-5 text-sm">
             {{ faq.title }}
           </summary>
-          <div class="px-9 pb-7 max-w-[94%]">
+          <div class="px-4 sm:px-9 pb-7 max-w-[94%]">
             {{{ faq.content }}}
           </div>
         </details>
