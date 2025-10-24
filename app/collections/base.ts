@@ -166,9 +166,8 @@ export default abstract class BaseCollection<Entry> {
       this.originalDb.push(entry)
     }
 
-    const contentPath = (entry as any).content
-    if (contentPath) {
-      await writeFile(this.makePath(contentPath), '')
+    if (typeof entry === 'object' && entry && 'content_path' in entry) {
+      await writeFile(this.makePath(entry.content_path as string), '')
     }
 
     await writeFile(this.dbFilePath, JSON.stringify(this.originalDb, null, 2))

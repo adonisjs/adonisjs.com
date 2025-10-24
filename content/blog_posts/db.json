@@ -1,5 +1,13 @@
 [
   {
+    "title": "Building from the Base Up: Rethinking Starter Kits in AdonisJS",
+    "slug": "rethinking-starter-kits",
+    "authorName": "virk",
+    "content_path": "./articles/rethinking-starter-kits.md",
+    "publishedAt": "2025-10-24T07:12:09.676Z",
+    "category": "Philosophy"
+  },
+  {
     "title": "10 Years of AdonisJS — A Personal Reflection and What’s Next",
     "slug": "a-decade-of-adonisjs-and-the-future",
     "authorName": "virk",
