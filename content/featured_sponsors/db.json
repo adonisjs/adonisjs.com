@@ -15,6 +15,11 @@
     "logo": "./logos/galaxy.svg"
   },
   {
+    "name": "LambdaTest",
+    "website": "https://www.lambdatest.com",
+    "logo": "./logos/lambdatest.svg"
+  },
+  {
     "name": "Relancer",
     "website": "https://relancer.com/",
     "logo": "./logos/relancer.svg"
