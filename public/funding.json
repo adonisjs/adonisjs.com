@@ -121,10 +121,10 @@
         "channels": ["gh-sponsors", "my-paypal"]
       },
       {
-        "guid": "partners",
+        "guid": "insiders-team",
         "status": "active",
-        "name": "Partners program - Companies",
-        "description": "As partners, you can enjoy additional benefits on top of what's already available in the Insiders program.\n\n- Insider benefits: Empower your entire team with early access to open-source packages, example projects, and a special sponsor role on our Discord server.\n- Logo placement: 500K+ monthly views across all the websites. Put your product in front of thousands of developers with a back-link on the AdonisJS home page, docs landing page, and crucial Github repos.\n- Expedite issue resolution: We will work together with you to address the issues you and your team are facing, even if they usually would be of lower priority due to their limited impact.",
+        "name": "Insiders program - Teams",
+        "description": "Access to Insiders benefits for your entire team (upto 10 members). Along with that you will have access to the following benefits\n\n- Prominent logo placement on the AdonisJS website homepage\n- Featured announcement across AdonisJS social and newsletter channels\n- Thank-you highlight on AdonisJS social channels",
         "amount": 499,
         "currency": "USD",
         "frequency": "monthly",
@@ -154,7 +154,7 @@
         "guid": "prime",
         "status": "active",
         "name": "Prime Sponsor",
-        "description": "Prime Sponsors help maintain the momentum behind AdonisJS, supporting consistent releases, improvements, and ecosystem maintenance.\n\nBenefits:\n\n- Logo featured on the AdonisJS sponsor page (Prime section)\n- Mention in annual sponsor announcement post\n- Invitations to private feedback sessions and early previews\n- Thank-you highlight on AdonisJS social channels",
+        "description": "Prime Sponsors help maintain the momentum behind AdonisJS, supporting consistent releases, improvements, and ecosystem maintenance.\n\nBenefits:\n\n- Logo featured on the AdonisJS sponsor page\n- Mention in annual sponsor announcement post\n- Invitations to private feedback sessions and early previews\n- Thank-you highlight on AdonisJS social channels",
         "amount": 10000,
         "currency": "USD",
         "frequency": "yearly",
