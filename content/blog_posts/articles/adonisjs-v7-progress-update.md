@@ -10,7 +10,7 @@ Before diving into the details, I want to re-iterate that the surface area of br
 
 ## Starter kits now include login and signup flows
 
-All three starter kits — React, Vue, and Hypermedia — now include simple login and signup flows. These flows handle basic email and password authentication to help you get started quickly without having to build these pages from scratch.
+All starter kits — React and Hypermedia — now include simple login and signup flows. These flows handle basic email and password authentication to help you get started quickly without having to build these pages from scratch.
 
 The approach is intentionally minimal. You get the essentials needed to authenticate users so you can focus on building the core features of your application. Security improvements and edge cases can be refined later without blocking progress.
 
