@@ -1,5 +1,13 @@
 [
   {
+    "title": "AdonisJS v7: State of Things",
+    "slug": "adonisjs-v7-progress-update",
+    "authorName": "virk",
+    "content_path": "./articles/adonisjs-v7-progress-update.md",
+    "publishedAt": "2025-11-13T12:13:59.268Z",
+    "category": "News"
+  },
+  {
     "title": "Building from the Base Up: Rethinking Starter Kits in AdonisJS",
     "slug": "rethinking-starter-kits",
     "authorName": "virk",

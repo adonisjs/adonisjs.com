@@ -381,6 +381,10 @@
   display: flex;
 }
 
+.markdown h4 + pre {
+  margin-top: 0;
+}
+
 .markdown pre code {
   flex: 1;
 }
