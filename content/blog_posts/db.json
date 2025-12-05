@@ -1,5 +1,13 @@
 [
   {
+    "title": "Supporting Platform-Native Response and ReadableStream in AdonisJS",
+    "slug": "adonisjs-native-response-readablestream-support",
+    "authorName": "virk",
+    "content_path": "./articles/adonisjs-native-response-readablestream-support.md",
+    "publishedAt": "2025-12-05T06:32:15.246Z",
+    "category": "News"
+  },
+  {
     "title": "AdonisJS v7: State of Things",
     "slug": "adonisjs-v7-progress-update",
     "authorName": "virk",
