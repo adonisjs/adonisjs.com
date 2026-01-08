@@ -386,14 +386,14 @@
   margin-top: 0;
 }
 
-.markdown p:has(strong:only-child) {
+/* .markdown p:has(strong:only-child) {
   color: var(--prose-headings-color);
   margin-bottom: 12px;
   font-size: var(--prose-h4-font-size);
   line-height: var(--prose-h4-line-height);
   letter-spacing: var(--prose-h4-letter-spacing);
   font-weight: var(--prose-h4-font-weight);
-}
+} */
 
 .markdown pre code {
   flex: 1;

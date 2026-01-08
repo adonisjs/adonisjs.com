@@ -1,5 +1,13 @@
 [
   {
+    "title": "Batteries-included frameworks in the era of AI",
+    "slug": "frameworks-in-the-era-of-ai",
+    "authorName": "virk",
+    "content_path": "./articles/frameworks-in-the-era-of-ai.md",
+    "publishedAt": "2026-01-08T09:21:30.679Z",
+    "category": "Philosophy"
+  },
+  {
     "title": "OpenTelemetry for AdonisJS",
     "slug": "introduction-adonisjs-opentelemetry",
     "authorName": "julien-ripouteau",
