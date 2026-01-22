@@ -2,9 +2,9 @@
 summary: AdonisJS v7 has reached its final form with stable APIs, revamped documentation, and a small breaking changes surface. Insiders can start building today.
 ---
 
-We're thrilled to announce that AdonisJS v7 has reached its final form and is now available for Insiders in closed preview. If you're a sponsor, head over to [insiders.adonisjs.com](https://insiders.adonisjs.com/) to access the documentation and start building with v7 today.
+We're thrilled to announce that AdonisJS v7 has reached its final form and is now available for Insiders in closed preview. **If you're a sponsor, head over to [insiders.adonisjs.com](https://insiders.adonisjs.com/) to access the documentation and start building with v7 today**.
 
-If you've been following along with the alpha releases, you already know that your feedback has been instrumental in shaping what v7 has become. Thank you for being part of this journey.
+If you've been following along with the [alpha releases](https://insiders.adonisjs.com/changelog), you already know that your feedback has been instrumental in shaping what v7 has become. Thank you for being part of this journey.
 
 The APIs are stable and locked. The documentation has been completely revamped with significantly better coverage. v7 is ready.
 
@@ -26,6 +26,14 @@ The full changelog and upgrade guides will be published during the public releas
 - **DX improvements.** Numerous quality-of-life enhancements throughout the framework.
 
 And there's more that we'll reveal during the public release.
+
+## Previous announcements
+
+- [Roadmap to AdonisJS 7](./roadmap-to-adonisjs-7.md)
+- [Rethinking Starter Kits in AdonisJS](./rethinking-starter-kits.md)
+- [AdonisJS v7: State of Things](./adonisjs-v7-progress-update.md)
+- [Supporting Platform-Native Response and ReadableStream in AdonisJS](./adonisjs-native-response-readablestream-support.md)
+- [OpenTelemetry for AdonisJS](./introduction-adonisjs-opentelemetry.md)
 
 ## The Road Ahead
 
