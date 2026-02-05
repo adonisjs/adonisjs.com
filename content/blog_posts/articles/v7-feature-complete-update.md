@@ -29,11 +29,11 @@ And there's more that we'll reveal during the public release.
 
 ## Previous announcements
 
-- [Roadmap to AdonisJS 7](./roadmap-to-adonisjs-7.md)
-- [Rethinking Starter Kits in AdonisJS](./rethinking-starter-kits.md)
-- [AdonisJS v7: State of Things](./adonisjs-v7-progress-update.md)
-- [Supporting Platform-Native Response and ReadableStream in AdonisJS](./adonisjs-native-response-readablestream-support.md)
-- [OpenTelemetry for AdonisJS](./introduction-adonisjs-opentelemetry.md)
+- [Roadmap to AdonisJS 7](./roadmap-to-adonisjs-7)
+- [Rethinking Starter Kits in AdonisJS](./rethinking-starter-kits)
+- [AdonisJS v7: State of Things](./adonisjs-v7-progress-update)
+- [Supporting Platform-Native Response and ReadableStream in AdonisJS](./adonisjs-native-response-readablestream-support)
+- [OpenTelemetry for AdonisJS](./introduction-adonisjs-opentelemetry)
 
 ## The Road Ahead
 
