@@ -84,7 +84,7 @@ export function Header() {
 
 I have tried different packages to use TSX as a templating engine. For this tutorial, we will use [`@kitajs/html`](https://github.com/kitajs/html), but feel free to use the one you prefer.
 
-First, you have to install the package. At the time of writing, this package is at version `3.1.1`.
+First, you have to install the package. At the time of writing, this package is at version `4.1.0`.
 
 We will also install their plugin to enable editor intellisense.
 
@@ -92,19 +92,7 @@ We will also install their plugin to enable editor intellisense.
 npm install @kitajs/html @kitajs/ts-html-plugin
 ```
 
-Once done, we will edit the `bin/server.ts` file to register Kita.
-
-```ts
-import 'reflect-metadata'
-// insert-start
-import '@kitajs/html/register.js'
-// insert-end
-import { Ignitor, prettyPrintError } from '@adonisjs/core'
-
-// ...
-```
-
-We must also change our `tsconfig.json` file to add JSX support.
+Once done, will edit the `tsconfig.json` file to add JSX support.
 
 ```js
 {
@@ -112,10 +100,9 @@ We must also change our `tsconfig.json` file to add JSX support.
   "compilerOptions": {
    // ...
    // insert-start
-   "jsx": "react",
-   "jsxFactory": "Html.createElement",
-   "jsxFragmentFactory": "Html.Fragment",
-   "plugins": [{ "name": "@kitajs/ts-html-plugin" }]
+    "jsx": "react-jsx",
+    "jsxImportSource": "@kitajs/html",
+    "plugins": [{ "name": "@kitajs/ts-html-plugin" }]
     // insert-end
   }
 }
